@@ -19,3 +19,7 @@ DerivedData
 
 #vim 
 *.swp
+
+#pods
+Podfile.lock
+**/*contents.xcworkspacedata
