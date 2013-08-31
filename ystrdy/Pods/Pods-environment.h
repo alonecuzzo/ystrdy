@@ -6,6 +6,12 @@
 // project.
 
 
+// AFNetworking
+#define COCOAPODS_POD_AVAILABLE_AFNetworking
+#define COCOAPODS_VERSION_MAJOR_AFNetworking 1
+#define COCOAPODS_VERSION_MINOR_AFNetworking 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking 2
+
 // GHUnitIOS
 #define COCOAPODS_POD_AVAILABLE_GHUnitIOS
 #define COCOAPODS_VERSION_MAJOR_GHUnitIOS 0
