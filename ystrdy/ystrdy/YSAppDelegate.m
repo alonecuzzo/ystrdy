@@ -8,7 +8,7 @@
 
 #import "YSAppDelegate.h"
 
-#import "YSViewController.h"
+#import "YSLocationViewController.h"
 
 @implementation YSAppDelegate
 
@@ -16,7 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[YSViewController alloc] initWithNibName:@"YSViewController" bundle:nil];
+    self.viewController = [[YSLocationViewController alloc] initWithNibName:@"YSLocationViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

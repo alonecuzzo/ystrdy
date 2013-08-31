@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class YSViewController;
+@class YSLocationViewController;
 
 @interface YSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) YSViewController *viewController;
+@property (strong, nonatomic) YSLocationViewController *viewController;
 
 @end

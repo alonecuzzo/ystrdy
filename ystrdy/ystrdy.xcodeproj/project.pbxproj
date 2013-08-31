@@ -29,8 +29,11 @@
 		8E767F5F17D0F02D0039C788 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F5E17D0F02D0039C788 /* Default.png */; };
 		8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F6017D0F02D0039C788 /* Default@2x.png */; };
 		8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F6217D0F02D0039C788 /* Default-568h@2x.png */; };
-		8E767F6617D0F02D0039C788 /* YSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E767F6517D0F02D0039C788 /* YSViewController.m */; };
-		8E767F6917D0F02D0039C788 /* YSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F6717D0F02D0039C788 /* YSViewController.xib */; };
+		8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42217D1899600D5979E /* YSLocationViewController.m */; };
+		8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E78B42317D1899600D5979E /* YSLocationViewController.xib */; };
+		8E78B42917D18A4200D5979E /* YSLocationViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */; };
+		8E78B42A17D18A5A00D5979E /* YSLocationViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42117D1899600D5979E /* YSLocationViewController.h */; };
+		8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42217D1899600D5979E /* YSLocationViewController.m */; };
 		9002522197014C9E93947551 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C61303797E4672A4B47D83 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +48,7 @@
 		8E34247717D11CBD0027A951 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8E34247917D11CBD0027A951 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8E34247B17D11CBD0027A951 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8E34248217D11E7A0027A951 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		8E34248217D11E7A0027A951 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		8E34248417D11EF90027A951 /* YSLocationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocationTest.h; sourceTree = "<group>"; };
 		8E34248517D11EF90027A951 /* YSLocationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocationTest.m; sourceTree = "<group>"; };
 		8E34248717D120050027A951 /* YSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocation.h; path = classes/model/YSLocation.h; sourceTree = "<group>"; };
@@ -63,10 +66,12 @@
 		8E767F5E17D0F02D0039C788 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8E767F6017D0F02D0039C788 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8E767F6217D0F02D0039C788 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8E767F6417D0F02D0039C788 /* YSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSViewController.h; sourceTree = "<group>"; };
-		8E767F6517D0F02D0039C788 /* YSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSViewController.m; sourceTree = "<group>"; };
-		8E767F6817D0F02D0039C788 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YSViewController.xib; sourceTree = "<group>"; };
 		8E767F7017D0F02D0039C788 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8E78B42117D1899600D5979E /* YSLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationViewController.h; path = classes/controllers/YSLocationViewController.h; sourceTree = "<group>"; };
+		8E78B42217D1899600D5979E /* YSLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationViewController.m; path = classes/controllers/YSLocationViewController.m; sourceTree = "<group>"; };
+		8E78B42317D1899600D5979E /* YSLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YSLocationViewController.xib; path = classes/controllers/YSLocationViewController.xib; sourceTree = "<group>"; };
+		8E78B42717D18A4200D5979E /* YSLocationViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationViewControllerTest.h; path = controllers/YSLocationViewControllerTest.h; sourceTree = "<group>"; };
+		8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationViewControllerTest.m; path = controllers/YSLocationViewControllerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +103,9 @@
 		8E34246B17D11CBC0027A951 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				8E78B42617D189D500D5979E /* controllers */,
+				8E34248C17D12F710027A951 /* model */,
 				8E34246C17D11CBC0027A951 /* Supporting Files */,
-				8E34248417D11EF90027A951 /* YSLocationTest.h */,
-				8E34248517D11EF90027A951 /* YSLocationTest.m */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -117,6 +122,15 @@
 				8E34247B17D11CBD0027A951 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E34248C17D12F710027A951 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8E34248417D11EF90027A951 /* YSLocationTest.h */,
+				8E34248517D11EF90027A951 /* YSLocationTest.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		8E767F4017D0F02D0039C788 = {
@@ -190,9 +204,9 @@
 		8E767F8817D112BA0039C788 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E767F6417D0F02D0039C788 /* YSViewController.h */,
-				8E767F6517D0F02D0039C788 /* YSViewController.m */,
-				8E767F6717D0F02D0039C788 /* YSViewController.xib */,
+				8E78B42117D1899600D5979E /* YSLocationViewController.h */,
+				8E78B42217D1899600D5979E /* YSLocationViewController.m */,
+				8E78B42317D1899600D5979E /* YSLocationViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -211,6 +225,15 @@
 			children = (
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		8E78B42617D189D500D5979E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E78B42717D18A4200D5979E /* YSLocationViewControllerTest.h */,
+				8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +323,7 @@
 				8E767F5F17D0F02D0039C788 /* Default.png in Resources */,
 				8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */,
 				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
-				8E767F6917D0F02D0039C788 /* YSViewController.xib in Resources */,
+				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,10 +367,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E78B42A17D18A5A00D5979E /* YSLocationViewController.h in Sources */,
+				8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */,
 				8E34248A17D1217F0027A951 /* YSLocation.h in Sources */,
 				8E34248B17D1217F0027A951 /* YSLocation.m in Sources */,
 				8E34247217D11CBC0027A951 /* main.m in Sources */,
 				8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */,
+				8E78B42917D18A4200D5979E /* YSLocationViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,8 +383,8 @@
 			files = (
 				8E767F5917D0F02D0039C788 /* main.m in Sources */,
 				8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */,
-				8E767F6617D0F02D0039C788 /* YSViewController.m in Sources */,
 				8E34248917D120050027A951 /* YSLocation.m in Sources */,
+				8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,14 +405,6 @@
 				8E767F5617D0F02D0039C788 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		8E767F6717D0F02D0039C788 /* YSViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8E767F6817D0F02D0039C788 /* en */,
-			);
-			name = YSViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -507,6 +525,7 @@
 				8E34247F17D11CBD0027A951 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E767F4417D0F02D0039C788 /* Build configuration list for PBXProject "ystrdy" */ = {
 			isa = XCConfigurationList;

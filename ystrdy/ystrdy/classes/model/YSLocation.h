@@ -11,5 +11,8 @@
 @interface YSLocation : NSObject
 
 @property(nonatomic, strong) NSString *name;
+@property(readwrite, assign) NSInteger todaysTemperature;
+@property(readwrite, assign) NSInteger yesterdaysTemperature;
+@property(readwrite, assign) BOOL isRaining;
 
 @end
