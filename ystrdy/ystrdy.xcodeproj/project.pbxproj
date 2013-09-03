@@ -43,6 +43,7 @@
 		8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
 		8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
 		8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */; };
+		8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */; };
 		9002522197014C9E93947551 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C61303797E4672A4B47D83 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,8 @@
 		8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSCommunicator.m; path = classes/management/YSCommunicator.m; sourceTree = "<group>"; };
 		8EDD33DF17D58C120020E0D2 /* YSMockCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockCommunicator.h; path = mocks/YSMockCommunicator.h; sourceTree = "<group>"; };
 		8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockCommunicator.m; path = mocks/YSMockCommunicator.m; sourceTree = "<group>"; };
+		8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManagerDelegate.h; path = mocks/YSMockLocationManagerDelegate.h; sourceTree = "<group>"; };
+		8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationManagerDelegate.m; path = mocks/YSMockLocationManagerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +288,8 @@
 			children = (
 				8EDD33DF17D58C120020E0D2 /* YSMockCommunicator.h */,
 				8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */,
+				8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */,
+				8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */,
 			);
 			name = mocks;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				8E9F9EEA17D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m in Sources */,
 				8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
 				8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */,
+				8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

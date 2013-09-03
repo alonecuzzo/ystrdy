@@ -12,6 +12,7 @@
 #import "YSLocationBuilder.h"
 #import "YSLocation.h"
 #import "YSMockCommunicator.h"
+#import "YSMockLocationManagerDelegate.h"
 
 @interface YSLocationCreationWorkflowTest()
 
@@ -77,6 +78,17 @@
     [_manager fetchWeatherDataForLocation:location];
     
     GHAssertTrue(communicator.wasAskedToFetchWeatherDataForLocation, @"The communicator should fetch data.");
+}
+
+- (void)testErrorReturnedToDelegateIsNotErrorReturnedToCommunicator
+{
+    YSMockLocationManagerDelegate *delegate = [[YSMockLocationManagerDelegate alloc] init];
+    _manager.delegate = delegate;
+    
+    NSError *underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
+    [_manager searchForWeatherDataFailedWithError:underlyingError];
+    
+    GHAssertFalse(underlyingError == [delegate fetchError], @"Error should have proper level of abstraction.");
 }
 
 @end

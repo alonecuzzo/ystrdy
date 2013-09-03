@@ -8,6 +8,8 @@
 
 #import "YSLocationManager.h"
 
+NSString *YSManagerError = @"YSManagerError";
+
 @implementation YSLocationManager
 
 - (void)setDelegate:(id<YSLocationManagerDelegate>)delegate
@@ -21,6 +23,13 @@
 - (void)fetchWeatherDataForLocation:(YSLocation*)location
 {
     [_communicator searchForWeatherDataWithLocation:location];
+}
+
+- (void)searchForWeatherDataFailedWithError:(NSError*)error
+{
+    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    NSError *reportableError = [NSError errorWithDomain:YSManagerError code:YSErrorLocationSearchCode userInfo:errorInfo];
+    [_delegate fetchingLocationsFailedWithError:reportableError];
 }
 
 @end

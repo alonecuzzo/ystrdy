@@ -11,6 +11,12 @@
 #import "YSLocationBuilder.h"
 #import "YSLocation.h"
 
+extern NSString *YSManagerError;
+
+enum {
+    YSErrorLocationSearchCode
+};
+
 @protocol YSLocationManagerDelegate <NSObject>
 
 - (void)fetchingLocationsFailedWithError:(NSError*)error;
@@ -27,6 +33,6 @@
 
 
 - (void)fetchWeatherDataForLocation:(YSLocation*)location;
-
+- (void)searchForWeatherDataFailedWithError:(NSError*)error;
 
 @end
