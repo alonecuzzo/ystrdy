@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YSLocation.h"
 
 @interface YSLocationBuilder : NSObject
+
+- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json;
 
 @end

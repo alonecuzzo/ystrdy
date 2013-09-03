@@ -10,4 +10,9 @@
 
 @implementation YSLocationBuilder
 
+- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json
+{
+    return nil;
+}
+
 @end

@@ -34,5 +34,6 @@ enum {
 
 - (void)fetchWeatherDataForLocation:(YSLocation*)location;
 - (void)searchForWeatherDataFailedWithError:(NSError*)error;
+- (void)receivedWeatherDataFromJSON:(NSString*)json;
 
 @end

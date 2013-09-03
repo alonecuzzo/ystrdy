@@ -32,4 +32,10 @@ NSString *YSManagerError = @"YSManagerError";
     [_delegate fetchingLocationsFailedWithError:reportableError];
 }
 
+
+- (void)receivedWeatherDataFromJSON:(NSString*)json
+{
+    [_locationBuilder weatherDataForLocationFromJSON:json];
+}
+
 @end

@@ -13,13 +13,14 @@
 #import "YSLocation.h"
 #import "YSMockCommunicator.h"
 #import "YSMockLocationManagerDelegate.h"
+#import "YSMockLocationBuilder.h"
 
 @interface YSLocationCreationWorkflowTest()
 
 @property YSLocationManager *manager;
 @property YSCommunicator *communicator;
 @property OCMockObject *delegate;
-@property OCMockObject *locationBuilder;
+@property YSMockLocationBuilder *locationBuilder;
 
 @end
 
@@ -32,10 +33,10 @@
     _manager = [[YSLocationManager alloc] init];
     _communicator = [OCMockObject mockForClass:[YSCommunicator class]];
     _delegate = [OCMockObject mockForProtocol:@protocol(YSLocationManagerDelegate)];
-    _locationBuilder = [OCMockObject mockForClass:[YSLocationBuilder class]];
+    _locationBuilder = [[YSMockLocationBuilder alloc] init];
     
     _manager.communicator = _communicator;
-    
+    _manager.locationBuilder = _locationBuilder;
 }
 
 - (void)tearDown
@@ -89,6 +90,27 @@
     [_manager searchForWeatherDataFailedWithError:underlyingError];
     
     GHAssertFalse(underlyingError == [delegate fetchError], @"Error should have proper level of abstraction.");
+}
+
+- (void)testErrorReturnedToDelegateShouldEqualCommunicatorsUnderlyingError
+{
+    YSMockLocationManagerDelegate *delegate = [[YSMockLocationManagerDelegate alloc] init];
+    _manager.delegate = delegate;
+    
+    NSError *underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
+    [_manager searchForWeatherDataFailedWithError:underlyingError];
+    
+    GHAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError, @"the underlying error should be accessible by client code");
+}
+
+#pragma mark - Location Building
+
+- (void)testThatJSONisPassedToBuilder
+{
+    NSString *fakeJSON = @"Fake JSON";
+    [_manager receivedWeatherDataFromJSON:fakeJSON];
+    
+    GHAssertEqualObjects(_locationBuilder.JSON, fakeJSON, @"Downloaded JSON should be sent to the builder");
 }
 
 @end

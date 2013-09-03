@@ -20,6 +20,7 @@
 		8E34248917D120050027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
 		8E34248A17D1217F0027A951 /* YSLocation.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248717D120050027A951 /* YSLocation.h */; };
 		8E34248B17D1217F0027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
+		8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */; };
 		8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
 		8E767F4F17D0F02D0039C788 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4E17D0F02D0039C788 /* Foundation.framework */; };
 		8E767F5117D0F02D0039C788 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F5017D0F02D0039C788 /* CoreGraphics.framework */; };
@@ -63,6 +64,8 @@
 		8E34248517D11EF90027A951 /* YSLocationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocationTest.m; sourceTree = "<group>"; };
 		8E34248717D120050027A951 /* YSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocation.h; path = classes/model/YSLocation.h; sourceTree = "<group>"; };
 		8E34248817D120050027A951 /* YSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocation.m; path = classes/model/YSLocation.m; sourceTree = "<group>"; };
+		8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationBuilder.h; path = mocks/YSMockLocationBuilder.h; sourceTree = "<group>"; };
+		8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationBuilder.m; path = mocks/YSMockLocationBuilder.m; sourceTree = "<group>"; };
 		8E767F4917D0F02D0039C788 /* ystrdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ystrdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E767F4C17D0F02D0039C788 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8E767F4E17D0F02D0039C788 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -290,6 +293,8 @@
 				8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */,
 				8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */,
 				8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */,
+				8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */,
+				8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */,
 			);
 			name = mocks;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
 				8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */,
 				8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */,
+				8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
