@@ -27,9 +27,30 @@
 - (void)tearDown
 {
     [super tearDown];
+    
+    _location = nil;
 }
 
 #pragma mark - tessssts
+
+- (void)testThatLocationExists
+{
+    GHAssertNotNil(_location, @"location should be able to be created");
+}
+
+- (void)testThatLocationHasLatitude
+{
+    _location.latitude = 37.50999832f;
+    
+    GHAssertEquals(_location.latitude, (CGFloat)37.50999832f, @"location should have latitude");
+}
+
+- (void)testThatLocationHasLongitude
+{
+    _location.longitude = -122.50000000f;
+    
+    GHAssertEquals(_location.longitude, (CGFloat)-122.50000000f, @"location should have longitude");
+}
 
 - (void)testLocationCanHaveAName
 {

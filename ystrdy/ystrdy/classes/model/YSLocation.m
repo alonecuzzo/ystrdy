@@ -10,4 +10,16 @@
 
 @implementation YSLocation
 
+
+- (id)initWithLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude
+{
+    self = [super init];
+    if (self) {
+        _latitude = latitude;
+        _longitude = longitude;
+    }
+    
+    return self;
+}
+
 @end
