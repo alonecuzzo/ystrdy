@@ -7,7 +7,6 @@
 //
 
 #import "GHTestCase.h"
-#import <OCMock/OCMock.h>
 
 @interface YSLocationCreationWorkflowTest : GHTestCase
 

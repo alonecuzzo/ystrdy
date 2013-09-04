@@ -11,6 +11,8 @@
 
 @interface YSLocationBuilder : NSObject
 
-- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json;
+@property(strong, nonatomic) NSError *errorToSet;
+
+- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json error:(NSError**)error;
 
 @end

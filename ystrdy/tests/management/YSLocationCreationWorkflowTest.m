@@ -19,8 +19,9 @@
 
 @property YSLocationManager *manager;
 @property YSCommunicator *communicator;
-@property OCMockObject *delegate;
+@property YSMockLocationManagerDelegate *delegate;
 @property YSMockLocationBuilder *locationBuilder;
+@property NSError *underlyingError;
 
 @end
 
@@ -31,12 +32,15 @@
     [super setUp];
     
     _manager = [[YSLocationManager alloc] init];
-    _communicator = [OCMockObject mockForClass:[YSCommunicator class]];
-    _delegate = [OCMockObject mockForProtocol:@protocol(YSLocationManagerDelegate)];
+    _communicator = [[YSMockCommunicator alloc] init];
+    _delegate = [[YSMockLocationManagerDelegate alloc] init];
     _locationBuilder = [[YSMockLocationBuilder alloc] init];
     
     _manager.communicator = _communicator;
     _manager.locationBuilder = _locationBuilder;
+    _manager.delegate = _delegate;
+    
+    _underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
 }
 
 - (void)tearDown
@@ -47,6 +51,7 @@
     _communicator = nil;
     _delegate = nil;
     _locationBuilder = nil;
+    _underlyingError = nil;
 }
 
 #pragma mark - delegate tesstszzz
@@ -58,7 +63,7 @@
 
 - (void)testThatManagerCanHaveConfrormingDelegate
 {
-    id <YSLocationManagerDelegate> delegate = [OCMockObject mockForProtocol:@protocol(YSLocationManagerDelegate)];
+    YSMockLocationManagerDelegate *delegate = [[YSMockLocationManagerDelegate alloc] init];
     
     GHAssertNoThrow(_manager.delegate = delegate, @"manager can have a conforming delegate");
 }
@@ -111,6 +116,16 @@
     [_manager receivedWeatherDataFromJSON:fakeJSON];
     
     GHAssertEqualObjects(_locationBuilder.JSON, fakeJSON, @"Downloaded JSON should be sent to the builder");
+}
+
+- (void)testThatDelegateIsNotifiedOfErrorWhenBuilderFails
+{
+    _locationBuilder.locationToReturn = nil;
+    _locationBuilder.errorToSet = _underlyingError;
+    
+    [_manager receivedWeatherDataFromJSON:@"Fake JSON"];
+    
+    GHAssertNotNil([[_delegate.fetchError userInfo] objectForKey:NSUnderlyingErrorKey], @"The delegate should know about the error.");
 }
 
 @end

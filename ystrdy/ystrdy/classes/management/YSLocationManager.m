@@ -9,6 +9,7 @@
 #import "YSLocationManager.h"
 
 NSString *YSManagerError = @"YSManagerError";
+NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
 
 @implementation YSLocationManager
 
@@ -35,7 +36,16 @@ NSString *YSManagerError = @"YSManagerError";
 
 - (void)receivedWeatherDataFromJSON:(NSString*)json
 {
-    [_locationBuilder weatherDataForLocationFromJSON:json];
+    if (!_locationBuilder.errorToSet) {
+        NSError *error = nil;
+        YSLocation *locationData = [_locationBuilder weatherDataForLocationFromJSON:json error:&error];
+        if (!locationData) {
+            NSError *reportableError = [NSError errorWithDomain:YSManagerSearchFailedError code:YSErrorLocationSearchCode userInfo:[NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey]];
+            [_delegate fetchingLocationsFailedWithError:reportableError];
+        }
+    } else {
+        [self searchForWeatherDataFailedWithError:_locationBuilder.errorToSet];
+    }
 }
 
 @end

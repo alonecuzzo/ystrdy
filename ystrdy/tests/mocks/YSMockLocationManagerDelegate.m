@@ -8,7 +8,7 @@
 
 #import "YSMockLocationManagerDelegate.h"
 
-@implementation YSMockLocationManagerDelegate
+@implementation YSMockLocationManagerDelegate 
 
 - (void)fetchingLocationsFailedWithError:(NSError*)error
 {

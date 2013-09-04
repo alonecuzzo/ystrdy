@@ -10,10 +10,19 @@
 
 @implementation YSMockLocationBuilder
 
-- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json
+- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json error:(NSError**)error
 {
-    YSLocation *locationToReturn = [[YSLocation alloc] init];
     _JSON = json;
-    return locationToReturn;
+    
+    if (_JSON) {
+        _locationToReturn = [[YSLocation alloc] init];
+    }
+    
+    if (error) {
+        *error = self.errorToSet;
+    }
+    
+    return _locationToReturn;
 }
+
 @end

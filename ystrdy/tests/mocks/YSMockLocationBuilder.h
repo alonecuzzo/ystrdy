@@ -12,7 +12,8 @@
 @interface YSMockLocationBuilder : YSLocationBuilder
 
 @property(copy) NSString *JSON;
+@property(strong) YSLocation *locationToReturn;
 
-- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json;
+- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json error:(NSError**)error;
 
 @end

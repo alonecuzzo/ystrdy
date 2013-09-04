@@ -8,11 +8,12 @@
 
 #import "YSLocationBuilder.h"
 
-@implementation YSLocationBuilder
+@implementation YSLocationBuilder 
 
-- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json
+- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json error:(NSError**)error
 {
     return nil;
 }
+
 
 @end
