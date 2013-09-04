@@ -14,12 +14,12 @@
 {
     _JSON = json;
     
-    if (_JSON) {
-        _locationToReturn = [[YSLocation alloc] init];
-    }
-    
     if (error) {
         *error = self.errorToSet;
+    }
+    
+    if (!_locationToReturn) {
+        return nil;
     }
     
     return _locationToReturn;
