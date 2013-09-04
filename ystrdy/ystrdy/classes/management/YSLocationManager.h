@@ -20,7 +20,7 @@ enum {
 @protocol YSLocationManagerDelegate <NSObject>
 
 - (void)fetchingLocationsFailedWithError:(NSError*)error;
-- (void)didReceiveLocations:(NSArray*)locations;
+- (void)didReceiveLocation:(YSLocation*)location;
 
 @end
 

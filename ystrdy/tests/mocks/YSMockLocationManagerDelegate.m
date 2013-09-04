@@ -15,9 +15,9 @@
     _fetchError = error;
 }
 
-- (void)didReceiveLocations:(NSArray*)locations
+- (void)didReceiveLocation:(YSLocation*)location;
 {
-    
+    _receivedLocation = location;
 }
 
 @end

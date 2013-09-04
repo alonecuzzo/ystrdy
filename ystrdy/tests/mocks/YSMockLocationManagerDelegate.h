@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "YSLocationManager.h"
+#import "YSLocation.h"
 
 @interface YSMockLocationManagerDelegate : NSObject <YSLocationManagerDelegate>
 
 @property (strong) NSError *fetchError;
+@property (strong) YSLocation *receivedLocation;
 
 - (void)fetchingLocationsFailedWithError:(NSError*)error;
-- (void)didReceiveLocations:(NSArray*)locations;
+- (void)didReceiveLocation:(YSLocation*)location;
 
 @end

@@ -53,6 +53,8 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
     YSLocation *locationData = [_locationBuilder weatherDataForLocationFromJSON:json error:&error];
     if (!locationData) {
         [self tellDelegateAboutLocationSearchError:error];
+    } else {
+        [_delegate didReceiveLocation:locationData];
     }
 }
 

@@ -22,6 +22,7 @@
 @property YSMockLocationManagerDelegate *delegate;
 @property YSMockLocationBuilder *locationBuilder;
 @property NSError *underlyingError;
+@property YSLocation *locationToReturn;
 
 @end
 
@@ -35,6 +36,7 @@
     _communicator = [[YSMockCommunicator alloc] init];
     _delegate = [[YSMockLocationManagerDelegate alloc] init];
     _locationBuilder = [[YSMockLocationBuilder alloc] init];
+    _locationToReturn = [[YSLocation alloc] initWithLatitude:43.03f andLongitude:28.38f];
     
     _manager.communicator = _communicator;
     _manager.locationBuilder = _locationBuilder;
@@ -52,6 +54,7 @@
     _delegate = nil;
     _locationBuilder = nil;
     _underlyingError = nil;
+    _locationToReturn = nil;
 }
 
 #pragma mark - delegate tesstszzz
@@ -126,6 +129,22 @@
     [_manager receivedWeatherDataFromJSON:@"Fake JSON"];
     
     GHAssertNotNil([[_delegate.fetchError userInfo] objectForKey:NSUnderlyingErrorKey], @"The delegate should know about the error.");
+}
+
+- (void)testThatDelegateReceivesNoErrorWhenLocationReceived
+{
+    _locationBuilder.locationToReturn = _locationToReturn;
+    [_manager receivedWeatherDataFromJSON:@"Fake JSON"];
+    
+    GHAssertNil([_delegate fetchError], @"There should be no error reported to delegate if weather data received.");
+}
+
+- (void)testDelegateCanAccessReceivedLocation
+{
+    _locationBuilder.locationToReturn = _locationToReturn;
+    [_manager receivedWeatherDataFromJSON:@"Fake JSON"];
+    
+    GHAssertEqualObjects(_delegate.receivedLocation, _locationToReturn, @"Delegate should be able to access received location from builder.");
 }
 
 @end
