@@ -147,4 +147,15 @@
     GHAssertEqualObjects(_delegate.receivedLocation, _locationToReturn, @"Delegate should be able to access received location from builder.");
 }
 
+- (void)testDelegateCanReceiveLocation
+{
+    [_delegate didReceiveLocation:_locationToReturn];
+    
+    GHAssertEqualObjects(_delegate.receivedLocation, _locationToReturn, @"Delegate can receive location.");
+}
+
+#pragma mark - communicator tessttzz
+
+
+
 @end
