@@ -9,10 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "YSLocation.h"
 
+enum {
+    YSLocationBuilderCurrentWeatherDataInvalidJSONError,
+    YSLocationBuilderYesterdaysWeatherDataInvalidJSONError,
+    YSLocationBuilderMissingDataError
+};
+
 @interface YSLocationBuilder : NSObject
 
 @property(strong, nonatomic) NSError *errorToSet;
 
-- (YSLocation*)weatherDataForLocationFromJSON:(NSString*)json error:(NSError**)error;
+- (YSLocation*)currentWeatherDataForLocationFromJSON:(NSString*)currentJSON andYesterdaysWeatherDataForLocationFromJSON:(NSString*)yesterdayJSON error:(NSError**)error;
 
 @end

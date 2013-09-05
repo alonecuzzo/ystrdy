@@ -22,16 +22,17 @@
 
 - (NSString*)temperatureDifference
 {
-    return [NSString stringWithFormat:@"%i", _location.todaysTemperature - _location.yesterdaysTemperature];
+//    return [NSString stringWithFormat:@"%i", _location.todaysTemperature - _location.yesterdaysTemperature];
+    return 0;
 }
 
 - (void)setupLocation
 {
     //this will get set outside of vc eventually
     _location = [[YSLocation alloc] init];
-    _location.name = NSLocalizedString(@"Santiago, Chile", @"location name");
-    _location.yesterdaysTemperature = 17;
-    _location.todaysTemperature = 19;
+    _location.city = NSLocalizedString(@"Santiago, Chile", @"location name");
+//    _location.yesterdaysTemperature = 17;
+//    _location.todaysTemperature = 19;
     _location.isRaining = YES;
 }
 
@@ -47,7 +48,7 @@
 - (void)populateLocation
 {
     _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 105.0f, self.view.frame.size.width, 100)];
-    _locationLabel.text = [NSString stringWithFormat:@"Location: %@", _location.name];
+    _locationLabel.text = [NSString stringWithFormat:@"Location: %@", _location.city];
     _locationLabel.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_locationLabel];
 }

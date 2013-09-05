@@ -7,95 +7,81 @@
 //
 
 #import "YSLocationBuilderTests.h"
+#import "YSLocationBuilder.h"
+#import "YSLocation.h"
+
+@interface YSLocationBuilderTests()
+
+@property YSLocationBuilder *locationBuilder;
+@property YSLocation *location;
+@property NSString *locationCurrentConditionsJSON;
+@property NSString *locationYesterdayConditionsJSON;
+
+@end
 
 @implementation YSLocationBuilderTests
 
-static NSString *locationJSON = @"{"
-@"response\": {"
-    @"\"version\": \"0.1\","
-    @"\"termsofService\": \"http://www.wunderground.com/weather/api/d/terms.html\","
-    @"\"features\": {"
-        @"\"geolookup\": 1"
-    @"}"
-@"},"
-@"\"location\": {"
-    @"\"type\": \"CITY\","
-    @"\"country\": \"US\","
-    @"\"country_iso3166\": \"US\","
-    @"\"country_name\": \"USA\","
-    @"\"state\": \"CA\","
-    @"\"city\": \"San Francisco\","
-    @"\"tz_short\": \"PDT\","
-    @"\"tz_long\": \"America/Los_Angeles\","
-    @"\"lat\": \"37.776289\","
-    @"\"lon\": \"-122.395234\","
-    @"\"zip\": \"94107\","
-    @"\"magic\": \"1\","
-    @"\"wmo\": \"99999\","
-    @"\"l\": \"/q/zmw:94107.1.99999\","
-    @"\"requesturl\": \"US/CA/San_Francisco.html\","
-    @"\"wuiurl\": \"http://www.wunderground.com/US/CA/San_Francisco.html\","
-    @"\"nearby_weather_stations\": {"
-        @"\"airport\": {"
-            @"\"station\": [{"
-                @"\"city\": \"Oakland\","
-                @"\"state\": \"CA\","
-                @"\"country\": \"US\","
-                @"\"icao\": \"KOAK\","
-                @"\"lat\": \"37.72000122\","
-                @"\"lon\": \"-122.22000122\""
-            @"}, {"
-                @"\"city\": \"San Francisco\","
-                @"\"state\": \"CA\","
-                @"\"country\": \"US\","
-                @"\"icao\": \"KSFO\","
-                @"\"lat\": \"37.61999893\","
-                @"\"lon\": \"-122.37000275\""
-            @"}, {"
-                @"\"city\": \"Hayward\","
-                @"\"state\": \"CA\","
-                @"\"country\": \"US\","
-                @"\"icao\": \"KHWD\","
-                @"\"lat\": \"37.65999985\","
-                @"\"lon\": \"-122.12000275\""
-            @"}, {"
-                @"\"city\": \"Half Moon Bay\","
-                @"\"state\": \"CA\","
-                @"\"country\": \"US\","
-                @"\"icao\": \"KHAF\","
-                @"\"lat\": \"37.50999832\","
-                @"\"lon\": \"-122.50000000\""
-            @"}]"
-        @"},"
-        @"\"pws\": {"
-            @"\"station\": [{"
-                @"\"neighborhood\": \"Mission Bay - My weather is better than yours.\","
-                @"\"city\": \"San Francisco\","
-                @"\"state\": \"CA\","
-                @"\"country\": \"US\","
-                @"\"id\": \"KCASANFR53\","
-                @"\"distance_km\": 0,"
-                @"\"distance_mi\": 0"
-            @"}, {"
-                @"\"neighborhood\": \"Potrero Hill\","
-                @"\"city\": \"San Francisco\","
-                @"\"state\": \"CA\","
-                @"\"country\": \"US\","
-                @"\"id\": \"KCASANFR108\","
-                @"\"distance_km\": 1,"
-                @"\"distance_mi\": 0"
-            @"}, {"
-                @"\"neighborhood\": \"Mid Richmond\","
-                @"\"city\": \"San Francisco\","
-                @"\"state\": \"CA\","
-                @"\"country\": \"US\","
-                @"\"id\": \"KCASANFR128\","
-                @"\"distance_km\": 6,"
-                @"\"distance_mi\": 4"
-            @"}]"
-        @"}"
-    @"}"
-@"}"
-@"}\"";
+- (void)setUp
+{
+    [super setUp];
+    
+    _locationBuilder = [[YSLocationBuilder alloc] init];
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sf-location" ofType:@"json"];
+    _locationCurrentConditionsJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    if (!_locationCurrentConditionsJSON) {
+        NSLog(@"Conditions file couldn't be read!");
+        return;
+    }
+    
+    filePath = [[NSBundle mainBundle] pathForResource:@"sf-yesterday" ofType:@"json"];
+    _locationYesterdayConditionsJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    if (!_locationYesterdayConditionsJSON) {
+        NSLog(@"Yesterday file couldn't be read!");
+        return;
+    }
+    
+    _location = [_locationBuilder currentWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON andYesterdaysWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON error:NULL];
+}
+
+- (void)tearDown
+{
+    [super tearDown];
+    
+    _locationBuilder = nil;
+    _location = nil;
+}
+
+#pragma mark - tessstttzzz
+
+- (void)testThatNilIsNotAnAcceptableForCurrentOrYesterdayJSON
+{
+    GHAssertThrows([_locationBuilder currentWeatherDataForLocationFromJSON:nil andYesterdaysWeatherDataForLocationFromJSON:nil error:NULL], @"Lack of data should be handled elsewhere.");
+}
+
+- (void)testThatNilIsReturnedIfStringPassedIsNotJSON
+{
+    GHAssertNil([_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" andYesterdaysWeatherDataForLocationFromJSON:@"Not JSON" error:NULL], @"Builder should return nil if it is not fed the jsonz.");
+}
+
+- (void)testThatValidJSONReturnsNotNilLocation
+{
+    GHAssertNotNil([_locationBuilder currentWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON andYesterdaysWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON error:NULL], @"Builder should return not nil object if valid jsonz.");
+}
+
+- (void)testThatErrorIsThrownWhenCurrentWeatherJSONIsNotJSON
+{
+    NSError *error = nil;
+    [_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" andYesterdaysWeatherDataForLocationFromJSON:@"Not JSON" error:&error];
+    GHAssertNotNil(error, @"Builder should return nil if it is not fed the current weather data jsonz.");
+}
+
+- (void)testThatErrorIsThrownWhenYesterdaysWeatherJSONIsNotJSON
+{
+    NSError *error = nil;
+    [_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" andYesterdaysWeatherDataForLocationFromJSON:@"Not JSON" error:&error];
+    GHAssertNotNil(error, @"Builder should return nil if it is not fed the yesterdays jsonz.");
+}
+
 
 @end

@@ -54,23 +54,37 @@
 
 - (void)testLocationCanHaveAName
 {
-    _location.name = @"Santiago";
+    _location.city = @"Santiago";
     
-    GHAssertTrue([_location.name isEqualToString:@"Santiago"], @"location name should equal expected value, Santiago");
+    GHAssertTrue([_location.city isEqualToString:@"Santiago"], @"location name should equal expected value, Santiago");
 }
 
-- (void)testLocationCanHaveATodayTemperature
+- (void)testLocationCanHaveATodayTemperatureFarenheit
 {
-    _location.todaysTemperature = 14;
+    _location.todaysTemperatureF = 14;
 
-    GHAssertEquals(_location.todaysTemperature, 14, @"todays temperature should equal 14");
+    GHAssertEquals(_location.todaysTemperatureF, 14, @"location should have today's temperature in farenheit");
 }
 
-- (void)testLocationCanHaveAYesterdayTemperature
+- (void)testLocationCanHaveATodayTemperatureCelcius
 {
-    _location.yesterdaysTemperature = 13;
+    _location.todaysTemperatureC = 14;
     
-    GHAssertEquals(_location.yesterdaysTemperature, 13, @"yesterdays temperature should be equal to 13");
+    GHAssertEquals(_location.todaysTemperatureC, 14, @"location should have today's temperature in celcius");
+}
+
+- (void)testLocationCanHaveAYesterdayTemperatureFarenheit
+{
+    _location.yesterdaysTemperatureF = 13;
+    
+    GHAssertEquals(_location.yesterdaysTemperatureF, 13, @"location should have today's temperature in farenheit");
+}
+
+- (void)testLocationCanHaveAYesterdayTemperatureCelcius
+{
+    _location.yesterdaysTemperatureC = 13;
+    
+    GHAssertEquals(_location.yesterdaysTemperatureC, 13, @"location should have today's temperature in celcius");
 }
 
 - (void)testLocationCanHaveIsRainingStatus
