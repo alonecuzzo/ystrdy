@@ -10,9 +10,11 @@
 #import "YSLocation.h"
 
 enum {
-    YSLocationBuilderCurrentWeatherDataInvalidJSONError,
-    YSLocationBuilderYesterdaysWeatherDataInvalidJSONError,
-    YSLocationBuilderMissingDataError
+    YSLocationBuilderWeatherDataInvalidJSONError,
+    YSLocationBuilderMissingDataError,
+    YSLocationBuilderMissingForecastDataError,
+    YSLocationBuilderMissingYesterdayDataError,
+    YSLocationBuilderMissingConditionsDataError
 };
 
 @interface YSLocationBuilder : NSObject

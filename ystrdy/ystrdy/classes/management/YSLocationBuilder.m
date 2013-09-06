@@ -28,7 +28,7 @@ static NSString *YSLocationBuilderErrorDomain = @"YSLocationBuilderErrorDomain";
     
     if (parsedLocation == nil || parsedLocation == NULL) {
         if (error != NULL) {
-            *error = [NSError errorWithDomain:YSLocationBuilderErrorDomain code:YSLocationBuilderCurrentWeatherDataInvalidJSONError userInfo:nil];
+            *error = [NSError errorWithDomain:YSLocationBuilderErrorDomain code:YSLocationBuilderWeatherDataInvalidJSONError userInfo:nil];
         }
         return nil;
     }
@@ -37,6 +37,15 @@ static NSString *YSLocationBuilderErrorDomain = @"YSLocationBuilderErrorDomain";
     
     NSDictionary *currentObservationDictionary = [parsedLocation objectForKey:@"current_observation"];
     NSDictionary *currentDisplayLocationDictionary = [currentObservationDictionary objectForKey:@"display_location"];
+    
+    NSDictionary *forecastDictionary = [parsedLocation objectForKey:@"forecast"];
+    
+    if (!forecastDictionary) {
+        if (error != NULL) {
+             *error = [NSError errorWithDomain:YSLocationBuilderErrorDomain code:YSLocationBuilderMissingForecastDataError userInfo:nil];
+        }
+        return  nil;
+    }
     
     if ([currentDisplayLocationDictionary objectForKey:@"city"]) {
         locationToReturn.city = [currentDisplayLocationDictionary objectForKey:@"city"];

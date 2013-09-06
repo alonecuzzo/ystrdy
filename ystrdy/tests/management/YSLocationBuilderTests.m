@@ -68,5 +68,13 @@
     GHAssertNotNil(error, @"Builder should return nil if it is not fed the current weather data jsonz.");
 }
 
+- (void)testThatJSONWithoutForecastDataReturnsMissingDataError
+{
+    NSError *error = nil;
+    NSString *noForecastJSON = @"{ \"broz\" : 5 }";
+    [_locationBuilder currentWeatherDataForLocationFromJSON:noForecastJSON error:&error];
+    GHAssertEquals([error code], YSLocationBuilderMissingForecastDataError, @"Builder should throw yslocationbuildermissingforecastdataerror if forecast data is missing");
+}
+
 
 @end
