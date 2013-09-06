@@ -73,7 +73,23 @@
     NSError *error = nil;
     NSString *noForecastJSON = @"{ \"broz\" : 5 }";
     [_locationBuilder currentWeatherDataForLocationFromJSON:noForecastJSON error:&error];
-    GHAssertEquals([error code], YSLocationBuilderMissingForecastDataError, @"Builder should throw yslocationbuildermissingforecastdataerror if forecast data is missing");
+    GHAssertEquals([error code], YSLocationBuilderMissingForecastDataError, @"Builder should throw yslocationbuildermissingforecastdataerror if forecast data is missing.");
+}
+
+- (void)testThatJSONWithoutYesterdayDataReturnsMissingDataError
+{
+    NSError *error = nil;
+    NSString *noYesterdayJSON = @"{ \"forecast\" : 3 }";
+    [_locationBuilder currentWeatherDataForLocationFromJSON:noYesterdayJSON error:&error];
+    GHAssertEquals([error code], YSLocationBuilderMissingYesterdayDataError, @"Builder should throw YSLocationBuilderMissingYesterdayDataError if yesterday data is missing.");
+}
+
+- (void)testThatJSONWithoutCurrentObservationDataReturnsMissingDataError
+{
+    NSError *error = nil;
+    NSString *noCurrentObservationJSON = @"{ \"forecast\" : 4, \"history\" : 8}";
+    [_locationBuilder currentWeatherDataForLocationFromJSON:noCurrentObservationJSON error:&error];
+    GHAssertEquals([error code], YSLocationBuilderMissingConditionsDataError, @"Builder should throw  YSLocationBuilderMissingConditionsDataError error if current conditions data is missing.");
 }
 
 

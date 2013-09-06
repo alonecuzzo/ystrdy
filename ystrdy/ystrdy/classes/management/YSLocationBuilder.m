@@ -39,10 +39,26 @@ static NSString *YSLocationBuilderErrorDomain = @"YSLocationBuilderErrorDomain";
     NSDictionary *currentDisplayLocationDictionary = [currentObservationDictionary objectForKey:@"display_location"];
     
     NSDictionary *forecastDictionary = [parsedLocation objectForKey:@"forecast"];
+    NSDictionary *yesterdayDictionary = [parsedLocation objectForKey:@"history"];
+    NSDictionary *currentConditionsDictionary = [parsedLocation objectForKey:@"current_observation"];
     
     if (!forecastDictionary) {
         if (error != NULL) {
              *error = [NSError errorWithDomain:YSLocationBuilderErrorDomain code:YSLocationBuilderMissingForecastDataError userInfo:nil];
+        }
+        return  nil;
+    }
+    
+    if (!yesterdayDictionary) {
+        if (error != NULL) {
+             *error = [NSError errorWithDomain:YSLocationBuilderErrorDomain code:YSLocationBuilderMissingYesterdayDataError userInfo:nil];
+        }
+        return nil;
+    }
+    
+    if (!currentConditionsDictionary) {
+        if (error != NULL) {
+            *error = [NSError errorWithDomain:YSLocationBuilderErrorDomain code:YSLocationBuilderMissingConditionsDataError userInfo:nil];
         }
         return  nil;
     }
