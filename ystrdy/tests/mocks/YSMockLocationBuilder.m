@@ -10,10 +10,9 @@
 
 @implementation YSMockLocationBuilder
 
-- (YSLocation*)currentWeatherDataForLocationFromJSON:(NSString*)currentJSON andYesterdaysWeatherDataForLocationFromJSON:(NSString*)yesterdayJSON error:(NSError**)error
+- (YSLocation*)currentWeatherDataForLocationFromJSON:(NSString*)json error:(NSError**)error
 {
-    _currentConditionsJSON = currentJSON;
-    _yesterdaysConditionsJSON = yesterdayJSON;
+    _JSON = json;
     
     if (error) {
         *error = self.errorToSet;

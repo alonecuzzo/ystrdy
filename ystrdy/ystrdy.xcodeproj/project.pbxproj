@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E0BC9EE17DA7DC40010969E /* ny-location-data.json */; };
 		8E34246817D11CBC0027A951 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
 		8E34246917D11CBC0027A951 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4E17D0F02D0039C788 /* Foundation.framework */; };
 		8E34246A17D11CBC0027A951 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F5017D0F02D0039C788 /* CoreGraphics.framework */; };
@@ -44,9 +45,6 @@
 		8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
 		8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
 		8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */; };
-		8ECBBA9E17D8294000C1449C /* sf-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9D17D8294000C1449C /* sf-location.json */; };
-		8ECBBAA017D831FE00C1449C /* sf-conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9F17D831FE00C1449C /* sf-conditions.json */; };
-		8ECBBAA217D8326700C1449C /* sf-yesterday.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ECBBAA117D8326700C1449C /* sf-yesterday.json */; };
 		8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */; };
 		8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */; };
 		9002522197014C9E93947551 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C61303797E4672A4B47D83 /* libPods.a */; };
@@ -55,6 +53,7 @@
 /* Begin PBXFileReference section */
 		64C61303797E4672A4B47D83 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F951293D3EC4789983A6D10 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8E0BC9EE17DA7DC40010969E /* ny-location-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ny-location-data.json"; path = "fixtures/ny-location-data.json"; sourceTree = "<group>"; };
 		8E34246717D11CBC0027A951 /* tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E34246D17D11CBC0027A951 /* tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tests-Info.plist"; sourceTree = "<group>"; };
 		8E34246F17D11CBC0027A951 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -99,9 +98,6 @@
 		8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSCommunicator.m; path = classes/management/YSCommunicator.m; sourceTree = "<group>"; };
 		8ECBBA9917D7FFA400C1449C /* YSLocationBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilderTests.h; path = management/YSLocationBuilderTests.h; sourceTree = "<group>"; };
 		8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationBuilderTests.m; path = management/YSLocationBuilderTests.m; sourceTree = "<group>"; };
-		8ECBBA9D17D8294000C1449C /* sf-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "sf-location.json"; path = "fixtures/sf-location.json"; sourceTree = "<group>"; };
-		8ECBBA9F17D831FE00C1449C /* sf-conditions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "sf-conditions.json"; path = "fixtures/sf-conditions.json"; sourceTree = "<group>"; };
-		8ECBBAA117D8326700C1449C /* sf-yesterday.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "sf-yesterday.json"; path = "fixtures/sf-yesterday.json"; sourceTree = "<group>"; };
 		8EDD33DF17D58C120020E0D2 /* YSMockCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockCommunicator.h; path = mocks/YSMockCommunicator.h; sourceTree = "<group>"; };
 		8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockCommunicator.m; path = mocks/YSMockCommunicator.m; sourceTree = "<group>"; };
 		8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManagerDelegate.h; path = mocks/YSMockLocationManagerDelegate.h; sourceTree = "<group>"; };
@@ -301,9 +297,7 @@
 		8ECBBA9C17D8290A00C1449C /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				8ECBBA9D17D8294000C1449C /* sf-location.json */,
-				8ECBBA9F17D831FE00C1449C /* sf-conditions.json */,
-				8ECBBAA117D8326700C1449C /* sf-yesterday.json */,
+				8E0BC9EE17DA7DC40010969E /* ny-location-data.json */,
 			);
 			name = fixtures;
 			sourceTree = "<group>";
@@ -397,9 +391,7 @@
 				8E34247817D11CBD0027A951 /* Default.png in Resources */,
 				8E34247A17D11CBD0027A951 /* Default@2x.png in Resources */,
 				8E34247C17D11CBD0027A951 /* Default-568h@2x.png in Resources */,
-				8ECBBA9E17D8294000C1449C /* sf-location.json in Resources */,
-				8ECBBAA017D831FE00C1449C /* sf-conditions.json in Resources */,
-				8ECBBAA217D8326700C1449C /* sf-yesterday.json in Resources */,
+				8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

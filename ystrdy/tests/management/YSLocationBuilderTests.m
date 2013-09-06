@@ -14,8 +14,7 @@
 
 @property YSLocationBuilder *locationBuilder;
 @property YSLocation *location;
-@property NSString *locationCurrentConditionsJSON;
-@property NSString *locationYesterdayConditionsJSON;
+@property NSString *locationJSON;
 
 @end
 
@@ -27,21 +26,14 @@
     
     _locationBuilder = [[YSLocationBuilder alloc] init];
 
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sf-location" ofType:@"json"];
-    _locationCurrentConditionsJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
-    if (!_locationCurrentConditionsJSON) {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ny-location-data" ofType:@"json"];
+    _locationJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    if (!_locationJSON) {
         NSLog(@"Conditions file couldn't be read!");
         return;
     }
     
-    filePath = [[NSBundle mainBundle] pathForResource:@"sf-yesterday" ofType:@"json"];
-    _locationYesterdayConditionsJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
-    if (!_locationYesterdayConditionsJSON) {
-        NSLog(@"Yesterday file couldn't be read!");
-        return;
-    }
-    
-    _location = [_locationBuilder currentWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON andYesterdaysWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON error:NULL];
+    _location = [_locationBuilder currentWeatherDataForLocationFromJSON:_locationJSON error:NULL];
 }
 
 - (void)tearDown
@@ -54,33 +46,26 @@
 
 #pragma mark - tessstttzzz
 
-- (void)testThatNilIsNotAnAcceptableForCurrentOrYesterdayJSON
+- (void)testThatNilIsNotAnAcceptableForlocationJSON
 {
-    GHAssertThrows([_locationBuilder currentWeatherDataForLocationFromJSON:nil andYesterdaysWeatherDataForLocationFromJSON:nil error:NULL], @"Lack of data should be handled elsewhere.");
+    GHAssertThrows([_locationBuilder currentWeatherDataForLocationFromJSON:nil error:NULL], @"Lack of data should be handled elsewhere.");
 }
 
 - (void)testThatNilIsReturnedIfStringPassedIsNotJSON
 {
-    GHAssertNil([_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" andYesterdaysWeatherDataForLocationFromJSON:@"Not JSON" error:NULL], @"Builder should return nil if it is not fed the jsonz.");
+    GHAssertNil([_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" error:NULL], @"Builder should return nil if it is not fed the jsonz.");
 }
 
 - (void)testThatValidJSONReturnsNotNilLocation
 {
-    GHAssertNotNil([_locationBuilder currentWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON andYesterdaysWeatherDataForLocationFromJSON:_locationCurrentConditionsJSON error:NULL], @"Builder should return not nil object if valid jsonz.");
+    GHAssertNotNil([_locationBuilder currentWeatherDataForLocationFromJSON:_locationJSON error:NULL], @"Builder should return not nil object if valid jsonz.");
 }
 
-- (void)testThatErrorIsThrownWhenCurrentWeatherJSONIsNotJSON
+- (void)testThatErrorIsThrownWhenLocationJSONIsNotJSON
 {
     NSError *error = nil;
-    [_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" andYesterdaysWeatherDataForLocationFromJSON:@"Not JSON" error:&error];
+    [_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" error:&error];
     GHAssertNotNil(error, @"Builder should return nil if it is not fed the current weather data jsonz.");
-}
-
-- (void)testThatErrorIsThrownWhenYesterdaysWeatherJSONIsNotJSON
-{
-    NSError *error = nil;
-    [_locationBuilder currentWeatherDataForLocationFromJSON:@"Not JSON" andYesterdaysWeatherDataForLocationFromJSON:@"Not JSON" error:&error];
-    GHAssertNotNil(error, @"Builder should return nil if it is not fed the yesterdays jsonz.");
 }
 
 

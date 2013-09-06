@@ -46,10 +46,10 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
     [_delegate fetchingLocationsFailedWithError:reportableError];
 }
 
-- (void)receivedWeatherDataFromCurrentConditionsJSON:(NSString*)currentConditionsJSON andYesterdaysConditionsJSON:(NSString*)yesterdaysConditionsJSON
+- (void)receivedWeatherDataFromJSON:(NSString*)json
 {
     NSError *error = nil;
-    YSLocation *locationData = [_locationBuilder currentWeatherDataForLocationFromJSON:currentConditionsJSON andYesterdaysWeatherDataForLocationFromJSON:yesterdaysConditionsJSON error:&error];
+    YSLocation *locationData = [_locationBuilder currentWeatherDataForLocationFromJSON:json error:&error];
     if (!locationData) {
         [self tellDelegateAboutLocationSearchError:error];
     } else {

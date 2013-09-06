@@ -19,6 +19,6 @@ enum {
 
 @property(strong, nonatomic) NSError *errorToSet;
 
-- (YSLocation*)currentWeatherDataForLocationFromJSON:(NSString*)currentJSON andYesterdaysWeatherDataForLocationFromJSON:(NSString*)yesterdayJSON error:(NSError**)error;
+- (YSLocation*)currentWeatherDataForLocationFromJSON:(NSString*)json error:(NSError**)error;
 
 @end

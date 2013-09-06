@@ -115,20 +115,10 @@
 
 - (void)testThatTheCurrentConditionsJSONisPassedToBuilder
 {
-    NSString *currentCondiditionsFakeJSON = @"Fake Current JSON";
-    NSString *yesterdaysConditionsFakeJSON = @"Fake Yesterday JSON";
-    [_manager receivedWeatherDataFromCurrentConditionsJSON:currentCondiditionsFakeJSON andYesterdaysConditionsJSON:yesterdaysConditionsFakeJSON];
+    NSString *fakeJSON = @"Fake JSON";
+    [_manager receivedWeatherDataFromJSON:fakeJSON];
     
-    GHAssertEqualObjects(_locationBuilder.currentConditionsJSON, currentCondiditionsFakeJSON, @"Current conditions JSON should be sent to the builder");
-}
-
-- (void)testThatYesterdaysConditionsJSONisPassedToBuilder
-{
-    NSString *currentCondiditionsFakeJSON = @"Fake Current JSON";
-    NSString *yesterdaysConditionsFakeJSON = @"Fake Yesterday JSON";
-    [_manager receivedWeatherDataFromCurrentConditionsJSON:currentCondiditionsFakeJSON andYesterdaysConditionsJSON:yesterdaysConditionsFakeJSON];
-    
-    GHAssertEqualObjects(_locationBuilder.yesterdaysConditionsJSON, yesterdaysConditionsFakeJSON, @"Yesterday's conditions JSON should be sent to the builder");
+    GHAssertEqualObjects(_locationBuilder.JSON, fakeJSON, @"Current conditions JSON should be sent to the builder");
 }
 
 - (void)testThatDelegateIsNotifiedOfErrorWhenBuilderFails
@@ -136,9 +126,8 @@
     _locationBuilder.locationToReturn = nil;
     _locationBuilder.errorToSet = _underlyingError;
     
-    NSString *currentCondiditionsFakeJSON = @"Fake Current JSON";
-    NSString *yesterdaysConditionsFakeJSON = @"Fake Yesterday JSON";
-    [_manager receivedWeatherDataFromCurrentConditionsJSON:currentCondiditionsFakeJSON andYesterdaysConditionsJSON:yesterdaysConditionsFakeJSON];
+    NSString *fakeJSON = @"Fake JSON";
+    [_manager receivedWeatherDataFromJSON:fakeJSON];
     
     GHAssertNotNil([[_delegate.fetchError userInfo] objectForKey:NSUnderlyingErrorKey], @"The delegate should know about the error.");
 }
@@ -147,9 +136,8 @@
 {
     _locationBuilder.locationToReturn = _locationToReturn;
 
-    NSString *currentCondiditionsFakeJSON = @"Fake Current JSON";
-    NSString *yesterdaysConditionsFakeJSON = @"Fake Yesterday JSON";
-    [_manager receivedWeatherDataFromCurrentConditionsJSON:currentCondiditionsFakeJSON andYesterdaysConditionsJSON:yesterdaysConditionsFakeJSON];
+    NSString *fakeJSON = @"Fake JSON";
+    [_manager receivedWeatherDataFromJSON:fakeJSON];
     
     GHAssertNil([_delegate fetchError], @"There should be no error reported to delegate if weather data received.");
 }
@@ -158,9 +146,8 @@
 {
     _locationBuilder.locationToReturn = _locationToReturn;
 
-    NSString *currentCondiditionsFakeJSON = @"Fake Current JSON";
-    NSString *yesterdaysConditionsFakeJSON = @"Fake Yesterday JSON";
-    [_manager receivedWeatherDataFromCurrentConditionsJSON:currentCondiditionsFakeJSON andYesterdaysConditionsJSON:yesterdaysConditionsFakeJSON];
+    NSString *fakeJSON = @"Fake JSON";
+    [_manager receivedWeatherDataFromJSON:fakeJSON];
     
     GHAssertEqualObjects(_delegate.receivedLocation, _locationToReturn, @"Delegate should be able to access received location from builder.");
 }
