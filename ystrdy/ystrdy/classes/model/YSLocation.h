@@ -11,14 +11,12 @@
 @interface YSLocation : NSObject
 
 @property(nonatomic, strong) NSString *city;
-@property(readwrite, assign) NSInteger todaysTemperatureF;
-@property(readwrite, assign) NSInteger todaysTemperatureC;
-@property(readwrite, assign) NSInteger yesterdaysTemperatureF;
-@property(readwrite, assign) NSInteger yesterdaysTemperatureC;
-@property(readwrite, assign) CGFloat latitude;
-@property(readwrite, assign) CGFloat longitude;
+@property(readwrite, assign) CGFloat todaysTemperatureF;
+@property(readwrite, assign) CGFloat todaysTemperatureC;
+@property(readwrite, assign) CGFloat yesterdaysTemperatureF;
+@property(readwrite, assign) CGFloat yesterdaysTemperatureC;
+@property(readwrite, assign) NSNumber *latitude;
+@property(readwrite, assign) NSNumber *longitude;
 @property(readwrite, assign) BOOL isRaining;
-
-- (id)initWithLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude;
 
 @end

@@ -40,16 +40,16 @@
 
 - (void)testThatLocationHasLatitude
 {
-    _location.latitude = 37.50999832f;
+    _location.latitude = @37.50999832;
     
-    GHAssertEquals(_location.latitude, (CGFloat)37.50999832f, @"location should have latitude");
+    GHAssertEqualObjects(_location.latitude, [NSNumber numberWithDouble:37.50999832], @"location should have latitude");
 }
 
 - (void)testThatLocationHasLongitude
 {
-    _location.longitude = -122.50000000f;
+    _location.longitude = @-122.50000000f;
     
-    GHAssertEquals(_location.longitude, (CGFloat)-122.50000000f, @"location should have longitude");
+    GHAssertEqualObjects(_location.longitude, [NSNumber numberWithDouble:-122.50000000], @"location should have longitude");
 }
 
 - (void)testLocationCanHaveAName
@@ -63,28 +63,28 @@
 {
     _location.todaysTemperatureF = 14;
 
-    GHAssertEquals(_location.todaysTemperatureF, 14, @"location should have today's temperature in farenheit");
+    GHAssertEquals(_location.todaysTemperatureF, (float)14, @"location should have today's temperature in farenheit");
 }
 
 - (void)testLocationCanHaveATodayTemperatureCelcius
 {
     _location.todaysTemperatureC = 14;
     
-    GHAssertEquals(_location.todaysTemperatureC, 14, @"location should have today's temperature in celcius");
+    GHAssertEquals(_location.todaysTemperatureC, (float)14, @"location should have today's temperature in celcius");
 }
 
 - (void)testLocationCanHaveAYesterdayTemperatureFarenheit
 {
     _location.yesterdaysTemperatureF = 13;
     
-    GHAssertEquals(_location.yesterdaysTemperatureF, 13, @"location should have today's temperature in farenheit");
+    GHAssertEquals(_location.yesterdaysTemperatureF, (float)13, @"location should have today's temperature in farenheit");
 }
 
 - (void)testLocationCanHaveAYesterdayTemperatureCelcius
 {
     _location.yesterdaysTemperatureC = 13;
     
-    GHAssertEquals(_location.yesterdaysTemperatureC, 13, @"location should have today's temperature in celcius");
+    GHAssertEquals(_location.yesterdaysTemperatureC, (float)13, @"location should have today's temperature in celcius");
 }
 
 - (void)testLocationCanHaveIsRainingStatus

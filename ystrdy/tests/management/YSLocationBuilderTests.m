@@ -79,7 +79,7 @@
 - (void)testThatJSONWithoutYesterdayDataReturnsMissingDataError
 {
     NSError *error = nil;
-    NSString *noYesterdayJSON = @"{ \"forecast\" : 3 }";
+    NSString *noYesterdayJSON = @"{ \"forecast\" : { \"lolz\" : 5 } }";
     [_locationBuilder currentWeatherDataForLocationFromJSON:noYesterdayJSON error:&error];
     GHAssertEquals([error code], YSLocationBuilderMissingYesterdayDataError, @"Builder should throw YSLocationBuilderMissingYesterdayDataError if yesterday data is missing.");
 }
@@ -87,9 +87,21 @@
 - (void)testThatJSONWithoutCurrentObservationDataReturnsMissingDataError
 {
     NSError *error = nil;
-    NSString *noCurrentObservationJSON = @"{ \"forecast\" : 4, \"history\" : 8}";
+    NSString *noCurrentObservationJSON = @"{ \"forecast\" : 4, \"history\" : 8 }";
     [_locationBuilder currentWeatherDataForLocationFromJSON:noCurrentObservationJSON error:&error];
-    GHAssertEquals([error code], YSLocationBuilderMissingConditionsDataError, @"Builder should throw  YSLocationBuilderMissingConditionsDataError error if current conditions data is missing.");
+    GHAssertEquals([error code], YSLocationBuilderMissingConditionsDataError, @"Builder should throw YSLocationBuilderMissingConditionsDataError error if current conditions data is missing.");
+}
+
+- (void)testThatBuiltLocationHasValuesSetInJSON
+{
+    GHAssertEqualStrings(_location.city, @"New York", @"Location city name should equal value from json.");
+    GHAssertEqualObjects(_location.latitude, [NSNumber numberWithDouble:40.75013351], @"Location latitude should equal value from json.");
+    GHAssertEqualObjects(_location.longitude, [NSNumber numberWithDouble:-73.99700928], @"Location longitude should equal value from json.");
+    GHAssertEquals(_location.isRaining, NO, @"Location is raining should equal > 30 pop value from jason.");
+    GHAssertEquals(_location.todaysTemperatureC, (float)22.6, @"Location temperature for today in celcius should equal value from json.");
+    GHAssertEquals(_location.todaysTemperatureF, (float)72.7, @"Location temperature for today in farenheit should equal value from json.");
+    GHAssertEquals(_location.yesterdaysTemperatureC, (float)22, @"Location temperature for yesterday in celcius should equal value from json.");
+    GHAssertEquals(_location.yesterdaysTemperatureF, (float)72, @"Location temperature for yesterday in farenheit should equal value from json.");
 }
 
 

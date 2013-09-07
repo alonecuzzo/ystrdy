@@ -36,7 +36,7 @@
     _communicator = [[YSMockCommunicator alloc] init];
     _delegate = [[YSMockLocationManagerDelegate alloc] init];
     _locationBuilder = [[YSMockLocationBuilder alloc] init];
-    _locationToReturn = [[YSLocation alloc] initWithLatitude:43.03f andLongitude:28.38f];
+    _locationToReturn = [[YSLocation alloc] init];
     
     _manager.communicator = _communicator;
     _manager.locationBuilder = _locationBuilder;
@@ -83,7 +83,7 @@
     YSMockCommunicator *communicator = [[YSMockCommunicator alloc] init];
     _manager.communicator = communicator;
     
-    YSLocation *location = [[YSLocation alloc] initWithLatitude:0.000f andLongitude:23.32f];
+    YSLocation *location = [[YSLocation alloc] init];
     [_manager fetchWeatherDataForLocation:location];
     
     GHAssertTrue(communicator.wasAskedToFetchWeatherDataForLocation, @"The communicator should fetch data.");
