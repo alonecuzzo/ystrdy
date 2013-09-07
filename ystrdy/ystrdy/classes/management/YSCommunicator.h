@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "YSLocation.h"
 
-@interface YSCommunicator : NSObject
+extern NSString* const kWundergroundAPIKey;
+
+@interface YSCommunicator : NSObject {
+    @protected
+    NSURL *fetchingURL;
+}
 
 - (void)searchForWeatherDataWithLocation:(YSLocation*)location;
 

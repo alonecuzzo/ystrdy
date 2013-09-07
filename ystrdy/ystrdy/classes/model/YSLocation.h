@@ -19,4 +19,6 @@
 @property(readwrite, assign) NSNumber *longitude;
 @property(readwrite, assign) BOOL isRaining;
 
+- (id)initWithLatitude:(NSNumber*)latitude andLongitude:(NSNumber*)longitude;
+
 @end
