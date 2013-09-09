@@ -11,11 +11,17 @@
 
 extern NSString* const kWundergroundAPIKey;
 
-@interface YSCommunicator : NSObject {
+@interface YSCommunicator : NSObject <NSURLConnectionDelegate>{
     @protected
-    NSURL *fetchingURL;
+    NSURL *_fetchingURL;
+    BOOL _isOpen;
+    NSURLConnection *_fetchingConnection;
+    NSMutableData *_receivedData;
 }
 
 - (void)searchForWeatherDataWithLocation:(YSLocation*)location;
+- (BOOL)hasOpenConnection;
+- (void)cancelAndDiscardConnection;
+- (NSURLConnection*)currentURLConnection;
 
 @end

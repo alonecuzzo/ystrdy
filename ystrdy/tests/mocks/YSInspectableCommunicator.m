@@ -12,7 +12,7 @@
 
 - (NSURL*)URLToFetch
 {
-    return fetchingURL;
+    return _fetchingURL;
 }
 
 @end
