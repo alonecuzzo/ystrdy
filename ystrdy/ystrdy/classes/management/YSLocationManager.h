@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YSCommunicator.h"
+#import "YSCommunicatorDelegate.h"
+#import "YSLocationManagerDelegate.h"
 #import "YSLocationBuilder.h"
 #import "YSLocation.h"
+#import "YSCommunicator.h"
 
 extern NSString *YSManagerError;
 
@@ -17,20 +19,12 @@ enum {
     YSErrorLocationSearchCode
 };
 
-@protocol YSLocationManagerDelegate <NSObject>
-
-- (void)fetchingLocationsFailedWithError:(NSError*)error;
-- (void)didReceiveLocation:(YSLocation*)location;
-
-@end
-
-@interface YSLocationManager : NSObject
+@interface YSLocationManager : NSObject <YSCommunicatorDelegate>
 
 @property(weak, nonatomic) id <YSLocationManagerDelegate> delegate;
 
 @property(strong) YSCommunicator *communicator;
 @property(strong) YSLocationBuilder *locationBuilder;
-
 
 - (void)fetchWeatherDataForLocation:(YSLocation*)location;
 - (void)searchForWeatherDataFailedWithError:(NSError*)error;

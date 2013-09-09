@@ -8,6 +8,18 @@
 
 #import "YSMockLocationManager.h"
 
-@implementation YSMockLocationManager
+@implementation YSMockLocationManager {
+    NSInteger _weatherFailureErrorCode;
+}
+
+- (void)searchingForWeatherDataFailedWithError:(NSError *)error
+{
+    _weatherFailureErrorCode = [error code];
+}
+
+- (NSInteger)weatherFailureErrorCode
+{
+    return _weatherFailureErrorCode;
+}
 
 @end

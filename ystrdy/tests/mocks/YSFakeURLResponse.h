@@ -11,5 +11,6 @@
 @interface YSFakeURLResponse : NSURLResponse
 
 - (id)initWithStatusCode:(NSInteger)statusCode;
+- (NSInteger)statusCode;
 
 @end

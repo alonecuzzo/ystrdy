@@ -12,17 +12,13 @@ NSString *const kWundergroundAPIKey = @"9caa09c5d1399971";
 static NSString *APIURLBase = @"http://api.wunderground.com/api/";
 static NSString *APIURLConditions = @"forecast/yesterday/conditions/";
 static NSString *APIURLQueryPrefix = @"q/";
-
-@interface YSCommunicator()
-
-
-@end
+static NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
 
 @implementation YSCommunicator
 
-- (void)fetchContentAtURL:(NSURL*)url
-{
+- (void)fetchContentAtURL:(NSURL *)url errorHandler:(void (^)(NSError *))errorBlock successHandler:(void (^)(NSString *))successBlock {
     _fetchingURL = url;
+    errorHandler = errorBlock;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -33,7 +29,11 @@ static NSString *APIURLQueryPrefix = @"q/";
 - (void)searchForWeatherDataWithLocation:(YSLocation*)location
 {
     NSString *fetchingURLString = [NSString stringWithFormat:@"%@%@/%@%@%@,%@.json", APIURLBase, kWundergroundAPIKey, APIURLConditions, APIURLQueryPrefix, location.latitude, location.longitude];
-    [self fetchContentAtURL:[NSURL URLWithString:fetchingURLString]];
+    [self fetchContentAtURL:[NSURL URLWithString:fetchingURLString] errorHandler:^(NSError *error) {
+        [_delegate searchingForWeatherDataFailedWithError:error];
+    } successHandler:^(NSString *json) {
+//        [delegate ]
+    }];
 }
 
 - (BOOL)hasOpenConnection
@@ -52,10 +52,21 @@ static NSString *APIURLQueryPrefix = @"q/";
     return _fetchingConnection;
 }
 
+#pragma mark - NSURLConnection delegate stuff
+
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     _receivedData = nil;
-    
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    _receivedData = nil;
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+    if ([httpResponse statusCode] != 200) {
+        NSError *reportableError = [NSError errorWithDomain:YSCommunicatorErrorDomain code:[httpResponse statusCode] userInfo:nil];
+        errorHandler(reportableError);
+    }
 }
 
 @end

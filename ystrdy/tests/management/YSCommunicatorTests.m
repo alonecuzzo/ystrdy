@@ -33,6 +33,7 @@
     _communicator = [[YSInspectableCommunicator alloc] init];
     _nnCommunicator = [[YSNonNetworkedCommunicator alloc] init];
     _manager = [[YSMockLocationManager alloc] init];
+    _nnCommunicator.delegate = _manager;
     _fourOhFourResponse = [[YSFakeURLResponse alloc] initWithStatusCode:404];
     _receivedData = [@"Weather" dataUsingEncoding:NSUTF8StringEncoding];
 }
@@ -80,6 +81,13 @@
     [_nnCommunicator searchForWeatherDataWithLocation:_location];
     [_nnCommunicator connection:nil didFailWithError:nil];
     GHAssertEquals([_nnCommunicator.receivedData length], (NSUInteger)0, @"Old received data should be cleared out.");
+}
+
+- (void)testThatReceiving404ErrorPassesErrorToDelegate
+{
+    [_nnCommunicator searchForWeatherDataWithLocation:_location];
+    [_nnCommunicator connection:nil didReceiveResponse:(NSURLResponse*)_fourOhFourResponse];
+    GHAssertEquals([_manager weatherFailureErrorCode], (NSInteger)404, @"Delegate should know about 404 error.");
 }
 
 @end

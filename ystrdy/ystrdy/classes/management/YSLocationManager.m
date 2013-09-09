@@ -57,4 +57,19 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
     }
 }
 
+- (void)fetchingLocationsFailedWithError:(NSError *)error
+{
+    
+}
+
+- (void)searchingForWeatherDataFailedWithError:(NSError *)error
+{
+    
+}
+
+- (void)didReceiveLocation:(YSLocation *)location
+{
+    
+}
+
 @end

@@ -8,15 +8,22 @@
 
 #import "YSFakeURLResponse.h"
 
-@implementation YSFakeURLResponse
+@implementation YSFakeURLResponse {
+    NSInteger _statusCode;
+}
 
-- (id)initWithStatusCode:(NSInteger)statusCode
+- (id)initWithStatusCode:(NSInteger)code
 {
     self = [super init];
     if (self) {
-        statusCode = statusCode;
+        _statusCode = code;
     }
     return self;
+}
+
+- (NSInteger)statusCode
+{
+    return _statusCode;
 }
 
 @end

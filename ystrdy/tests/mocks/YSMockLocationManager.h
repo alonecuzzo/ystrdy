@@ -10,4 +10,6 @@
 
 @interface YSMockLocationManager : YSLocationManager
 
+- (NSInteger)weatherFailureErrorCode;
+
 @end

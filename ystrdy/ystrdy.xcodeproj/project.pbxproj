@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E0BC9EE17DA7DC40010969E /* ny-location-data.json */; };
+		8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */; };
+		8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */; };
 		8E34246817D11CBC0027A951 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
 		8E34246917D11CBC0027A951 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4E17D0F02D0039C788 /* Foundation.framework */; };
 		8E34246A17D11CBC0027A951 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F5017D0F02D0039C788 /* CoreGraphics.framework */; };
@@ -19,7 +21,6 @@
 		8E34248317D11E7A0027A951 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E34248217D11E7A0027A951 /* libPods.a */; };
 		8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248517D11EF90027A951 /* YSLocationTest.m */; };
 		8E34248917D120050027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
-		8E34248A17D1217F0027A951 /* YSLocation.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248717D120050027A951 /* YSLocation.h */; };
 		8E34248B17D1217F0027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
 		8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */; };
 		8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
@@ -34,7 +35,6 @@
 		8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42217D1899600D5979E /* YSLocationViewController.m */; };
 		8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E78B42317D1899600D5979E /* YSLocationViewController.xib */; };
 		8E78B42917D18A4200D5979E /* YSLocationViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */; };
-		8E78B42A17D18A5A00D5979E /* YSLocationViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42117D1899600D5979E /* YSLocationViewController.h */; };
 		8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42217D1899600D5979E /* YSLocationViewController.m */; };
 		8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
@@ -59,6 +59,8 @@
 		64C61303797E4672A4B47D83 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F951293D3EC4789983A6D10 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8E0BC9EE17DA7DC40010969E /* ny-location-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ny-location-data.json"; path = "fixtures/ny-location-data.json"; sourceTree = "<group>"; };
+		8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSCommunicatorDelegate.h; path = classes/management/YSCommunicatorDelegate.h; sourceTree = "<group>"; };
+		8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YSLocationManagerDelegate.h; path = classes/management/YSLocationManagerDelegate.h; sourceTree = "<group>"; };
 		8E34246717D11CBC0027A951 /* tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E34246D17D11CBC0027A951 /* tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tests-Info.plist"; sourceTree = "<group>"; };
 		8E34246F17D11CBC0027A951 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -290,10 +292,12 @@
 			children = (
 				8E9F9EDE17D5466900C19CF4 /* YSLocationManager.h */,
 				8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */,
+				8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */,
 				8E9F9EE217D5469E00C19CF4 /* YSLocationBuilder.h */,
 				8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */,
 				8E9F9EEB17D55E5F00C19CF4 /* YSCommunicator.h */,
 				8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */,
+				8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */,
 			);
 			name = management;
 			sourceTree = "<group>";
@@ -472,9 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E78B42A17D18A5A00D5979E /* YSLocationViewController.h in Sources */,
 				8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */,
-				8E34248A17D1217F0027A951 /* YSLocation.h in Sources */,
 				8E34248B17D1217F0027A951 /* YSLocation.m in Sources */,
 				8E34247217D11CBC0027A951 /* main.m in Sources */,
 				8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */,
@@ -499,6 +501,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */,
+				8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */,
 				8E767F5917D0F02D0039C788 /* main.m in Sources */,
 				8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */,
 				8E34248917D120050027A951 /* YSLocation.m in Sources */,
