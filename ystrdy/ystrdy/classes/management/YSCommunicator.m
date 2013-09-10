@@ -19,6 +19,7 @@ static NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
 - (void)fetchContentAtURL:(NSURL *)url errorHandler:(void (^)(NSError *))errorBlock successHandler:(void (^)(NSString *))successBlock {
     _fetchingURL = url;
     errorHandler = errorBlock;
+    successHandler = successBlock;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -32,7 +33,7 @@ static NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
     [self fetchContentAtURL:[NSURL URLWithString:fetchingURLString] errorHandler:^(NSError *error) {
         [_delegate searchingForWeatherDataFailedWithError:error];
     } successHandler:^(NSString *json) {
-//        [delegate ]
+        [_delegate receivedWeatherDataFromJSON:json];
     }];
 }
 
@@ -57,6 +58,9 @@ static NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     _receivedData = nil;
+    _fetchingConnection = nil;
+    _fetchingURL = nil;
+    errorHandler(error);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -66,7 +70,24 @@ static NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
     if ([httpResponse statusCode] != 200) {
         NSError *reportableError = [NSError errorWithDomain:YSCommunicatorErrorDomain code:[httpResponse statusCode] userInfo:nil];
         errorHandler(reportableError);
+        [self cancelAndDiscardConnection];
+    } else {
+        _receivedData = [[NSMutableData alloc] init];
     }
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    _fetchingURL = nil;
+    _fetchingConnection = nil;
+    NSString *receivedText = [[NSString alloc] initWithData:_receivedData encoding:NSUTF8StringEncoding];
+    _receivedData = nil;
+    successHandler(receivedText);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    _receivedData = [[NSMutableData alloc] initWithData:data];
 }
 
 @end

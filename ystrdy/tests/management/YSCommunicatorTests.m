@@ -19,6 +19,7 @@
 @property YSNonNetworkedCommunicator *nnCommunicator;
 @property YSMockLocationManager *manager;
 @property YSFakeURLResponse *fourOhFourResponse;
+@property YSFakeURLResponse *twoHundredResponse;
 @property NSData *receivedData;
 
 @end
@@ -35,6 +36,7 @@
     _manager = [[YSMockLocationManager alloc] init];
     _nnCommunicator.delegate = _manager;
     _fourOhFourResponse = [[YSFakeURLResponse alloc] initWithStatusCode:404];
+    _twoHundredResponse = [[YSFakeURLResponse alloc] initWithStatusCode:200];
     _receivedData = [@"Weather" dataUsingEncoding:NSUTF8StringEncoding];
 }
 
@@ -88,6 +90,29 @@
     [_nnCommunicator searchForWeatherDataWithLocation:_location];
     [_nnCommunicator connection:nil didReceiveResponse:(NSURLResponse*)_fourOhFourResponse];
     GHAssertEquals([_manager weatherFailureErrorCode], (NSInteger)404, @"Delegate should know about 404 error.");
+}
+
+- (void)testThatReceiving200ErrorDoesNotPassErrorToDelegate
+{
+    [_nnCommunicator searchForWeatherDataWithLocation:_location];
+    [_nnCommunicator connection:nil didReceiveResponse:(NSURLResponse*)_twoHundredResponse];
+    GHAssertFalse([_manager weatherFailureErrorCode] == 200, @"Delegate should not receive error after 200 response.");
+}
+
+- (void)testThatConnectionFailingPassesErrorToDelegate
+{
+    [_nnCommunicator searchForWeatherDataWithLocation:_location];
+    NSError *connectionError = [NSError errorWithDomain:@"Fake Domain" code:1023 userInfo:nil];
+    [_nnCommunicator connection:nil didFailWithError:connectionError];
+    GHAssertTrue([_manager weatherFailureErrorCode] == 1023, @"Delegate should receive error if connection fails.");
+}
+
+- (void)testThatDelegateReceivesSuccessfullyReturnedData
+{
+    [_nnCommunicator searchForWeatherDataWithLocation:_location];
+    [_nnCommunicator setReceivedData:_receivedData];
+    [_nnCommunicator connectionDidFinishLoading:nil];
+    GHAssertEqualStrings([_manager locationJSON], @"Weather", @"Delegate should know about json that is received successfully.");
 }
 
 @end

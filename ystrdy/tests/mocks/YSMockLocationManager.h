@@ -11,5 +11,7 @@
 @interface YSMockLocationManager : YSLocationManager
 
 - (NSInteger)weatherFailureErrorCode;
+- (void)receivedWeatherDataFromJSON:(NSString *)json;
+- (NSString*)locationJSON;
 
 @end

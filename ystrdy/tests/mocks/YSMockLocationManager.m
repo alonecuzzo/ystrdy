@@ -10,6 +10,7 @@
 
 @implementation YSMockLocationManager {
     NSInteger _weatherFailureErrorCode;
+    NSString *_locationJSON;
 }
 
 - (void)searchingForWeatherDataFailedWithError:(NSError *)error
@@ -20,6 +21,16 @@
 - (NSInteger)weatherFailureErrorCode
 {
     return _weatherFailureErrorCode;
+}
+
+- (void)receivedWeatherDataFromJSON:(NSString *)json
+{
+    _locationJSON = json;
+}
+
+- (NSString*)locationJSON
+{
+    return _locationJSON;
 }
 
 @end
