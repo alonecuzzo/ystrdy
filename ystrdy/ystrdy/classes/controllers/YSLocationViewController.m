@@ -7,12 +7,14 @@
 //
 
 #import "YSLocationViewController.h"
+#import "YSColorHelper.h"
 
 @interface YSLocationViewController ()
 
 @property(strong, nonatomic) UILabel *temperatureLabel;
 @property(strong, nonatomic) UILabel *locationLabel;
 @property(strong, nonatomic) UILabel *umbrellaLabel;
+@property(strong, nonatomic) UIImageView *umbrellaIconImageView;
 
 @end
 
@@ -75,7 +77,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
     [self setupLocation];
     [self populateTemperature];
     [self populateLocation];

@@ -22,6 +22,7 @@
 		8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248517D11EF90027A951 /* YSLocationTest.m */; };
 		8E34248917D120050027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
 		8E34248B17D1217F0027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
+		8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */; };
 		8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */; };
 		8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
 		8E767F4F17D0F02D0039C788 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4E17D0F02D0039C788 /* Foundation.framework */; };
@@ -40,7 +41,6 @@
 		8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
 		8E9F9EE517D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
-		8E9F9EE917D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE817D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m */; };
 		8E9F9EEA17D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE817D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m */; };
 		8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
 		8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
@@ -50,6 +50,9 @@
 		8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */; };
 		8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */; };
 		8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9917DBC7D200FBF203 /* YSFakeURLResponse.m */; };
+		8ED5D31217DFB54500ACA9AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5D31117DFB54500ACA9AE /* Default-568h@2x.png */; };
+		8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */; };
+		8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */; };
 		8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */; };
 		8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */; };
 		9002522197014C9E93947551 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C61303797E4672A4B47D83 /* libPods.a */; };
@@ -74,6 +77,8 @@
 		8E34248517D11EF90027A951 /* YSLocationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocationTest.m; sourceTree = "<group>"; };
 		8E34248717D120050027A951 /* YSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocation.h; path = classes/model/YSLocation.h; sourceTree = "<group>"; };
 		8E34248817D120050027A951 /* YSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocation.m; path = classes/model/YSLocation.m; sourceTree = "<group>"; };
+		8E67F97917E113EB00B6C4B1 /* YSColorHelperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelperTest.h; path = helpers/YSColorHelperTest.h; sourceTree = "<group>"; };
+		8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelperTest.m; path = helpers/YSColorHelperTest.m; sourceTree = "<group>"; };
 		8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationBuilder.h; path = mocks/YSMockLocationBuilder.h; sourceTree = "<group>"; };
 		8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationBuilder.m; path = mocks/YSMockLocationBuilder.m; sourceTree = "<group>"; };
 		8E767F4917D0F02D0039C788 /* ystrdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ystrdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +120,9 @@
 		8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSNonNetworkedCommunicator.m; path = mocks/YSNonNetworkedCommunicator.m; sourceTree = "<group>"; };
 		8ED59C9817DBC7D200FBF203 /* YSFakeURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFakeURLResponse.h; path = mocks/YSFakeURLResponse.h; sourceTree = "<group>"; };
 		8ED59C9917DBC7D200FBF203 /* YSFakeURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFakeURLResponse.m; path = mocks/YSFakeURLResponse.m; sourceTree = "<group>"; };
+		8ED5D31117DFB54500ACA9AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		8ED5D31517DFB6E900ACA9AE /* YSColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelper.h; path = classes/helpers/YSColorHelper.h; sourceTree = "<group>"; };
+		8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelper.m; path = classes/helpers/YSColorHelper.m; sourceTree = "<group>"; };
 		8EDD33DF17D58C120020E0D2 /* YSMockCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockCommunicator.h; path = mocks/YSMockCommunicator.h; sourceTree = "<group>"; };
 		8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockCommunicator.m; path = mocks/YSMockCommunicator.m; sourceTree = "<group>"; };
 		8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManagerDelegate.h; path = mocks/YSMockLocationManagerDelegate.h; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 		8E34246B17D11CBC0027A951 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				8ED5D31417DFB6C600ACA9AE /* helpers */,
 				8EDD33DE17D58BF00020E0D2 /* mocks */,
 				8E9F9EE617D546AF00C19CF4 /* management */,
 				8E78B42617D189D500D5979E /* controllers */,
@@ -163,6 +172,7 @@
 		8E34246C17D11CBC0027A951 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8ED5D31117DFB54500ACA9AE /* Default-568h@2x.png */,
 				8E34246D17D11CBC0027A951 /* tests-Info.plist */,
 				8E34246E17D11CBC0027A951 /* InfoPlist.strings */,
 				8E34247117D11CBC0027A951 /* main.m */,
@@ -219,6 +229,7 @@
 		8E767F5217D0F02D0039C788 /* ystrdy */ = {
 			isa = PBXGroup;
 			children = (
+				8ED5D31317DFB6A200ACA9AE /* helpers */,
 				8E9F9EDD17D5464500C19CF4 /* management */,
 				8E767F8A17D113940039C788 /* views */,
 				8E767F8917D112E60039C788 /* delegate */,
@@ -321,6 +332,24 @@
 				8E0BC9EE17DA7DC40010969E /* ny-location-data.json */,
 			);
 			name = fixtures;
+			sourceTree = "<group>";
+		};
+		8ED5D31317DFB6A200ACA9AE /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8ED5D31517DFB6E900ACA9AE /* YSColorHelper.h */,
+				8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		8ED5D31417DFB6C600ACA9AE /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8E67F97917E113EB00B6C4B1 /* YSColorHelperTest.h */,
+				8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 		8EDD33DE17D58BF00020E0D2 /* mocks */ = {
@@ -433,6 +462,7 @@
 				8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */,
 				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
 				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
+				8ED5D31217DFB54500ACA9AE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +524,8 @@
 				8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */,
 				8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */,
 				8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */,
+				8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
+				8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,8 +541,8 @@
 				8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */,
 				8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */,
 				8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */,
-				8E9F9EE917D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m in Sources */,
 				8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
+				8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

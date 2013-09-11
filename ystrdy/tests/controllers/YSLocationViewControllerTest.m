@@ -8,6 +8,7 @@
 
 #import "YSLocationViewControllerTest.h"
 #import "YSLocation.h"
+#import <objc/runtime.h>
 
 @interface YSLocationViewControllerTest()
 
@@ -21,7 +22,7 @@
 {
     [super setUp];
     
-    _locationViewController = [[YSLocationViewController alloc] initWithNibName:@"YSLocationViewController" bundle:nil];
+    _locationViewController = [[YSLocationViewController alloc] init];
 }
 
 - (void)tearDown
@@ -31,13 +32,32 @@
 
 #pragma mark - teeessttszz
 
-- (void)testLocationViewControllerHasLocation
+- (void)testThatLocationViewControllerHasLocationProperty
 {
-    YSLocation *location = [[YSLocation alloc] init];
-    _locationViewController.location = location;
+    objc_property_t locationProperty = class_getProperty([_locationViewController class], "location");
     
-    GHAssertNotNil(_locationViewController.location, @"location view controller should have a location");
+    GHAssertTrue(locationProperty != NULL, @"Location View Controller needs location property.");
+}
+
+- (void)testThatLocationViewControllerHasLocationLabelProperty
+{
+    objc_property_t locationLabelProperty = class_getProperty([_locationViewController class], "locationLabel");
     
+    GHAssertTrue(locationLabelProperty != NULL, @"Location View Controller needs location label property.");
+}
+
+- (void)testThatLocationViewControllerHasTemperatureLabelProperty
+{
+    objc_property_t temperatureLabelProperty = class_getProperty([_locationViewController class], "temperatureLabel");
+    
+    GHAssertTrue(temperatureLabelProperty != NULL, @"Location View Controller needs temperature label property.");
+}
+
+- (void)testThatLocationViewControllerHasUmbrellaIconImageViewProperty
+{
+    objc_property_t umbrellaIconProperty = class_getProperty([_locationViewController class], "umbrellaIconImageView");
+    
+    GHAssertTrue(umbrellaIconProperty != NULL, @"Location View Controller should have an umbrella icon image view.");
 }
 
 @end
