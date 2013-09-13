@@ -54,7 +54,6 @@
 		8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */; };
 		8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */; };
 		8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9917DBC7D200FBF203 /* YSFakeURLResponse.m */; };
-		8ED5D31217DFB54500ACA9AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5D31117DFB54500ACA9AE /* Default-568h@2x.png */; };
 		8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */; };
 		8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */; };
 		8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */; };
@@ -129,7 +128,6 @@
 		8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSNonNetworkedCommunicator.m; path = mocks/YSNonNetworkedCommunicator.m; sourceTree = "<group>"; };
 		8ED59C9817DBC7D200FBF203 /* YSFakeURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFakeURLResponse.h; path = mocks/YSFakeURLResponse.h; sourceTree = "<group>"; };
 		8ED59C9917DBC7D200FBF203 /* YSFakeURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFakeURLResponse.m; path = mocks/YSFakeURLResponse.m; sourceTree = "<group>"; };
-		8ED5D31117DFB54500ACA9AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		8ED5D31517DFB6E900ACA9AE /* YSColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelper.h; path = classes/helpers/YSColorHelper.h; sourceTree = "<group>"; };
 		8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelper.m; path = classes/helpers/YSColorHelper.m; sourceTree = "<group>"; };
 		8EDD33DF17D58C120020E0D2 /* YSMockCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockCommunicator.h; path = mocks/YSMockCommunicator.h; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		8E34246C17D11CBC0027A951 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8ED5D31117DFB54500ACA9AE /* Default-568h@2x.png */,
 				8E34246D17D11CBC0027A951 /* tests-Info.plist */,
 				8E34246E17D11CBC0027A951 /* InfoPlist.strings */,
 				8E34247117D11CBC0027A951 /* main.m */,
@@ -492,7 +489,6 @@
 				8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */,
 				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
 				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
-				8ED5D31217DFB54500ACA9AE /* Default-568h@2x.png in Resources */,
 				8EC9348017E2825E0034DD4E /* Avenir.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
