@@ -30,7 +30,7 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
 {
     NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
     NSError *reportableError = [NSError errorWithDomain:YSManagerError code:YSErrorLocationSearchCode userInfo:errorInfo];
-    [_delegate fetchingLocationsFailedWithError:reportableError];
+    [_delegate fetchingLocationFailedWithError:reportableError];
 }
 
 - (void)tellDelegateAboutLocationSearchError:(NSError*)error
@@ -43,7 +43,7 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
         reportableError = [NSError errorWithDomain:YSManagerSearchFailedError code:YSErrorLocationSearchCode userInfo:nil];
     }
     
-    [_delegate fetchingLocationsFailedWithError:reportableError];
+    [_delegate fetchingLocationFailedWithError:reportableError];
 }
 
 - (void)receivedWeatherDataFromJSON:(NSString*)json
@@ -57,7 +57,7 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
     }
 }
 
-- (void)fetchingLocationsFailedWithError:(NSError *)error
+- (void)fetchingLocationFailedWithError:(NSError *)error
 {
     
 }

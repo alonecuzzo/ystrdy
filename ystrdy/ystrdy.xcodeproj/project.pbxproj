@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */; };
+		8E02CE6817E20A2400705A43 /* YSObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */; };
 		8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E0BC9EE17DA7DC40010969E /* ny-location-data.json */; };
 		8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */; };
 		8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */; };
@@ -46,6 +48,8 @@
 		8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
 		8EAD642617DB8FFE009BC594 /* YSCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD642517DB8FFE009BC594 /* YSCommunicatorTests.m */; };
 		8EAD642917DB9177009BC594 /* YSInspectableCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD642817DB9177009BC594 /* YSInspectableCommunicator.m */; };
+		8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
+		8EC9348017E2825E0034DD4E /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9347F17E2825E0034DD4E /* Avenir.ttc */; };
 		8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */; };
 		8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */; };
 		8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */; };
@@ -61,6 +65,8 @@
 /* Begin PBXFileReference section */
 		64C61303797E4672A4B47D83 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F951293D3EC4789983A6D10 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8E02CE6517E20A2400705A43 /* YSObjectConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSObjectConfiguration.h; path = classes/management/YSObjectConfiguration.h; sourceTree = "<group>"; };
+		8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSObjectConfiguration.m; path = classes/management/YSObjectConfiguration.m; sourceTree = "<group>"; };
 		8E0BC9EE17DA7DC40010969E /* ny-location-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ny-location-data.json"; path = "fixtures/ny-location-data.json"; sourceTree = "<group>"; };
 		8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSCommunicatorDelegate.h; path = classes/management/YSCommunicatorDelegate.h; sourceTree = "<group>"; };
 		8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YSLocationManagerDelegate.h; path = classes/management/YSLocationManagerDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 		8EAD642517DB8FFE009BC594 /* YSCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSCommunicatorTests.m; path = management/YSCommunicatorTests.m; sourceTree = "<group>"; };
 		8EAD642717DB9177009BC594 /* YSInspectableCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInspectableCommunicator.h; path = mocks/YSInspectableCommunicator.h; sourceTree = "<group>"; };
 		8EAD642817DB9177009BC594 /* YSInspectableCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInspectableCommunicator.m; path = mocks/YSInspectableCommunicator.m; sourceTree = "<group>"; };
+		8EC9347717E27ED20034DD4E /* YSFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFontHelper.h; path = classes/helpers/YSFontHelper.h; sourceTree = "<group>"; };
+		8EC9347817E27ED20034DD4E /* YSFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFontHelper.m; path = classes/helpers/YSFontHelper.m; sourceTree = "<group>"; };
+		8EC9347F17E2825E0034DD4E /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Avenir.ttc; path = assets/fonts/Avenir.ttc; sourceTree = "<group>"; };
 		8ECBBA9917D7FFA400C1449C /* YSLocationBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilderTests.h; path = management/YSLocationBuilderTests.h; sourceTree = "<group>"; };
 		8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationBuilderTests.m; path = management/YSLocationBuilderTests.m; sourceTree = "<group>"; };
 		8ED59C8F17DBC6A900FBF203 /* YSMockLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManager.h; path = mocks/YSMockLocationManager.h; sourceTree = "<group>"; };
@@ -243,6 +252,7 @@
 		8E767F5317D0F02D0039C788 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EC9347B17E2820F0034DD4E /* assets */,
 				8E767F5417D0F02D0039C788 /* ystrdy-Info.plist */,
 				8E767F5517D0F02D0039C788 /* InfoPlist.strings */,
 				8E767F5817D0F02D0039C788 /* main.m */,
@@ -309,6 +319,8 @@
 				8E9F9EEB17D55E5F00C19CF4 /* YSCommunicator.h */,
 				8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */,
 				8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */,
+				8E02CE6517E20A2400705A43 /* YSObjectConfiguration.h */,
+				8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */,
 			);
 			name = management;
 			sourceTree = "<group>";
@@ -326,6 +338,22 @@
 			name = management;
 			sourceTree = "<group>";
 		};
+		8EC9347B17E2820F0034DD4E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				8EC9347C17E282180034DD4E /* fonts */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		8EC9347C17E282180034DD4E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8EC9347F17E2825E0034DD4E /* Avenir.ttc */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		8ECBBA9C17D8290A00C1449C /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +367,8 @@
 			children = (
 				8ED5D31517DFB6E900ACA9AE /* YSColorHelper.h */,
 				8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */,
+				8EC9347717E27ED20034DD4E /* YSFontHelper.h */,
+				8EC9347817E27ED20034DD4E /* YSFontHelper.m */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -463,6 +493,7 @@
 				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
 				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
 				8ED5D31217DFB54500ACA9AE /* Default-568h@2x.png in Resources */,
+				8EC9348017E2825E0034DD4E /* Avenir.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +557,7 @@
 				8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */,
 				8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
 				8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */,
+				8E02CE6817E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +575,8 @@
 				8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */,
 				8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
 				8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
+				8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
+				8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

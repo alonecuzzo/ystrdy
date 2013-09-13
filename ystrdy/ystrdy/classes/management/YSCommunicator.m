@@ -9,10 +9,10 @@
 #import "YSCommunicator.h"
 
 NSString *const kWundergroundAPIKey = @"9caa09c5d1399971";
-static NSString *APIURLBase = @"http://api.wunderground.com/api/";
-static NSString *APIURLConditions = @"forecast/yesterday/conditions/";
-static NSString *APIURLQueryPrefix = @"q/";
-static NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
+NSString *APIURLBase = @"http://api.wunderground.com/api/";
+NSString *APIURLConditions = @"forecast/yesterday/conditions/";
+NSString *APIURLQueryPrefix = @"q/";
+NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
 
 @implementation YSCommunicator
 
@@ -87,7 +87,7 @@ static NSString *YSCommunicatorErrorDomain = @"YSCommunicatorErrorDomain";
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    _receivedData = [[NSMutableData alloc] initWithData:data];
+    [_receivedData appendData:data];
 }
 
 @end

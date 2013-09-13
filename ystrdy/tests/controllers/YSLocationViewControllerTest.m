@@ -7,12 +7,17 @@
 //
 
 #import "YSLocationViewControllerTest.h"
+#import "YSLocationViewController.h"
+#import "YSMockLocationManager.h"
+#import "YSLocationManagerDelegate.h"
+#import "YSLocationViewController.h"
 #import "YSLocation.h"
 #import <objc/runtime.h>
 
 @interface YSLocationViewControllerTest()
 
 @property(strong, nonatomic) YSLocationViewController *locationViewController;
+@property(strong, nonatomic) YSMockLocationManager *manager;
 
 @end
 
@@ -55,9 +60,40 @@
 
 - (void)testThatLocationViewControllerHasUmbrellaIconImageViewProperty
 {
-    objc_property_t umbrellaIconProperty = class_getProperty([_locationViewController class], "umbrellaIconImageView");
+    objc_property_t umbrellaIconImageViewProperty = class_getProperty([_locationViewController class], "umbrellaIconImageView");
     
-    GHAssertTrue(umbrellaIconProperty != NULL, @"Location View Controller should have an umbrella icon image view.");
+    GHAssertTrue(umbrellaIconImageViewProperty != NULL, @"Location View Controller should have an umbrella icon image view.");
+}
+
+- (void)testViewWillAppearCreatesAYSLocationManager
+{
+    [_locationViewController viewWillAppear:YES];
+    
+    GHAssertNotNil(_locationViewController.manager, @"Location View Controller should create a manager on viewwillappear");
+}
+
+- (void)testViewControllerConformsToYSLocationManagerProtocol
+{
+    GHAssertTrue([_locationViewController conformsToProtocol:@protocol(YSLocationManagerDelegate)], @"Location View Controller should conform to YSLocationManager protocol.");
+}
+
+- (void)testThatLocationManagerDelegateIsYSLocationViewController
+{
+    [_locationViewController viewWillAppear:YES];
+    
+    GHAssertEqualObjects(_locationViewController.manager.delegate, _locationViewController, @"Location View Controller should be its manager's delegate.");
+}
+
+- (void)testThatViewControllerHasLocationToSend
+{
+    [_locationViewController viewWillAppear:YES];
+    
+    GHAssertNotNil(_locationViewController.location, @"Location View Controller should have a Location to send to get weather data for.");
+}
+
+- (void)testThatLocationIsSearchedOnYSLocationViewControllerViewWillAppear
+{
+    
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "GHTestCase.h"
-#import "YSLocationViewController.h"
 
 @interface YSLocationViewControllerTest : GHTestCase
 

@@ -10,7 +10,7 @@
 
 @implementation YSMockLocationManagerDelegate 
 
-- (void)fetchingLocationsFailedWithError:(NSError*)error
+- (void)fetchingLocationFailedWithError:(NSError*)error
 {
     _fetchError = error;
 }

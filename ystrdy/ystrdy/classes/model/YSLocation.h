@@ -15,8 +15,8 @@
 @property(readwrite, assign) CGFloat todaysTemperatureC;
 @property(readwrite, assign) CGFloat yesterdaysTemperatureF;
 @property(readwrite, assign) CGFloat yesterdaysTemperatureC;
-@property(readwrite, assign) NSNumber *latitude;
-@property(readwrite, assign) NSNumber *longitude;
+@property(nonatomic, strong) NSNumber *latitude;
+@property(nonatomic, strong) NSNumber *longitude;
 @property(readwrite, assign) BOOL isRaining;
 
 - (id)initWithLatitude:(NSNumber*)latitude andLongitude:(NSNumber*)longitude;

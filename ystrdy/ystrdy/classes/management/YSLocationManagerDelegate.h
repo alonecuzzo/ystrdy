@@ -11,7 +11,8 @@
 
 @protocol YSLocationManagerDelegate <NSObject>
 
-- (void)fetchingLocationsFailedWithError:(NSError*)error;
+- (void)fetchingLocationFailedWithError:(NSError*)error;
+
 - (void)didReceiveLocation:(YSLocation*)location;
 
 @end

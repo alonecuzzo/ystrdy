@@ -15,7 +15,7 @@
 @property (strong) NSError *fetchError;
 @property (strong) YSLocation *receivedLocation;
 
-- (void)fetchingLocationsFailedWithError:(NSError*)error;
+- (void)fetchingLocationFailedWithError:(NSError*)error;
 - (void)didReceiveLocation:(YSLocation*)location;
 
 @end

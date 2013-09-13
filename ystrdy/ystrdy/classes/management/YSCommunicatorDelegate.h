@@ -12,7 +12,9 @@
 @protocol YSCommunicatorDelegate <NSObject>
 
 - (void)searchingForWeatherDataFailedWithError:(NSError*)error;
-- (void)fetchingLocationsFailedWithError:(NSError*)error;
+
+- (void)fetchingLocationFailedWithError:(NSError*)error;
+
 - (void)receivedWeatherDataFromJSON:(NSString*)json;
 
 @end

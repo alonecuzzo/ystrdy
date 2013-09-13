@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "YSLocation.h"
+#import "YSLocationManagerDelegate.h"
+#import "YSLocationManager.h"
+#import "YSObjectConfiguration.h"
 
-@interface YSLocationViewController : UIViewController
-
+@interface YSLocationViewController : UIViewController <YSLocationManagerDelegate>
+    
 @property(strong, nonatomic) YSLocation *location;
+@property(strong, nonatomic) UILabel *temperatureLabel;
+@property(strong, nonatomic) UILabel *umbrellaLabel;
+@property(strong, nonatomic) UILabel *locationLabel;
+@property(strong, nonatomic) YSLocationManager *manager;
+@property(strong, nonatomic) YSObjectConfiguration *objectConfiguration;
 
 @end
