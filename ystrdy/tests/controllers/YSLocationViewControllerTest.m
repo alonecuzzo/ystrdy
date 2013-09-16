@@ -13,6 +13,7 @@
 #import "YSLocationViewController.h"
 #import "YSLocation.h"
 #import <objc/runtime.h>
+#import <CoreLocation/CLLocationManager.h>
 
 @interface YSLocationViewControllerTest()
 
@@ -42,6 +43,13 @@
     objc_property_t locationProperty = class_getProperty([_locationViewController class], "location");
     
     GHAssertTrue(locationProperty != NULL, @"Location View Controller needs location property.");
+}
+
+- (void)testThatLocationViewControllerHasCoreLocationManagerProperty
+{
+    objc_property_t coreLocationProperty = class_getProperty([_locationViewController class], "coreLocationManager");
+    
+    GHAssertTrue(coreLocationProperty != NULL, @"Location View Controller needs core location manager property.");
 }
 
 - (void)testThatLocationViewControllerHasLocationLabelProperty
@@ -75,6 +83,11 @@
 - (void)testViewControllerConformsToYSLocationManagerProtocol
 {
     GHAssertTrue([_locationViewController conformsToProtocol:@protocol(YSLocationManagerDelegate)], @"Location View Controller should conform to YSLocationManager protocol.");
+}
+
+- (void)testViewControllerConformsToCLLocationManagerProtocol
+{
+    GHAssertTrue([_locationViewController conformsToProtocol:@protocol(CLLocationManagerDelegate)], @"Location View Controller should conform to CLLocationManager Protocol.");
 }
 
 - (void)testThatLocationManagerDelegateIsYSLocationViewController

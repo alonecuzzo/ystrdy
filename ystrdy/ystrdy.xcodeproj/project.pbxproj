@@ -24,6 +24,9 @@
 		8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248517D11EF90027A951 /* YSLocationTest.m */; };
 		8E34248917D120050027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
 		8E34248B17D1217F0027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
+		8E4BBBDC17E2B7B8007AC0C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */; };
+		8E4BBBDD17E2B89D007AC0C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */; };
+		8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
 		8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */; };
 		8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */; };
 		8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
@@ -82,6 +85,7 @@
 		8E34248517D11EF90027A951 /* YSLocationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocationTest.m; sourceTree = "<group>"; };
 		8E34248717D120050027A951 /* YSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocation.h; path = classes/model/YSLocation.h; sourceTree = "<group>"; };
 		8E34248817D120050027A951 /* YSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocation.m; path = classes/model/YSLocation.m; sourceTree = "<group>"; };
+		8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8E67F97917E113EB00B6C4B1 /* YSColorHelperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelperTest.h; path = helpers/YSColorHelperTest.h; sourceTree = "<group>"; };
 		8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelperTest.m; path = helpers/YSColorHelperTest.m; sourceTree = "<group>"; };
 		8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationBuilder.h; path = mocks/YSMockLocationBuilder.h; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4BBBDD17E2B89D007AC0C6 /* CoreLocation.framework in Frameworks */,
 				8E34248317D11E7A0027A951 /* libPods.a in Frameworks */,
 				8E34246817D11CBC0027A951 /* UIKit.framework in Frameworks */,
 				8E34246917D11CBC0027A951 /* Foundation.framework in Frameworks */,
@@ -152,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4BBBDC17E2B7B8007AC0C6 /* CoreLocation.framework in Frameworks */,
 				8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */,
 				8E767F4F17D0F02D0039C788 /* Foundation.framework in Frameworks */,
 				8E767F5117D0F02D0039C788 /* CoreGraphics.framework in Frameworks */,
@@ -222,6 +228,7 @@
 		8E767F4B17D0F02D0039C788 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */,
 				8E34248217D11E7A0027A951 /* libPods.a */,
 				8E767F4C17D0F02D0039C788 /* UIKit.framework */,
 				8E767F4E17D0F02D0039C788 /* Foundation.framework */,
@@ -533,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */,
 				8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */,
 				8E34248B17D1217F0027A951 /* YSLocation.m in Sources */,
 				8E34247217D11CBC0027A951 /* main.m in Sources */,

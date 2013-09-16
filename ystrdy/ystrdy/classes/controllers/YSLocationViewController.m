@@ -13,28 +13,13 @@
 @interface YSLocationViewController ()
 
 @property(strong, nonatomic) UIImageView *umbrellaIconImageView;
+@property(strong, nonatomic) CLLocationManager *coreLocationManager;
 
 @end
 
 @implementation YSLocationViewController
 
 #pragma mark - builder stuff
-
-- (NSString*)temperatureDifference
-{
-//    return [NSString stringWithFormat:@"%i", _location.todaysTemperature - _location.yesterdaysTemperature];
-    return 0;
-}
-
-- (void)setupLocation
-{
-    //this will get set outside of vc eventually
-    _location = [[YSLocation alloc] init];
-    _location.city = NSLocalizedString(@"Santiago, Chile", @"location name");
-//    _location.yesterdaysTemperature = 17;
-//    _location.todaysTemperature = 19;
-    _location.isRaining = YES;
-}
 
 - (void)populateTemperature
 {
@@ -43,17 +28,18 @@
     _temperatureLabel.textAlignment = NSTextAlignmentCenter;
     _temperatureLabel.backgroundColor = [UIColor clearColor];
     _temperatureLabel.textColor = [YSColorHelper ystrdayWhite];
+    _temperatureLabel.alpha = 0.0f;
     [self.view addSubview:_temperatureLabel];
 }
 
 - (void)populateLocation
 {
     _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(-30.0f, self.view.frame.size.height - 80, self.view.frame.size.width, 100)];
-    _locationLabel.text = [NSString stringWithFormat:@"Location: %@", _location.city];
     _locationLabel.backgroundColor = [UIColor clearColor];
     _locationLabel.font = [YSFontHelper getFont:YSFontAvenirRoman withSize:YSFontSizeCityNameLarge];
     _locationLabel.textAlignment = NSTextAlignmentRight;
     _locationLabel.textColor = [YSColorHelper ystrdayWhite];
+    _locationLabel.alpha = 0.0f;
     [self.view addSubview:_locationLabel];
 }
 
@@ -63,6 +49,24 @@
     _umbrellaLabel.text = [NSString stringWithFormat:@"IS IT GONNA RAIN?: %@", _location.isRaining ? @"YEP" : @"NOPE"];
     _umbrellaLabel.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_umbrellaLabel];
+}
+
+- (void)fadeTemperatureLabelIn
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.8f];
+    [UIView setAnimationDelegate:self];
+    _temperatureLabel.alpha = 1.0f;
+    [UIView commitAnimations];
+}
+
+- (void)fadeLocationLabelIn
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3f];
+    [UIView setAnimationDelegate:self];
+    _locationLabel.alpha = 1.0f;
+    [UIView commitAnimations];
 }
 
 #pragma mark - init stuff
@@ -80,7 +84,6 @@
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
-//    [self setupLocation];
     [self populateTemperature];
     [self populateLocation];
 //    [self populateUmbrella];
@@ -91,10 +94,16 @@
     [super viewWillAppear:animated];
 
     //TODO: put in real location
-    _location = [[YSLocation alloc] initWithLatitude:[NSNumber numberWithDouble:40.75013351] andLongitude:[NSNumber numberWithDouble:-73.99700928]];
     _manager = [_objectConfiguration locationManager];
     _manager.delegate = self;
+    NSLog(@"manager delegate: %@", _manager);
     [_manager fetchWeatherDataForLocation:_location];
+    
+    _coreLocationManager = [[CLLocationManager alloc] init];
+    _coreLocationManager.delegate = self;
+    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self startLocationServicesManager];
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,12 +131,38 @@
 
 - (void)didReceiveLocation:(YSLocation *)location
 {
-    NSLog(@"got a location! %@", location.city);
-    NSLog(@"tempz today %f", location.todaysTemperatureF);
-    NSLog(@"tempz yesterday %f", location.yesterdaysTemperatureF);
-    NSLog(@"is rain? %d", location.isRaining);
     _locationLabel.text = [location.city lowercaseString];
     _temperatureLabel.text = [self formatTemperature:[self findDifferenceBetweenTodaysTemperature:location.todaysTemperatureF andYesterdaysTemperature:location.yesterdaysTemperatureF]];
+    [self fadeTemperatureLabelIn];
+    [self fadeLocationLabelIn];
+}
+
+#pragma mark - corelocation
+
+- (void)startLocationServicesManager
+{
+    [_coreLocationManager startUpdatingLocation];
+}
+
+- (void)stopLocationManager
+{
+    [_coreLocationManager stopUpdatingLocation];
+}
+
+#pragma mark - corelocation delegate stuff
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *currentLocation = [locations lastObject];
+    
+    _location = [[YSLocation alloc] initWithLatitude:[NSNumber numberWithFloat:currentLocation.coordinate.latitude] andLongitude:[NSNumber numberWithFloat:currentLocation.coordinate.longitude]];
+    [_manager fetchWeatherDataForLocation:_location];
+    [self stopLocationManager];
 }
 
 @end
