@@ -112,6 +112,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)animateBackgroundWithTemperatureDelta:(CGFloat)tempDelta
+{
+    if (tempDelta > 0) {
+        [UIView animateWithDuration:2.0 animations:^{
+            self.view.backgroundColor = [YSColorHelper ystrdayOrange];
+        }];
+    }
+}
+
 - (CGFloat)findDifferenceBetweenTodaysTemperature:(CGFloat)todaysTemperature andYesterdaysTemperature:(CGFloat)yesterdaysTemperature
 {
     return todaysTemperature - yesterdaysTemperature;
@@ -132,6 +141,7 @@
 - (void)didReceiveLocation:(YSLocation *)location
 {
     _locationLabel.text = [location.city lowercaseString];
+    [self animateBackgroundWithTemperatureDelta:[self findDifferenceBetweenTodaysTemperature:location.todaysTemperatureF andYesterdaysTemperature:location.yesterdaysTemperatureF]];
     _temperatureLabel.text = [self formatTemperature:[self findDifferenceBetweenTodaysTemperature:location.todaysTemperatureF andYesterdaysTemperature:location.yesterdaysTemperatureF]];
     [self fadeTemperatureLabelIn];
     [self fadeLocationLabelIn];

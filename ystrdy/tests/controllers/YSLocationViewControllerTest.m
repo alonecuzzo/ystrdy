@@ -15,6 +15,7 @@
 #import <objc/runtime.h>
 #import <CoreLocation/CLLocationManager.h>
 #import "YSMockLocationViewController.h"
+#import "YSColorHelper.h"
 
 @interface YSLocationViewControllerTest()
 
@@ -110,6 +111,18 @@
     [_locationViewController viewDidLoad];
     
     GHAssertNotNil([_locationViewController valueForKey:@"coreLocationManager"], @"Location View Controller should have a Core Location Manager on view did load.");
+}
+
+#pragma mark - color change tests
+
+- (void)testThatBackgroundColorChangesToOrangeWhenTemperatureDifferenceIsPositive
+{
+    float tempDelta = 5.0f;
+    YSMockLocationViewController *mockVC = [[YSMockLocationViewController alloc] init];
+    
+    [mockVC animateBackgroundWithTemperatureDelta:tempDelta];
+    
+    GHAssertEqualObjects(mockVC.view.backgroundColor, [YSColorHelper ystrdayOrange], @"Location View Controller's background should be orange if there is a positive temperature difference.");
 }
 
 @end

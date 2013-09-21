@@ -13,4 +13,6 @@
 
 @property(strong, nonatomic) YSLocationManager *manager;
 
+- (void)animateBackgroundWithTemperatureDelta:(CGFloat)tempDelta;
+
 @end

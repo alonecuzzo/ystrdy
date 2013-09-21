@@ -7,6 +7,7 @@
 //
 
 #import "YSMockLocationViewController.h"
+#import "YSColorHelper.h"
 
 @interface YSMockLocationViewController ()
 
@@ -36,6 +37,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)animateBackgroundWithTemperatureDelta:(CGFloat)tempDelta
+{
+    if (tempDelta > 0) {
+        self.view.backgroundColor = [YSColorHelper ystrdayOrange];
+    }
 }
 
 @end
