@@ -103,13 +103,6 @@
     GHAssertEqualObjects(mockVC.manager.delegate, mockVC, @"Location View Controller should be its manager's delegate.");
 }
 
-- (void)testThatViewControllerHasLocationToSend
-{
-    [_locationViewController viewWillAppear:YES];
-    
-    GHAssertNotNil(_locationViewController.location, @"Location View Controller should have a Location to send to get weather data for.");
-}
-
 #pragma mark - core location tesssstzz
 
 - (void)testThatCoreLocationManagerIsCreatedInViewDidLoad
@@ -117,11 +110,6 @@
     [_locationViewController viewDidLoad];
     
     GHAssertNotNil([_locationViewController valueForKey:@"coreLocationManager"], @"Location View Controller should have a Core Location Manager on view did load.");
-}
-
-- (void)testThatCoreLocationManagerIsStartedOnViewWillAppear
-{
-    
 }
 
 @end
