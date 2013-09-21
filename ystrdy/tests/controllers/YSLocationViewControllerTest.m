@@ -96,9 +96,11 @@
 
 - (void)testThatLocationManagerDelegateIsYSLocationViewController
 {
-    [_locationViewController viewWillAppear:YES];
+    YSMockLocationViewController *mockVC = [[YSMockLocationViewController alloc] init];
     
-    GHAssertEqualObjects(_locationViewController.manager.delegate, _locationViewController, @"Location View Controller should be its manager's delegate.");
+    [mockVC viewWillAppear:YES];
+    
+    GHAssertEqualObjects(mockVC.manager.delegate, mockVC, @"Location View Controller should be its manager's delegate.");
 }
 
 - (void)testThatViewControllerHasLocationToSend

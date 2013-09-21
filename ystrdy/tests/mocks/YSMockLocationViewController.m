@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.manager = [self.objectConfiguration locationManager];
+    self.manager.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning

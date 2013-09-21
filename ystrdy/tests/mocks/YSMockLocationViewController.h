@@ -7,7 +7,10 @@
 //
 
 #import "YSLocationViewController.h"
+#import "YSLocationManager.h"
 
 @interface YSMockLocationViewController : YSLocationViewController
+
+@property(strong, nonatomic) YSLocationManager *manager;
 
 @end
