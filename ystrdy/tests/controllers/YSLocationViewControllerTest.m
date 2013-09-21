@@ -14,11 +14,13 @@
 #import "YSLocation.h"
 #import <objc/runtime.h>
 #import <CoreLocation/CLLocationManager.h>
+#import "YSMockLocationViewController.h"
 
 @interface YSLocationViewControllerTest()
 
 @property(strong, nonatomic) YSLocationViewController *locationViewController;
 @property(strong, nonatomic) YSMockLocationManager *manager;
+@property(strong, nonatomic) YSMockLocationViewController *mockLocationViewController;
 
 @end
 
@@ -75,9 +77,11 @@
 
 - (void)testViewWillAppearCreatesAYSLocationManager
 {
-    [_locationViewController viewWillAppear:YES];
+    YSMockLocationViewController *mockVC = [[YSMockLocationViewController alloc] init];
     
-    GHAssertNotNil(_locationViewController.manager, @"Location View Controller should create a manager on viewwillappear");
+    [mockVC viewWillAppear:YES];
+    
+    GHAssertNotNil(mockVC.manager, @"Location View Controller should create a manager on viewwillappear");
 }
 
 - (void)testViewControllerConformsToYSLocationManagerProtocol
@@ -104,7 +108,16 @@
     GHAssertNotNil(_locationViewController.location, @"Location View Controller should have a Location to send to get weather data for.");
 }
 
-- (void)testThatLocationIsSearchedOnYSLocationViewControllerViewWillAppear
+#pragma mark - core location tesssstzz
+
+- (void)testThatCoreLocationManagerIsCreatedInViewDidLoad
+{
+    [_locationViewController viewDidLoad];
+    
+    GHAssertNotNil([_locationViewController valueForKey:@"coreLocationManager"], @"Location View Controller should have a Core Location Manager on view did load.");
+}
+
+- (void)testThatCoreLocationManagerIsStartedOnViewWillAppear
 {
     
 }

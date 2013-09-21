@@ -17,7 +17,9 @@
 
 @end
 
-@implementation YSLocationViewController
+@implementation YSLocationViewController {
+    CLLocationManager *_coreLocationManager;
+}
 
 #pragma mark - builder stuff
 
@@ -87,6 +89,9 @@
     [self populateTemperature];
     [self populateLocation];
 //    [self populateUmbrella];
+    _coreLocationManager = [[CLLocationManager alloc] init];
+    _coreLocationManager.delegate = self;
+    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -96,12 +101,7 @@
     //TODO: put in real location
     _manager = [_objectConfiguration locationManager];
     _manager.delegate = self;
-    NSLog(@"manager delegate: %@", _manager);
     [_manager fetchWeatherDataForLocation:_location];
-    
-    _coreLocationManager = [[CLLocationManager alloc] init];
-    _coreLocationManager.delegate = self;
-    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [self startLocationServicesManager];
 }
@@ -153,7 +153,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    
+    NSLog(@"CORELOCATIONMANAGERERROR: %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -163,6 +163,13 @@
     _location = [[YSLocation alloc] initWithLatitude:[NSNumber numberWithFloat:currentLocation.coordinate.latitude] andLongitude:[NSNumber numberWithFloat:currentLocation.coordinate.longitude]];
     [_manager fetchWeatherDataForLocation:_location];
     [self stopLocationManager];
+}
+
+#pragma mark - ios7 stuff
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end
