@@ -25,4 +25,9 @@
     return [UIColor colorWithRed:244/255.0f green:113/255.0f blue:103/255.0f alpha:1.0f]; //F47167
 }
 
++ (UIColor*)ystrdayGreen
+{
+    return [UIColor colorWithRed:93/255.0f green:134/255.0f blue:82/255.0f alpha:1.0f]; //5D8652
+}
+
 @end

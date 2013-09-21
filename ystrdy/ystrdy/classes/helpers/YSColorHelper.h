@@ -16,4 +16,6 @@
 
 + (UIColor*)ystrdayOrange;
 
++ (UIColor*)ystrdayGreen;
+
 @end

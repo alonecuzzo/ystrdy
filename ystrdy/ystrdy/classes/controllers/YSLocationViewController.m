@@ -124,6 +124,10 @@ CGFloat kBackgroundAnimationTime = 1.0f;
        [UIView animateWithDuration:kBackgroundAnimationTime animations:^{
             self.view.backgroundColor = [YSColorHelper ystrdayBlue];
        }];
+    } else if (tempDelta == 0) {
+      [UIView animateWithDuration:kBackgroundAnimationTime animations:^{
+            self.view.backgroundColor = [YSColorHelper ystrdayGreen];
+      }];
     }
 }
 
