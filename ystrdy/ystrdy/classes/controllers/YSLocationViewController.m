@@ -17,6 +17,8 @@
 
 @end
 
+CGFloat kBackgroundAnimationTime = 1.0f;
+
 @implementation YSLocationViewController {
     CLLocationManager *_coreLocationManager;
 }
@@ -115,9 +117,13 @@
 - (void)animateBackgroundWithTemperatureDelta:(CGFloat)tempDelta
 {
     if (tempDelta > 0) {
-        [UIView animateWithDuration:2.0 animations:^{
+        [UIView animateWithDuration:kBackgroundAnimationTime animations:^{
             self.view.backgroundColor = [YSColorHelper ystrdayOrange];
         }];
+    } else if (tempDelta < 0) {
+       [UIView animateWithDuration:kBackgroundAnimationTime animations:^{
+            self.view.backgroundColor = [YSColorHelper ystrdayBlue];
+       }];
     }
 }
 

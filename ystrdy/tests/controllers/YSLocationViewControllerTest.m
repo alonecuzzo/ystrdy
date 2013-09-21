@@ -120,9 +120,22 @@
     float tempDelta = 5.0f;
     YSMockLocationViewController *mockVC = [[YSMockLocationViewController alloc] init];
     
+    [mockVC viewWillAppear:YES];
     [mockVC animateBackgroundWithTemperatureDelta:tempDelta];
     
     GHAssertEqualObjects(mockVC.view.backgroundColor, [YSColorHelper ystrdayOrange], @"Location View Controller's background should be orange if there is a positive temperature difference.");
+}
+
+- (void)testThatBackgroundColorChangesToBlueWhenTemperatureDifferenceIsNegative
+{
+    float tempDelta = -5.0f;
+    
+    YSMockLocationViewController *mockVC = [[YSMockLocationViewController alloc] init];
+    
+    [mockVC viewWillAppear:YES];
+    [mockVC animateBackgroundWithTemperatureDelta:tempDelta];
+    
+    GHAssertEqualObjects(mockVC.view.backgroundColor, [YSColorHelper ystrdayBlue], @"Location View Controller's background should be blue if there is a positive temperature difference.");
 }
 
 @end

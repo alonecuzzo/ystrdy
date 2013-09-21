@@ -33,6 +33,11 @@
     self.manager.delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -43,6 +48,8 @@
 {
     if (tempDelta > 0) {
         self.view.backgroundColor = [YSColorHelper ystrdayOrange];
+    } else if (tempDelta < 0) {
+        self.view.backgroundColor = [YSColorHelper ystrdayBlue];
     }
 }
 
