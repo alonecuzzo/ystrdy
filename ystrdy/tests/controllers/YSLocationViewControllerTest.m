@@ -149,4 +149,19 @@
     
     GHAssertEqualObjects(mockVC.view.backgroundColor, [YSColorHelper ystrdayGreen], @"Location View Controller's background should be green if there is zero temperature difference.");
 }
+
+#pragma mark - preloader testsss
+
+- (void)testThatViewControllerHasPreloaderAfterViewDidLoadIsCalled
+{
+    [_locationViewController viewDidLoad];
+    GHAssertNotNil(_locationViewController.preloader, @"Location View Controller should have preloader after view did load is called.");
+}
+
+- (void)testThatViewControllerHasPreloaderBeforeDataIsLoaded
+{
+    [_locationViewController viewWillAppear:YES];
+    GHAssertFalse(_locationViewController.preloader.isHidden, @"Location View Controller's preloader should be visible while waiting for data from server.");
+}
+
 @end

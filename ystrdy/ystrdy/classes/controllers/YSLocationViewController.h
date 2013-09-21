@@ -21,5 +21,6 @@
 @property(strong, nonatomic) UILabel *locationLabel;
 @property(strong, nonatomic) YSLocationManager *manager;
 @property(strong, nonatomic) YSObjectConfiguration *objectConfiguration;
+@property(strong, nonatomic) UILabel *preloader;
 
 @end

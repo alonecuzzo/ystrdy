@@ -25,7 +25,7 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 
 #pragma mark - builder stuff
 
-- (void)populateTemperature
+- (void)populateTemperatureLabel
 {
     _temperatureLabel = [[UILabel alloc] initWithFrame:CGRectMake(-8.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height)];
     _temperatureLabel.font = [YSFontHelper getFont:YSFontAvenirLight withSize:YSFontSizeTemperatureReadingHuge];
@@ -36,7 +36,7 @@ CGFloat kBackgroundAnimationTime = 1.0f;
     [self.view addSubview:_temperatureLabel];
 }
 
-- (void)populateLocation
+- (void)populateLocationLabel
 {
     _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(-30.0f, self.view.frame.size.height - 80, self.view.frame.size.width, 100)];
     _locationLabel.backgroundColor = [UIColor clearColor];
@@ -45,6 +45,17 @@ CGFloat kBackgroundAnimationTime = 1.0f;
     _locationLabel.textColor = [YSColorHelper ystrdayWhite];
     _locationLabel.alpha = 0.0f;
     [self.view addSubview:_locationLabel];
+}
+
+- (void)populatePreloader
+{
+    _preloader = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height)];
+    _preloader.backgroundColor = [UIColor clearColor];
+    _preloader.font = [YSFontHelper getFont:YSFontAvenirRoman withSize:YSFontSizeCityNameLarge];
+    _preloader.textAlignment = NSTextAlignmentCenter;
+    _preloader.textColor = [YSColorHelper ystrdayWhite];
+    _preloader.text = NSLocalizedString(@"loading...", @"locationvc preloader text");
+    [self.view addSubview:_preloader];
 }
 
 - (void)populateUmbrella
@@ -88,9 +99,10 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
-    [self populateTemperature];
-    [self populateLocation];
-//    [self populateUmbrella];
+    [self populateTemperatureLabel];
+    [self populateLocationLabel];
+    [self populatePreloader];
+    
     _coreLocationManager = [[CLLocationManager alloc] init];
     _coreLocationManager.delegate = self;
     _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -100,7 +112,6 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 {
     [super viewWillAppear:animated];
 
-    //TODO: put in real location
     _manager = [_objectConfiguration locationManager];
     _manager.delegate = self;
     [_manager fetchWeatherDataForLocation:_location];
