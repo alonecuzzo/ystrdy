@@ -11,6 +11,15 @@
 NSString *YSManagerError = @"YSManagerError";
 NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
 
+@interface YSLocationManager() {
+    struct {
+        unsigned int fetchingLocationFailedWithError : 1;
+        unsigned int didReceiveLocation              : 1;
+    } _delegateFlags;
+}
+
+@end
+
 @implementation YSLocationManager
 
 - (void)setDelegate:(id<YSLocationManagerDelegate>)delegate
@@ -18,6 +27,11 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
     if (delegate && ![delegate conformsToProtocol:@protocol(YSLocationManagerDelegate)]) {
         [[NSException exceptionWithName:NSInvalidArgumentException reason:@"Delegate object does not conform to it's protocol." userInfo:nil] raise];
     }
+    
+    _delegateFlags.fetchingLocationFailedWithError = [delegate respondsToSelector:@selector(fetchingLocationFailedWithError:)];
+    
+    _delegateFlags.didReceiveLocation = [delegate respondsToSelector:@selector(didReceiveLocation:)];
+    
     _delegate = delegate;
 }
 
@@ -30,7 +44,9 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
 {
     NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
     NSError *reportableError = [NSError errorWithDomain:YSManagerError code:YSErrorLocationSearchCode userInfo:errorInfo];
-    [_delegate fetchingLocationFailedWithError:reportableError];
+    if (_delegateFlags.fetchingLocationFailedWithError) {
+        [_delegate fetchingLocationFailedWithError:reportableError];
+    }
 }
 
 - (void)tellDelegateAboutLocationSearchError:(NSError*)error
@@ -43,7 +59,9 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
         reportableError = [NSError errorWithDomain:YSManagerSearchFailedError code:YSErrorLocationSearchCode userInfo:nil];
     }
     
-    [_delegate fetchingLocationFailedWithError:reportableError];
+    if (_delegateFlags.fetchingLocationFailedWithError) {
+        [_delegate fetchingLocationFailedWithError:reportableError];
+    }
 }
 
 - (void)receivedWeatherDataFromJSON:(NSString*)json
@@ -53,7 +71,9 @@ NSString *YSManagerSearchFailedError = @"YSManagerSearchFailedError";
     if (!locationData) {
         [self tellDelegateAboutLocationSearchError:error];
     } else {
-        [_delegate didReceiveLocation:locationData];
+        if (_delegateFlags.didReceiveLocation) {
+            [_delegate didReceiveLocation:locationData];
+        }
     }
 }
 

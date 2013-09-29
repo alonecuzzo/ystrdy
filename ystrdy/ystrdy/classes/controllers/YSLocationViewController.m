@@ -161,6 +161,9 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 
 - (void)didReceiveLocation:(YSLocation *)location
 {
+    [UIView animateWithDuration:kBackgroundAnimationTime / 2 animations:^{
+        _preloader.alpha = 0;
+    }];
     _locationLabel.text = [location.city lowercaseString];
     [self animateBackgroundWithTemperatureDelta:[self findDifferenceBetweenTodaysTemperature:location.todaysTemperatureF andYesterdaysTemperature:location.yesterdaysTemperatureF]];
     _temperatureLabel.text = [self formatTemperature:[self findDifferenceBetweenTodaysTemperature:location.todaysTemperatureF andYesterdaysTemperature:location.yesterdaysTemperatureF]];
