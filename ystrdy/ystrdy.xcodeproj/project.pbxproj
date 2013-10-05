@@ -62,6 +62,9 @@
 		8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */; };
 		8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */; };
 		8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */; };
+		8EFFCFF71800C6BF00AE2288 /* YSReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */; };
+		8EFFCFF81800C6BF00AE2288 /* YSReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */; };
+		8EFFCFFC1800C73E00AE2288 /* YSReachabilityManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFCFFB1800C73E00AE2288 /* YSReachabilityManagerTest.m */; };
 		9002522197014C9E93947551 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C61303797E4672A4B47D83 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +144,10 @@
 		8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockCommunicator.m; path = mocks/YSMockCommunicator.m; sourceTree = "<group>"; };
 		8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManagerDelegate.h; path = mocks/YSMockLocationManagerDelegate.h; sourceTree = "<group>"; };
 		8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationManagerDelegate.m; path = mocks/YSMockLocationManagerDelegate.m; sourceTree = "<group>"; };
+		8EFFCFF51800C6BF00AE2288 /* YSReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSReachabilityManager.h; path = classes/reachability/YSReachabilityManager.h; sourceTree = "<group>"; };
+		8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSReachabilityManager.m; path = classes/reachability/YSReachabilityManager.m; sourceTree = "<group>"; };
+		8EFFCFFA1800C73E00AE2288 /* YSReachabilityManagerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSReachabilityManagerTest.h; path = reachability/YSReachabilityManagerTest.h; sourceTree = "<group>"; };
+		8EFFCFFB1800C73E00AE2288 /* YSReachabilityManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSReachabilityManagerTest.m; path = reachability/YSReachabilityManagerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +181,7 @@
 		8E34246B17D11CBC0027A951 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				8EFFCFF91800C6FC00AE2288 /* reachability */,
 				8ED5D31417DFB6C600ACA9AE /* helpers */,
 				8EDD33DE17D58BF00020E0D2 /* mocks */,
 				8E9F9EE617D546AF00C19CF4 /* management */,
@@ -245,6 +253,7 @@
 		8E767F5217D0F02D0039C788 /* ystrdy */ = {
 			isa = PBXGroup;
 			children = (
+				8EFFCFF11800C64B00AE2288 /* reachability */,
 				8ED5D31317DFB6A200ACA9AE /* helpers */,
 				8E9F9EDD17D5464500C19CF4 /* management */,
 				8E767F8A17D113940039C788 /* views */,
@@ -412,6 +421,24 @@
 			name = mocks;
 			sourceTree = "<group>";
 		};
+		8EFFCFF11800C64B00AE2288 /* reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8EFFCFF51800C6BF00AE2288 /* YSReachabilityManager.h */,
+				8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */,
+			);
+			name = reachability;
+			sourceTree = "<group>";
+		};
+		8EFFCFF91800C6FC00AE2288 /* reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8EFFCFFA1800C73E00AE2288 /* YSReachabilityManagerTest.h */,
+				8EFFCFFB1800C73E00AE2288 /* YSReachabilityManagerTest.m */,
+			);
+			name = reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -547,6 +574,7 @@
 			files = (
 				8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */,
 				8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */,
+				8EFFCFF81800C6BF00AE2288 /* YSReachabilityManager.m in Sources */,
 				8E34248B17D1217F0027A951 /* YSLocation.m in Sources */,
 				8E34247217D11CBC0027A951 /* main.m in Sources */,
 				8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */,
@@ -559,6 +587,7 @@
 				8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */,
 				8E092F3617EE08C200000441 /* YSMockLocationViewController.m in Sources */,
 				8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */,
+				8EFFCFFC1800C73E00AE2288 /* YSReachabilityManagerTest.m in Sources */,
 				8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */,
 				8EAD642617DB8FFE009BC594 /* YSCommunicatorTests.m in Sources */,
 				8EAD642917DB9177009BC594 /* YSInspectableCommunicator.m in Sources */,
@@ -584,6 +613,7 @@
 				8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */,
 				8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */,
 				8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
+				8EFFCFF71800C6BF00AE2288 /* YSReachabilityManager.m in Sources */,
 				8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
 				8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
 				8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */,
