@@ -13,6 +13,8 @@
 
 @interface YSReachabilityManager : NSObject
 
+@property (strong, nonatomic) Reachability *reachability;
+
 + (YSReachabilityManager*)sharedInstance;
 
 @end

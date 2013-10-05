@@ -8,6 +8,7 @@
 
 #import "YSReachabilityManagerTest.h"
 #import "YSReachabilityManager.h"
+#import <objc/runtime.h>
 
 @interface YSReachabilityManagerTest()
 
@@ -50,6 +51,14 @@
     YSReachabilityManager *manager = [YSReachabilityManager sharedInstance];
     
     GHAssertEqualObjects(_reachabilityManger, manager, @"The reachability manager should be equal to a locally created manager using singleton.");
+}
+
+#pragma mark - reachability method tessts
+- (void)testThatManagerHasReachabilityProperty
+{
+    objc_property_t reachabilityProperty = class_getProperty([_reachabilityManger class], "reachability");
+    
+    GHAssertTrue(reachabilityProperty != NULL, @"Reachability manager should have a reachability property.");
 }
 
 @end
