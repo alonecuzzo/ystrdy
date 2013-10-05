@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Reachability/Reachability.h>
+
+@class Reachability;
 
 @interface YSReachabilityManager : NSObject
 
