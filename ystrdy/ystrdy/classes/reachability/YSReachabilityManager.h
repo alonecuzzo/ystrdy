@@ -10,4 +10,6 @@
 
 @interface YSReachabilityManager : NSObject
 
++ (YSReachabilityManager*)sharedInstance;
+
 @end
