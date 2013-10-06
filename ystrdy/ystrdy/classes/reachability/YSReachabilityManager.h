@@ -17,4 +17,9 @@
 
 + (YSReachabilityManager*)sharedInstance;
 
++ (BOOL)isReachable;
++ (BOOL)isUnReachable;
++ (BOOL)isReachableViaWWAN;
++ (BOOL)isReachableViaWifi;
+
 @end

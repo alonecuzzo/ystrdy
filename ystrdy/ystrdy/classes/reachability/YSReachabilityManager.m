@@ -20,4 +20,35 @@
     return _sharedManager;
 }
 
++ (BOOL)isReachable
+{
+    return [[[YSReachabilityManager sharedInstance] reachability] isReachable];
+}
+
++ (BOOL)isUnReachable
+{
+    return ![[[YSReachabilityManager sharedInstance] reachability] isReachable];
+}
+
++ (BOOL)isReachableViaWWAN
+{
+    return [[[YSReachabilityManager sharedInstance] reachability] isReachableViaWWAN];
+}
+
++ (BOOL)isReachableViaWifi
+{
+    return [[[YSReachabilityManager sharedInstance] reachability] isReachableViaWiFi];
+}
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
+        [self.reachability startNotifier];
+    }
+    return self;
+}
+
 @end

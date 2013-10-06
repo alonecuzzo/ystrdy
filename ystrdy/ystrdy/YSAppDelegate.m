@@ -10,11 +10,14 @@
 
 #import "YSLocationViewController.h"
 #import "YSObjectConfiguration.h"
+#import "YSReachabilityManager.h"
 
 @implementation YSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [YSReachabilityManager sharedInstance];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[YSLocationViewController alloc] initWithNibName:@"YSLocationViewController" bundle:nil];
