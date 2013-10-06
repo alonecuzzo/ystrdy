@@ -9,6 +9,7 @@
 #import "YSLocationViewController.h"
 #import "YSColorHelper.h"
 #import "YSFontHelper.h"
+#import <Reachability.h>
 
 @interface YSLocationViewController ()
 
@@ -91,6 +92,7 @@ CGFloat kBackgroundAnimationTime = 1.0f;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
     }
     return self;
 }
@@ -204,6 +206,17 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+#pragma mark - reachability stuff
+
+- (void)reachabilityDidChange:(NSNotification*)note
+{
+    Reachability *reachability = (Reachability*)[note object];
+    if ([reachability isReachable] || [reachability isReachableViaWiFi]) {
+    } else {
+        
+    }
 }
 
 @end

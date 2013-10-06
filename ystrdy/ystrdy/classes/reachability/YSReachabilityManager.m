@@ -20,6 +20,13 @@
     return _sharedManager;
 }
 
+- (void)dealloc
+{
+    if (_reachability) {
+        [_reachability stopNotifier];
+    }
+}
+
 + (BOOL)isReachable
 {
     return [[[YSReachabilityManager sharedInstance] reachability] isReachable];
