@@ -10,6 +10,7 @@
 #import "YSColorHelper.h"
 #import "YSFontHelper.h"
 #import <Reachability.h>
+#import "YSReachabilityManager.h"
 
 @interface YSLocationViewController ()
 
@@ -19,6 +20,8 @@
 @end
 
 CGFloat kBackgroundAnimationTime = 1.0f;
+NSString *kLoadingString = @"loading...";
+NSString *kNeedInternetConnectionString = @"you need to be connected to the internet to do that";
 
 @implementation YSLocationViewController {
     CLLocationManager *_coreLocationManager;
@@ -55,7 +58,14 @@ CGFloat kBackgroundAnimationTime = 1.0f;
     _preloader.font = [YSFontHelper getFont:YSFontAvenirRoman withSize:YSFontSizeCityNameLarge];
     _preloader.textAlignment = NSTextAlignmentCenter;
     _preloader.textColor = [YSColorHelper ystrdayWhite];
-    _preloader.text = NSLocalizedString(@"loading...", @"locationvc preloader text");
+    _preloader.numberOfLines = 5;
+    
+    if ([YSReachabilityManager isUnReachable]) {
+        _preloader.text = kNeedInternetConnectionString;
+    } else {
+        _preloader.text = kLoadingString;
+    }
+    
     [self.view addSubview:_preloader];
 }
 
@@ -116,7 +126,6 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 
     _manager = [_objectConfiguration locationManager];
     _manager.delegate = self;
-    [_manager fetchWeatherDataForLocation:_location];
     
     [self startLocationServicesManager];
 }
@@ -214,6 +223,7 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 {
     Reachability *reachability = (Reachability*)[note object];
     if ([reachability isReachable] || [reachability isReachableViaWiFi]) {
+        
     } else {
         
     }
