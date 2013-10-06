@@ -20,8 +20,9 @@
 @end
 
 CGFloat kBackgroundAnimationTime = 1.0f;
+CGFloat kAnimationFadeTime = 0.5f;
 NSString *kLoadingString = @"loading...";
-NSString *kNeedInternetConnectionString = @"you need to be connected to the internet to do that";
+NSString *kNeedInternetConnectionString = @"please connect to the interet";
 
 @implementation YSLocationViewController {
     CLLocationManager *_coreLocationManager;
@@ -138,15 +139,15 @@ NSString *kNeedInternetConnectionString = @"you need to be connected to the inte
 
 - (void)animateBackgroundWithTemperatureDelta:(CGFloat)tempDelta
 {
-    if (tempDelta > 0) {
+    if (floorf(tempDelta) > 0) {
         [UIView animateWithDuration:kBackgroundAnimationTime animations:^{
             self.view.backgroundColor = [YSColorHelper ystrdayOrange];
         }];
-    } else if (tempDelta < 0) {
+    } else if (floorf(tempDelta) < 0) {
        [UIView animateWithDuration:kBackgroundAnimationTime animations:^{
             self.view.backgroundColor = [YSColorHelper ystrdayBlue];
        }];
-    } else if (tempDelta == 0) {
+    } else if (floorf(tempDelta) == 0) {
       [UIView animateWithDuration:kBackgroundAnimationTime animations:^{
             self.view.backgroundColor = [YSColorHelper ystrdayGreen];
       }];
@@ -219,11 +220,31 @@ NSString *kNeedInternetConnectionString = @"you need to be connected to the inte
 
 #pragma mark - reachability stuff
 
+- (void)updateTemperatureText
+{
+   if (_location) {
+       if (_preloader.alpha > 0) {
+           [UIView animateWithDuration:kAnimationFadeTime animations:^{
+               _preloader.alpha = 0;
+           }completion:^(BOOL finished){
+               _preloader.text = kLoadingString;
+               [UIView animateWithDuration:kAnimationFadeTime animations:^{
+                   _preloader.alpha = 1.0f;
+               }completion:^(BOOL finished){
+                   [_manager fetchWeatherDataForLocation:_location];
+               }];
+           }];
+       } else {
+           [_manager fetchWeatherDataForLocation:_location];
+       }
+   }
+}
+
 - (void)reachabilityDidChange:(NSNotification*)note
 {
     Reachability *reachability = (Reachability*)[note object];
     if ([reachability isReachable] || [reachability isReachableViaWiFi]) {
-        
+        [self updateTemperatureText];
     } else {
         
     }
