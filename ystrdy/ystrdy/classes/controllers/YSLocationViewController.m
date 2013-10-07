@@ -23,6 +23,7 @@ CGFloat kBackgroundAnimationTime = 1.0f;
 CGFloat kAnimationFadeTime = 0.5f;
 NSString *kLoadingString = @"loading...";
 NSString *kNeedInternetConnectionString = @"please connect to the interet";
+NSString *kNeedLocationInfoString = @"need your location info";
 
 @implementation YSLocationViewController {
     CLLocationManager *_coreLocationManager;
@@ -200,6 +201,7 @@ NSString *kNeedInternetConnectionString = @"please connect to the interet";
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"CORELOCATIONMANAGERERROR: %@", error);
+    _preloader.text = kNeedLocationInfoString;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -209,6 +211,13 @@ NSString *kNeedInternetConnectionString = @"please connect to the interet";
     _location = [[YSLocation alloc] initWithLatitude:[NSNumber numberWithFloat:currentLocation.coordinate.latitude] andLongitude:[NSNumber numberWithFloat:currentLocation.coordinate.longitude]];
     [_manager fetchWeatherDataForLocation:_location];
     [self stopLocationManager];
+}
+
+- (void)refreshLocationData
+{
+    if (_location) {
+        [_manager fetchWeatherDataForLocation:_location];
+    }
 }
 
 #pragma mark - ios7 stuff

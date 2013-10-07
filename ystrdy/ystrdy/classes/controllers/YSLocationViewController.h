@@ -23,4 +23,6 @@
 @property(strong, nonatomic) YSObjectConfiguration *objectConfiguration;
 @property(strong, nonatomic) UILabel *preloader;
 
+- (void)refreshLocationData;
+
 @end
