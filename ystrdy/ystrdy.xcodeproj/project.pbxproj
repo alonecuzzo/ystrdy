@@ -58,6 +58,8 @@
 		8EC2377D1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */; };
 		8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */; };
 		8EC237811804DF7100D66565 /* YSAnimatingLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */; };
+		8EC237841804ED1200D66565 /* UIView+GCLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC237831804ED1200D66565 /* UIView+GCLibrary.m */; };
+		8EC237851804ED1200D66565 /* UIView+GCLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC237831804ED1200D66565 /* UIView+GCLibrary.m */; };
 		8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
 		8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */; };
 		8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */; };
@@ -138,6 +140,8 @@
 		8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSAnimatingLogo.m; path = classes/views/YSAnimatingLogo.m; sourceTree = "<group>"; };
 		8EC2377E1804DF7100D66565 /* YSAnimatingLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSAnimatingLetter.h; path = classes/views/YSAnimatingLetter.h; sourceTree = "<group>"; };
 		8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSAnimatingLetter.m; path = classes/views/YSAnimatingLetter.m; sourceTree = "<group>"; };
+		8EC237821804ED1200D66565 /* UIView+GCLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+GCLibrary.h"; path = "classes/helpers/UIView+GCLibrary.h"; sourceTree = "<group>"; };
+		8EC237831804ED1200D66565 /* UIView+GCLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+GCLibrary.m"; path = "classes/helpers/UIView+GCLibrary.m"; sourceTree = "<group>"; };
 		8EC9347717E27ED20034DD4E /* YSFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFontHelper.h; path = classes/helpers/YSFontHelper.h; sourceTree = "<group>"; };
 		8EC9347817E27ED20034DD4E /* YSFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFontHelper.m; path = classes/helpers/YSFontHelper.m; sourceTree = "<group>"; };
 		8ECBBA9917D7FFA400C1449C /* YSLocationBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilderTests.h; path = management/YSLocationBuilderTests.h; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 				8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */,
 				8EC9347717E27ED20034DD4E /* YSFontHelper.h */,
 				8EC9347817E27ED20034DD4E /* YSFontHelper.m */,
+				8EC237821804ED1200D66565 /* UIView+GCLibrary.h */,
+				8EC237831804ED1200D66565 /* UIView+GCLibrary.m */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -608,6 +614,7 @@
 				8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */,
 				8EAD642617DB8FFE009BC594 /* YSCommunicatorTests.m in Sources */,
 				8EAD642917DB9177009BC594 /* YSInspectableCommunicator.m in Sources */,
+				8EC237851804ED1200D66565 /* UIView+GCLibrary.m in Sources */,
 				8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */,
 				8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */,
 				8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */,
@@ -622,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC237841804ED1200D66565 /* UIView+GCLibrary.m in Sources */,
 				8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */,
 				8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */,
 				8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */,

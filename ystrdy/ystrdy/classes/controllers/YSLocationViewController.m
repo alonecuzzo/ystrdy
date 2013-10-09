@@ -122,28 +122,32 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [super viewDidLoad];
     [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
     [self populateAnimatingLogo];
-//    [self populateTemperatureLabel];
-//    [self populateLocationLabel];
-//    [self populatePreloader];
-//    
-//    _coreLocationManager = [[CLLocationManager alloc] init];
-//    _coreLocationManager.delegate = self;
-//    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self populateTemperatureLabel];
+    [self populateLocationLabel];
+    [self populatePreloader];
+    
+//    dispatch_queue_t queue = dispatch_queue_create("io.ystrdy", NULL);
+//    dispatch_async(queue, ^{
+//    });
+    
+    _coreLocationManager = [[CLLocationManager alloc] init];
+    _coreLocationManager.delegate = self;
+    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-//    _manager = [_objectConfiguration locationManager];
-//    _manager.delegate = self;
+    _manager = [_objectConfiguration locationManager];
+    _manager.delegate = self;
     
     [self startLocationServicesManager];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-//    [_animatingLogo animateLetters];
+    [_animatingLogo animateLetters];
 }
 
 - (void)didReceiveMemoryWarning

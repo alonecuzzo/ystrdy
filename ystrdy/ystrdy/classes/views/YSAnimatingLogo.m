@@ -9,6 +9,7 @@
 #import "YSAnimatingLogo.h"
 #import "YSAnimatingLetter.h"
 #import "YSFontHelper.h"
+#import "UIView+GCLibrary.h"
 
 @interface YSAnimatingLogo()
 
@@ -63,7 +64,16 @@ CGFloat charDimension = 170.0f;
 
 - (void)animateLetters
 {
-    [UIView animateWithDuration:1.0f animations:^{
+    // had to set this arbitrary delay when the app starts up... only way i can get it to work when phone is unplugged
+    [UIView animateWithDuration:1.0f delay:0.8f options:UIViewAnimationOptionAllowAnimatedContent animations:^{
+        [_y1Letter setY:680];
+        [_sLetter setY:720];
+        [_tLetter setY:600];
+        [_rLetter setY:680];
+        [_dLetter setY:650];
+        [_y2Letter setY:600];
+    }completion:^(BOOL completed){
+        
     }];
 }
 
