@@ -1,5 +1,5 @@
 //
-//  YSAnimatingLetter.h
+//  UIView+GCLibrary.h
 //  ystrdy
 //
 //  Created by Jabari on 10/8/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YSAnimatingLetter : UIView
-
-@property(strong, nonatomic) NSString *letter;
+@interface UIView (GCLibrary)
 
 @end

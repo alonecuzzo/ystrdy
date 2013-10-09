@@ -11,11 +11,13 @@
 #import "YSFontHelper.h"
 #import <Reachability.h>
 #import "YSReachabilityManager.h"
+#import "YSAnimatingLogo.h"
 
 @interface YSLocationViewController ()
 
 @property(strong, nonatomic) UIImageView *umbrellaIconImageView;
 @property(strong, nonatomic) CLLocationManager *coreLocationManager;
+@property(strong, nonatomic) YSAnimatingLogo *animatingLogo;
 
 @end
 
@@ -71,6 +73,12 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [self.view addSubview:_preloader];
 }
 
+- (void)populateAnimatingLogo
+{
+    _animatingLogo = [[YSAnimatingLogo alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:_animatingLogo];
+}
+
 - (void)populateUmbrella
 {
     _umbrellaLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 205.0f, self.view.frame.size.width, 100)];
@@ -113,23 +121,29 @@ NSString *kNeedLocationInfoString = @"need your location info";
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
-    [self populateTemperatureLabel];
-    [self populateLocationLabel];
-    [self populatePreloader];
-    
-    _coreLocationManager = [[CLLocationManager alloc] init];
-    _coreLocationManager.delegate = self;
-    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self populateAnimatingLogo];
+//    [self populateTemperatureLabel];
+//    [self populateLocationLabel];
+//    [self populatePreloader];
+//    
+//    _coreLocationManager = [[CLLocationManager alloc] init];
+//    _coreLocationManager.delegate = self;
+//    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-    _manager = [_objectConfiguration locationManager];
-    _manager.delegate = self;
+    
+//    _manager = [_objectConfiguration locationManager];
+//    _manager.delegate = self;
     
     [self startLocationServicesManager];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+//    [_animatingLogo animateLetters];
 }
 
 - (void)didReceiveMemoryWarning

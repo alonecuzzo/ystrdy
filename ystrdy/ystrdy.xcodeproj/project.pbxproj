@@ -56,6 +56,8 @@
 		8EC237791804D9E400D66565 /* Raleway-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC237771804D9E400D66565 /* Raleway-Thin.otf */; };
 		8EC2377C1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */; };
 		8EC2377D1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */; };
+		8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */; };
+		8EC237811804DF7100D66565 /* YSAnimatingLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */; };
 		8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
 		8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */; };
 		8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */; };
@@ -134,6 +136,8 @@
 		8EC237771804D9E400D66565 /* Raleway-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Thin.otf"; path = "assets/fonts/Raleway-Thin.otf"; sourceTree = "<group>"; };
 		8EC2377A1804DE7E00D66565 /* YSAnimatingLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSAnimatingLogo.h; path = classes/views/YSAnimatingLogo.h; sourceTree = "<group>"; };
 		8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSAnimatingLogo.m; path = classes/views/YSAnimatingLogo.m; sourceTree = "<group>"; };
+		8EC2377E1804DF7100D66565 /* YSAnimatingLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSAnimatingLetter.h; path = classes/views/YSAnimatingLetter.h; sourceTree = "<group>"; };
+		8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSAnimatingLetter.m; path = classes/views/YSAnimatingLetter.m; sourceTree = "<group>"; };
 		8EC9347717E27ED20034DD4E /* YSFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFontHelper.h; path = classes/helpers/YSFontHelper.h; sourceTree = "<group>"; };
 		8EC9347817E27ED20034DD4E /* YSFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFontHelper.m; path = classes/helpers/YSFontHelper.m; sourceTree = "<group>"; };
 		8ECBBA9917D7FFA400C1449C /* YSLocationBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilderTests.h; path = management/YSLocationBuilderTests.h; sourceTree = "<group>"; };
@@ -319,6 +323,8 @@
 			children = (
 				8EC2377A1804DE7E00D66565 /* YSAnimatingLogo.h */,
 				8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */,
+				8EC2377E1804DF7100D66565 /* YSAnimatingLetter.h */,
+				8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 			files = (
 				8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */,
 				8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */,
+				8EC237811804DF7100D66565 /* YSAnimatingLetter.m in Sources */,
 				8EFFCFF81800C6BF00AE2288 /* YSReachabilityManager.m in Sources */,
 				8E34248B17D1217F0027A951 /* YSLocation.m in Sources */,
 				8E34247217D11CBC0027A951 /* main.m in Sources */,
@@ -617,6 +624,7 @@
 			files = (
 				8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */,
 				8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */,
+				8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */,
 				8E767F5917D0F02D0039C788 /* main.m in Sources */,
 				8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */,
 				8E34248917D120050027A951 /* YSLocation.m in Sources */,

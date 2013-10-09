@@ -17,6 +17,7 @@ typedef NSInteger YSFont;
 enum {
     YSFontSizeSmall                  = 12,
     YSFontSizeCityNameLarge          = 40,
+    YSfontSizeLogoLarge              = 75,
     YSFontSizeTemperatureReadingHuge = 220
 };
 typedef NSInteger YSFontSize;
