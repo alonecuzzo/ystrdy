@@ -6,8 +6,6 @@
 	<array>
 		<string>Raleway-ExtraLight.otf</string>
 		<string>Raleway-Thin.otf</string>
-		<string>Avenir.ttc</string>
-		<string>SECRCODE.TTF</string>
 	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>

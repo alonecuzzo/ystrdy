@@ -52,8 +52,11 @@
 		8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
 		8EAD642617DB8FFE009BC594 /* YSCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD642517DB8FFE009BC594 /* YSCommunicatorTests.m */; };
 		8EAD642917DB9177009BC594 /* YSInspectableCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD642817DB9177009BC594 /* YSInspectableCommunicator.m */; };
+		8EC237781804D9E400D66565 /* Raleway-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC237761804D9E400D66565 /* Raleway-ExtraLight.otf */; };
+		8EC237791804D9E400D66565 /* Raleway-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC237771804D9E400D66565 /* Raleway-Thin.otf */; };
+		8EC2377C1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */; };
+		8EC2377D1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */; };
 		8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
-		8EC9348017E2825E0034DD4E /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9347F17E2825E0034DD4E /* Avenir.ttc */; };
 		8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */; };
 		8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */; };
 		8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */; };
@@ -127,9 +130,12 @@
 		8EAD642517DB8FFE009BC594 /* YSCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSCommunicatorTests.m; path = management/YSCommunicatorTests.m; sourceTree = "<group>"; };
 		8EAD642717DB9177009BC594 /* YSInspectableCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInspectableCommunicator.h; path = mocks/YSInspectableCommunicator.h; sourceTree = "<group>"; };
 		8EAD642817DB9177009BC594 /* YSInspectableCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInspectableCommunicator.m; path = mocks/YSInspectableCommunicator.m; sourceTree = "<group>"; };
+		8EC237761804D9E400D66565 /* Raleway-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraLight.otf"; path = "assets/fonts/Raleway-ExtraLight.otf"; sourceTree = "<group>"; };
+		8EC237771804D9E400D66565 /* Raleway-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Thin.otf"; path = "assets/fonts/Raleway-Thin.otf"; sourceTree = "<group>"; };
+		8EC2377A1804DE7E00D66565 /* YSAnimatingLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSAnimatingLogo.h; path = classes/views/YSAnimatingLogo.h; sourceTree = "<group>"; };
+		8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSAnimatingLogo.m; path = classes/views/YSAnimatingLogo.m; sourceTree = "<group>"; };
 		8EC9347717E27ED20034DD4E /* YSFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFontHelper.h; path = classes/helpers/YSFontHelper.h; sourceTree = "<group>"; };
 		8EC9347817E27ED20034DD4E /* YSFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFontHelper.m; path = classes/helpers/YSFontHelper.m; sourceTree = "<group>"; };
-		8EC9347F17E2825E0034DD4E /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Avenir.ttc; path = assets/fonts/Avenir.ttc; sourceTree = "<group>"; };
 		8ECBBA9917D7FFA400C1449C /* YSLocationBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilderTests.h; path = management/YSLocationBuilderTests.h; sourceTree = "<group>"; };
 		8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationBuilderTests.m; path = management/YSLocationBuilderTests.m; sourceTree = "<group>"; };
 		8ED59C8F17DBC6A900FBF203 /* YSMockLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManager.h; path = mocks/YSMockLocationManager.h; sourceTree = "<group>"; };
@@ -311,6 +317,8 @@
 		8E767F8A17D113940039C788 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8EC2377A1804DE7E00D66565 /* YSAnimatingLogo.h */,
+				8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -365,7 +373,8 @@
 		8EC9347C17E282180034DD4E /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				8EC9347F17E2825E0034DD4E /* Avenir.ttc */,
+				8EC237761804D9E400D66565 /* Raleway-ExtraLight.otf */,
+				8EC237771804D9E400D66565 /* Raleway-Thin.otf */,
 			);
 			name = fonts;
 			sourceTree = "<group>";
@@ -524,11 +533,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E767F5717D0F02D0039C788 /* InfoPlist.strings in Resources */,
+				8EC237781804D9E400D66565 /* Raleway-ExtraLight.otf in Resources */,
 				8E767F5F17D0F02D0039C788 /* Default.png in Resources */,
 				8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */,
+				8EC237791804D9E400D66565 /* Raleway-Thin.otf in Resources */,
 				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
 				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
-				8EC9348017E2825E0034DD4E /* Avenir.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +605,7 @@
 				8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */,
 				8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */,
 				8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
+				8EC2377D1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */,
 				8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */,
 				8E02CE6817E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
 			);
@@ -615,6 +626,7 @@
 				8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
 				8EFFCFF71800C6BF00AE2288 /* YSReachabilityManager.m in Sources */,
 				8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
+				8EC2377C1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */,
 				8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
 				8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */,
 			);
