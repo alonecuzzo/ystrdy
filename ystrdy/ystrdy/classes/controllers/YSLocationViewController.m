@@ -34,7 +34,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
 - (void)populateTemperatureLabel
 {
     _temperatureLabel = [[UILabel alloc] initWithFrame:CGRectMake(-8.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height)];
-    _temperatureLabel.font = [YSFontHelper getFont:YSFontAvenirLight withSize:YSFontSizeTemperatureReadingHuge];
+    _temperatureLabel.font = [YSFontHelper getFont:YSFontRalewayThin withSize:YSFontSizeTemperatureReadingHuge];
     _temperatureLabel.textAlignment = NSTextAlignmentCenter;
     _temperatureLabel.backgroundColor = [UIColor clearColor];
     _temperatureLabel.textColor = [YSColorHelper ystrdayWhite];
@@ -46,7 +46,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
 {
     _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(-30.0f, self.view.frame.size.height - 80, self.view.frame.size.width, 100)];
     _locationLabel.backgroundColor = [UIColor clearColor];
-    _locationLabel.font = [YSFontHelper getFont:YSFontAvenirRoman withSize:YSFontSizeCityNameLarge];
+    _locationLabel.font = [YSFontHelper getFont:YSFontRalewayExtraLight withSize:YSFontSizeCityNameLarge];
     _locationLabel.textAlignment = NSTextAlignmentRight;
     _locationLabel.textColor = [YSColorHelper ystrdayWhite];
     _locationLabel.alpha = 0.0f;
@@ -57,7 +57,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
 {
     _preloader = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height)];
     _preloader.backgroundColor = [UIColor clearColor];
-    _preloader.font = [YSFontHelper getFont:YSFontAvenirRoman withSize:YSFontSizeCityNameLarge];
+    _preloader.font = [YSFontHelper getFont:YSFontRalewayExtraLight withSize:YSFontSizeCityNameLarge];
     _preloader.textAlignment = NSTextAlignmentCenter;
     _preloader.textColor = [YSColorHelper ystrdayWhite];
     _preloader.numberOfLines = 5;

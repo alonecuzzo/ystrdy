@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 
 enum {
-    YSFontAvenirRoman,
-    YSFontAvenirLight
+    YSFontRalewayThin,
+    YSFontRalewayExtraLight
 };
 typedef NSInteger YSFont;
 
 enum {
     YSFontSizeSmall                  = 12,
     YSFontSizeCityNameLarge          = 40,
-    YSFontSizeTemperatureReadingHuge = 200
+    YSFontSizeTemperatureReadingHuge = 220
 };
 typedef NSInteger YSFontSize;
 

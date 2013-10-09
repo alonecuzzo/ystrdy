@@ -15,12 +15,12 @@
     NSString *fontName;
     
     switch (font) {
-        case YSFontAvenirRoman:
-            fontName = @"Avenir-Roman";
+        case YSFontRalewayThin:
+            fontName = @"Raleway-Thin";
             break;
             
-        case YSFontAvenirLight:
-            fontName = @"Avenir-Light";
+        case YSFontRalewayExtraLight:
+            fontName = @"Raleway-ExtraLight";
             break;
     }
     
