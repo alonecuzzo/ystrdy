@@ -112,6 +112,13 @@ NSString *kNeedLocationInfoString = @"need your location info";
     }
 }
 
+- (void)hideRefreshButton
+{
+    if (_refreshButton) {
+        [_refreshButton setY:-_refreshButton.height];
+    }
+}
+
 - (void)refreshDataOnButtonPress:(id)sender
 {
     [self startLocationServicesManager];
