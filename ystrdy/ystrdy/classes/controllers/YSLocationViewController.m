@@ -14,6 +14,7 @@
 #import "YSAnimatingLogo.h"
 #import "YSRefreshButton.h"
 #import "UIView+GCLibrary.h"
+#import "YSOfflineErrorView.h"
 
 @interface YSLocationViewController ()
 
@@ -21,13 +22,14 @@
 @property(strong, nonatomic) CLLocationManager *coreLocationManager;
 @property(strong, nonatomic) YSAnimatingLogo *animatingLogo;
 @property(strong, nonatomic) YSRefreshButton *refreshButton;
+@property(strong, nonatomic) YSOfflineErrorView *offlineErrorView;
 
 @end
 
 CGFloat kBackgroundAnimationTime = 1.0f;
 CGFloat kAnimationFadeTime = 0.5f;
 NSString *kLoadingString = @"loading...";
-NSString *kNeedInternetConnectionString = @"please connect to the interet";
+NSString *kNeedInternetConnectionString = @"please connect to the internet";
 NSString *kNeedLocationInfoString = @"need your location info";
 
 @implementation YSLocationViewController {
@@ -69,12 +71,16 @@ NSString *kNeedLocationInfoString = @"need your location info";
     _preloader.numberOfLines = 5;
     
     if ([YSReachabilityManager isUnReachable]) {
-        _preloader.text = kNeedInternetConnectionString;
+        
+        if (!_offlineErrorView) {
+            _offlineErrorView = [[YSOfflineErrorView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:_offlineErrorView];
+        }
+        
     } else {
         _preloader.text = kLoadingString;
+        [self.view addSubview:_preloader];
     }
-    
-    [self.view addSubview:_preloader];
 }
 
 - (void)populateAnimatingLogo

@@ -22,6 +22,10 @@
         case YSFontRalewayExtraLight:
             fontName = @"Raleway-ExtraLight";
             break;
+            
+        case YSFontRalewayMedium:
+            fontName = @"Raleway-Medium";
+            break;
     }
     
     return fontName;

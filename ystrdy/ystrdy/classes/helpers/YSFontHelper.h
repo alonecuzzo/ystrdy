@@ -10,12 +10,13 @@
 
 enum {
     YSFontRalewayThin,
-    YSFontRalewayExtraLight
+    YSFontRalewayExtraLight,
+    YSFontRalewayMedium
 };
 typedef NSInteger YSFont;
 
 enum {
-    YSFontSizeSmall                  = 12,
+    YSFontSizeSmall                  = 28,
     YSFontSizeCityNameLarge          = 40,
     YSfontSizeLogoLarge              = 75,
     YSFontSizeTemperatureReadingHuge = 220
