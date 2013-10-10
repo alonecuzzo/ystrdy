@@ -10,6 +10,8 @@
 
 @interface YSRefreshButton : UIButton
 
+@property(strong, nonatomic) UIColor *refreshButtonColor;
+
 - (id)initWithBackgroundColor:(UIColor*)color;
 
 @end

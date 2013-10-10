@@ -97,6 +97,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
     }
     
     if (_refreshButton.y < 0) {
+        _refreshButton.refreshButtonColor = self.view.backgroundColor;
         [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
             [_refreshButton setY:0];
         }completion:^(BOOL finished) {
