@@ -113,7 +113,8 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 - (void)refreshDataOnButtonPress:(id)sender
 {
-    [self refreshLocationData];
+//    [self refreshLocationData];
+    [self startLocationServicesManager];
     [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^ {
         [_refreshButton setY:-_refreshButton.height];
     }completion:^(BOOL finished) {
