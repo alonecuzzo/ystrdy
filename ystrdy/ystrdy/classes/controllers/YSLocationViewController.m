@@ -94,29 +94,37 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 - (void)toggleRefreshButton:(id)sender
 {
-    if (!_refreshButton) {
-        [self buildRefreshButton];
-    }
-    
-    _refreshButtonTimer = nil;
-    
-    if (_refreshButton.y < 0) {
-        _refreshButton.refreshButtonColor = self.view.backgroundColor;
-        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
-            [_refreshButton setY:0];
-        }completion:^(BOOL finished) {
-            _refreshButtonTimer = [NSTimer scheduledTimerWithTimeInterval:15.0f target:self selector:@selector(toggleRefreshButton:) userInfo:Nil repeats:NO];
-        }];
-    } else {
-       [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
-            [_refreshButton setY:-_refreshButton.height];
-        }completion:^(BOOL finished) {
-            
-        }];
+    if (![YSReachabilityManager isUnReachable]) {
+        if (!_refreshButton) {
+            [self buildRefreshButton];
+        }
+        
+        _refreshButtonTimer = nil;
+        
+        if (_refreshButton.y < 0) {
+            _refreshButton.refreshButtonColor = self.view.backgroundColor;
+            [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
+                [_refreshButton setY:0];
+            }completion:^(BOOL finished) {
+                _refreshButtonTimer = [NSTimer scheduledTimerWithTimeInterval:15.0f target:self selector:@selector(hideRefreshButton:) userInfo:Nil repeats:NO];
+            }];
+        } else {
+            [self hideRefreshButton:nil];
+        }
     }
 }
 
-- (void)hideRefreshButton
+- (void)hideRefreshButton:(id)sender
+{
+    _refreshButtonTimer = nil;
+    [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
+        [_refreshButton setY:-_refreshButton.height];
+    }completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)hideRefreshButtonOnEnterBackground
 {
     _refreshButtonTimer = nil;
     if (_refreshButton) {
@@ -323,7 +331,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
     if ([reachability isReachable] || [reachability isReachableViaWiFi]) {
         [self updateTemperatureText];
     } else {
-        
+        [self hideRefreshButton:nil];
     }
 }
 

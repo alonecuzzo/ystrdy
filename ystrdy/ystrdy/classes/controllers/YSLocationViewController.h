@@ -23,6 +23,6 @@
 @property(strong, nonatomic) YSObjectConfiguration *objectConfiguration;
 @property(strong, nonatomic) UILabel *preloader;
 
-- (void)hideRefreshButton;
+- (void)hideRefreshButtonOnEnterBackground;
 
 @end
