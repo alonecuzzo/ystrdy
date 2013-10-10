@@ -71,7 +71,6 @@ NSString *kNeedLocationInfoString = @"need your location info";
     _preloader.numberOfLines = 5;
     
     if ([YSReachabilityManager isUnReachable]) {
-        
         if (!_offlineErrorView) {
             _offlineErrorView = [[YSOfflineErrorView alloc] initWithFrame:self.view.frame];
             [self.view addSubview:_offlineErrorView];
@@ -264,6 +263,12 @@ NSString *kNeedLocationInfoString = @"need your location info";
     _temperatureLabel.text = [self formatTemperature:[self findDifferenceBetweenTodaysTemperature:location.todaysTemperatureF andYesterdaysTemperature:location.yesterdaysTemperatureF]];
     [self fadeTemperatureLabelIn];
     [self fadeLocationLabelIn];
+    
+    if (_offlineErrorView) {
+        [UIView animateWithDuration:kAnimationFadeTime animations:^ {
+            _offlineErrorView.alpha = 0.0f;
+        }];
+    }
 }
 
 #pragma mark - corelocation
@@ -326,7 +331,14 @@ NSString *kNeedLocationInfoString = @"need your location info";
                }];
            }];
        } else {
-           [_manager fetchWeatherDataForLocation:_location];
+           [UIView animateWithDuration:kAnimationFadeTime animations:^ {
+               if (_offlineErrorView) {
+                   _offlineErrorView.alpha = 0.0f;
+               }
+               _preloader.alpha = 1.0f;
+           }completion:^(BOOL completed) {
+               [_manager fetchWeatherDataForLocation:_location];
+           }];
        }
    }
 }
@@ -338,6 +350,15 @@ NSString *kNeedLocationInfoString = @"need your location info";
         [self updateTemperatureText];
     } else {
         [self hideRefreshButton:nil];
+        if (!_offlineErrorView) {
+            _offlineErrorView = [[YSOfflineErrorView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:_offlineErrorView];
+        }
+        [UIView animateWithDuration:1.0f animations:^ {
+            _offlineErrorView.alpha = 1.0f;
+            _temperatureLabel.alpha = 0.0f;
+            _locationLabel.alpha = 0.0f;
+        }];
     }
 }
 
