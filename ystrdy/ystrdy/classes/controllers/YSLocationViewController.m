@@ -12,13 +12,15 @@
 #import <Reachability.h>
 #import "YSReachabilityManager.h"
 #import "YSAnimatingLogo.h"
+#import "YSRefreshButton.h"
+#import "UIView+GCLibrary.h"
 
 @interface YSLocationViewController ()
 
 @property(strong, nonatomic) UIImageView *umbrellaIconImageView;
 @property(strong, nonatomic) CLLocationManager *coreLocationManager;
 @property(strong, nonatomic) YSAnimatingLogo *animatingLogo;
-
+@property(strong, nonatomic) YSRefreshButton *refreshButton;
 @end
 
 CGFloat kBackgroundAnimationTime = 1.0f;
@@ -79,12 +81,44 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [self.view addSubview:_animatingLogo];
 }
 
-- (void)populateUmbrella
+- (void)buildRefreshButton
 {
-    _umbrellaLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 205.0f, self.view.frame.size.width, 100)];
-    _umbrellaLabel.text = [NSString stringWithFormat:@"IS IT GONNA RAIN?: %@", _location.isRaining ? @"YEP" : @"NOPE"];
-    _umbrellaLabel.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_umbrellaLabel];
+    _refreshButton = [[YSRefreshButton alloc] initWithBackgroundColor:self.view.backgroundColor];
+    [self.view addSubview:_refreshButton];
+    [_refreshButton addTarget:self action:@selector(refreshDataOnButtonPress:) forControlEvents:UIControlEventTouchDown];
+    [_refreshButton setX:(self.view.width / 2) - (_refreshButton.width / 2)];
+    [_refreshButton setY:-_refreshButton.height];
+}
+
+- (void)toggleRefreshButton:(id)sender
+{
+    if (!_refreshButton) {
+        [self buildRefreshButton];
+    }
+    
+    if (_refreshButton.y < 0) {
+        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
+            [_refreshButton setY:0];
+        }completion:^(BOOL finished) {
+            
+        }];
+    } else {
+       [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
+            [_refreshButton setY:-_refreshButton.height];
+        }completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
+- (void)refreshDataOnButtonPress:(id)sender
+{
+    [self refreshLocationData];
+    [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^ {
+        [_refreshButton setY:-_refreshButton.height];
+    }completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (void)fadeTemperatureLabelIn
@@ -112,7 +146,6 @@ NSString *kNeedLocationInfoString = @"need your location info";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
     }
     return self;
 }
@@ -126,9 +159,10 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [self populateLocationLabel];
     [self populatePreloader];
     
-//    dispatch_queue_t queue = dispatch_queue_create("io.ystrdy", NULL);
-//    dispatch_async(queue, ^{
-//    });
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRefreshButton:)];
+    [self.view setGestureRecognizers:@[tapRecognizer]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
     
     _coreLocationManager = [[CLLocationManager alloc] init];
     _coreLocationManager.delegate = self;

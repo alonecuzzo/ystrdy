@@ -43,6 +43,14 @@
 		8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E78B42317D1899600D5979E /* YSLocationViewController.xib */; };
 		8E78B42917D18A4200D5979E /* YSLocationViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */; };
 		8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42217D1899600D5979E /* YSLocationViewController.m */; };
+		8E7BA38D180725F70075FD71 /* YSRefreshButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA38C180725F70075FD71 /* YSRefreshButton.m */; };
+		8E7BA38E180725F70075FD71 /* YSRefreshButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA38C180725F70075FD71 /* YSRefreshButton.m */; };
+		8E7BA390180728230075FD71 /* refresh-button-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA38F180728230075FD71 /* refresh-button-blue.png */; };
+		8E7BA391180728230075FD71 /* refresh-button-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA38F180728230075FD71 /* refresh-button-blue.png */; };
+		8E7BA39618072B4B0075FD71 /* refresh-button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39418072B4B0075FD71 /* refresh-button-green.png */; };
+		8E7BA39718072B4B0075FD71 /* refresh-button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39418072B4B0075FD71 /* refresh-button-green.png */; };
+		8E7BA39818072B4B0075FD71 /* refresh-button-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */; };
+		8E7BA39918072B4B0075FD71 /* refresh-button-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */; };
 		8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
@@ -122,6 +130,11 @@
 		8E78B42317D1899600D5979E /* YSLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YSLocationViewController.xib; path = classes/controllers/YSLocationViewController.xib; sourceTree = "<group>"; };
 		8E78B42717D18A4200D5979E /* YSLocationViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationViewControllerTest.h; path = controllers/YSLocationViewControllerTest.h; sourceTree = "<group>"; };
 		8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationViewControllerTest.m; path = controllers/YSLocationViewControllerTest.m; sourceTree = "<group>"; };
+		8E7BA38B180725F70075FD71 /* YSRefreshButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSRefreshButton.h; path = classes/views/buttons/YSRefreshButton.h; sourceTree = "<group>"; };
+		8E7BA38C180725F70075FD71 /* YSRefreshButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSRefreshButton.m; path = classes/views/buttons/YSRefreshButton.m; sourceTree = "<group>"; };
+		8E7BA38F180728230075FD71 /* refresh-button-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-blue.png"; path = "assets/images/buttons/refresh-button-blue.png"; sourceTree = "<group>"; };
+		8E7BA39418072B4B0075FD71 /* refresh-button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-green.png"; path = "assets/images/buttons/refresh-button-green.png"; sourceTree = "<group>"; };
+		8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-orange.png"; path = "assets/images/buttons/refresh-button-orange.png"; sourceTree = "<group>"; };
 		8E9F9EDE17D5466900C19CF4 /* YSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationManager.h; path = classes/management/YSLocationManager.h; sourceTree = "<group>"; };
 		8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationManager.m; path = classes/management/YSLocationManager.m; sourceTree = "<group>"; };
 		8E9F9EE217D5469E00C19CF4 /* YSLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilder.h; path = classes/management/YSLocationBuilder.h; sourceTree = "<group>"; };
@@ -282,6 +295,7 @@
 		8E767F5317D0F02D0039C788 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E7BA3921807282C0075FD71 /* images */,
 				8EC9347B17E2820F0034DD4E /* assets */,
 				8E767F5417D0F02D0039C788 /* ystrdy-Info.plist */,
 				8E767F5517D0F02D0039C788 /* InfoPlist.strings */,
@@ -325,6 +339,7 @@
 		8E767F8A17D113940039C788 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8E7BA38A180725BD0075FD71 /* buttons */,
 				8EC2377A1804DE7E00D66565 /* YSAnimatingLogo.h */,
 				8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */,
 				8EC2377E1804DF7100D66565 /* YSAnimatingLetter.h */,
@@ -340,6 +355,33 @@
 				8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		8E7BA38A180725BD0075FD71 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BA38B180725F70075FD71 /* YSRefreshButton.h */,
+				8E7BA38C180725F70075FD71 /* YSRefreshButton.m */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
+		8E7BA3921807282C0075FD71 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BA393180728300075FD71 /* buttons */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		8E7BA393180728300075FD71 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BA39418072B4B0075FD71 /* refresh-button-green.png */,
+				8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */,
+				8E7BA38F180728230075FD71 /* refresh-button-blue.png */,
+			);
+			name = buttons;
 			sourceTree = "<group>";
 		};
 		8E9F9EDD17D5464500C19CF4 /* management */ = {
@@ -537,6 +579,9 @@
 				8E34247A17D11CBD0027A951 /* Default@2x.png in Resources */,
 				8E34247C17D11CBD0027A951 /* Default-568h@2x.png in Resources */,
 				8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */,
+				8E7BA39918072B4B0075FD71 /* refresh-button-orange.png in Resources */,
+				8E7BA39718072B4B0075FD71 /* refresh-button-green.png in Resources */,
+				8E7BA391180728230075FD71 /* refresh-button-blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,12 +590,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E767F5717D0F02D0039C788 /* InfoPlist.strings in Resources */,
+				8E7BA39818072B4B0075FD71 /* refresh-button-orange.png in Resources */,
 				8EC237781804D9E400D66565 /* Raleway-ExtraLight.otf in Resources */,
 				8E767F5F17D0F02D0039C788 /* Default.png in Resources */,
 				8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */,
 				8EC237791804D9E400D66565 /* Raleway-Thin.otf in Resources */,
 				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
 				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
+				8E7BA39618072B4B0075FD71 /* refresh-button-green.png in Resources */,
+				8E7BA390180728230075FD71 /* refresh-button-blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +665,7 @@
 				8EC237851804ED1200D66565 /* UIView+GCLibrary.m in Sources */,
 				8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */,
 				8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */,
+				8E7BA38E180725F70075FD71 /* YSRefreshButton.m in Sources */,
 				8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */,
 				8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
 				8EC2377D1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */,
@@ -636,6 +685,7 @@
 				8E767F5917D0F02D0039C788 /* main.m in Sources */,
 				8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */,
 				8E34248917D120050027A951 /* YSLocation.m in Sources */,
+				8E7BA38D180725F70075FD71 /* YSRefreshButton.m in Sources */,
 				8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */,
 				8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */,
 				8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */,
