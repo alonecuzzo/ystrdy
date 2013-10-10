@@ -21,6 +21,7 @@
 @property(strong, nonatomic) CLLocationManager *coreLocationManager;
 @property(strong, nonatomic) YSAnimatingLogo *animatingLogo;
 @property(strong, nonatomic) YSRefreshButton *refreshButton;
+
 @end
 
 CGFloat kBackgroundAnimationTime = 1.0f;
@@ -31,6 +32,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 @implementation YSLocationViewController {
     CLLocationManager *_coreLocationManager;
+    NSTimer *_refreshButtonTimer;
 }
 
 #pragma mark - builder stuff
@@ -96,12 +98,14 @@ NSString *kNeedLocationInfoString = @"need your location info";
         [self buildRefreshButton];
     }
     
+    _refreshButtonTimer = nil;
+    
     if (_refreshButton.y < 0) {
         _refreshButton.refreshButtonColor = self.view.backgroundColor;
         [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
             [_refreshButton setY:0];
         }completion:^(BOOL finished) {
-            
+            _refreshButtonTimer = [NSTimer scheduledTimerWithTimeInterval:15.0f target:self selector:@selector(toggleRefreshButton:) userInfo:Nil repeats:NO];
         }];
     } else {
        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
@@ -114,6 +118,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 - (void)hideRefreshButton
 {
+    _refreshButtonTimer = nil;
     if (_refreshButton) {
         [_refreshButton setY:-_refreshButton.height];
     }
