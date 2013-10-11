@@ -14,7 +14,7 @@
 #import "YSAnimatingLogo.h"
 #import "YSRefreshButton.h"
 #import "UIView+GCLibrary.h"
-#import "YSOfflineErrorView.h"
+#import "YSOfflineErrorInfoView.h"
 
 @interface YSLocationViewController ()
 
@@ -22,7 +22,7 @@
 @property(strong, nonatomic) CLLocationManager *coreLocationManager;
 @property(strong, nonatomic) YSAnimatingLogo *animatingLogo;
 @property(strong, nonatomic) YSRefreshButton *refreshButton;
-@property(strong, nonatomic) YSOfflineErrorView *offlineErrorView;
+@property(strong, nonatomic) YSOfflineErrorInfoView *offlineErrorView;
 
 @end
 
@@ -72,7 +72,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
     
     if ([YSReachabilityManager isUnReachable]) {
         if (!_offlineErrorView) {
-            _offlineErrorView = [[YSOfflineErrorView alloc] initWithFrame:self.view.frame];
+            _offlineErrorView = [[YSOfflineErrorInfoView alloc] initWithFrame:self.view.frame];
             [self.view addSubview:_offlineErrorView];
         }
         
@@ -351,7 +351,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
     } else {
         [self hideRefreshButton:nil];
         if (!_offlineErrorView) {
-            _offlineErrorView = [[YSOfflineErrorView alloc] initWithFrame:self.view.frame];
+            _offlineErrorView = [[YSOfflineErrorInfoView alloc] initWithFrame:self.view.frame];
             [self.view addSubview:_offlineErrorView];
         }
         [UIView animateWithDuration:1.0f animations:^ {

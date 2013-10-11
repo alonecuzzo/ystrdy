@@ -51,12 +51,14 @@
 		8E7BA39718072B4B0075FD71 /* refresh-button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39418072B4B0075FD71 /* refresh-button-green.png */; };
 		8E7BA39818072B4B0075FD71 /* refresh-button-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */; };
 		8E7BA39918072B4B0075FD71 /* refresh-button-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */; };
-		8E7BA39C1807447A0075FD71 /* YSOfflineErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA39B1807447A0075FD71 /* YSOfflineErrorView.m */; };
-		8E7BA39D1807447A0075FD71 /* YSOfflineErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA39B1807447A0075FD71 /* YSOfflineErrorView.m */; };
+		8E7BA39C1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */; };
+		8E7BA39D1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */; };
 		8E7BA3A0180745790075FD71 /* wifi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39F180745790075FD71 /* wifi-icon.png */; };
 		8E7BA3A1180745790075FD71 /* wifi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39F180745790075FD71 /* wifi-icon.png */; };
 		8E7BA3A318074CCC0075FD71 /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */; };
 		8E7BA3A418074CCC0075FD71 /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */; };
+		8E7BA3A8180756210075FD71 /* YSBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */; };
+		8E7BA3A9180756210075FD71 /* YSBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */; };
 		8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
@@ -141,10 +143,12 @@
 		8E7BA38F180728230075FD71 /* refresh-button-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-blue.png"; path = "assets/images/buttons/refresh-button-blue.png"; sourceTree = "<group>"; };
 		8E7BA39418072B4B0075FD71 /* refresh-button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-green.png"; path = "assets/images/buttons/refresh-button-green.png"; sourceTree = "<group>"; };
 		8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-orange.png"; path = "assets/images/buttons/refresh-button-orange.png"; sourceTree = "<group>"; };
-		8E7BA39A1807447A0075FD71 /* YSOfflineErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSOfflineErrorView.h; path = classes/views/YSOfflineErrorView.h; sourceTree = "<group>"; };
-		8E7BA39B1807447A0075FD71 /* YSOfflineErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSOfflineErrorView.m; path = classes/views/YSOfflineErrorView.m; sourceTree = "<group>"; };
+		8E7BA39A1807447A0075FD71 /* YSOfflineErrorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSOfflineErrorInfoView.h; path = classes/views/YSOfflineErrorInfoView.h; sourceTree = "<group>"; };
+		8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSOfflineErrorInfoView.m; path = classes/views/YSOfflineErrorInfoView.m; sourceTree = "<group>"; };
 		8E7BA39F180745790075FD71 /* wifi-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wifi-icon.png"; path = "assets/images/icons/wifi-icon.png"; sourceTree = "<group>"; };
 		8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.otf"; path = "assets/fonts/Raleway-Medium.otf"; sourceTree = "<group>"; };
+		8E7BA3A6180756210075FD71 /* YSBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSBaseInfoView.h; path = classes/views/YSBaseInfoView.h; sourceTree = "<group>"; };
+		8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSBaseInfoView.m; path = classes/views/YSBaseInfoView.m; sourceTree = "<group>"; };
 		8E9F9EDE17D5466900C19CF4 /* YSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationManager.h; path = classes/management/YSLocationManager.h; sourceTree = "<group>"; };
 		8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationManager.m; path = classes/management/YSLocationManager.m; sourceTree = "<group>"; };
 		8E9F9EE217D5469E00C19CF4 /* YSLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilder.h; path = classes/management/YSLocationBuilder.h; sourceTree = "<group>"; };
@@ -353,8 +357,10 @@
 				8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */,
 				8EC2377E1804DF7100D66565 /* YSAnimatingLetter.h */,
 				8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */,
-				8E7BA39A1807447A0075FD71 /* YSOfflineErrorView.h */,
-				8E7BA39B1807447A0075FD71 /* YSOfflineErrorView.m */,
+				8E7BA39A1807447A0075FD71 /* YSOfflineErrorInfoView.h */,
+				8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */,
+				8E7BA3A6180756210075FD71 /* YSBaseInfoView.h */,
+				8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -689,8 +695,9 @@
 				8EAD642617DB8FFE009BC594 /* YSCommunicatorTests.m in Sources */,
 				8EAD642917DB9177009BC594 /* YSInspectableCommunicator.m in Sources */,
 				8EC237851804ED1200D66565 /* UIView+GCLibrary.m in Sources */,
-				8E7BA39D1807447A0075FD71 /* YSOfflineErrorView.m in Sources */,
+				8E7BA39D1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */,
 				8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */,
+				8E7BA3A9180756210075FD71 /* YSBaseInfoView.m in Sources */,
 				8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */,
 				8E7BA38E180725F70075FD71 /* YSRefreshButton.m in Sources */,
 				8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */,
@@ -715,12 +722,13 @@
 				8E7BA38D180725F70075FD71 /* YSRefreshButton.m in Sources */,
 				8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */,
 				8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */,
+				8E7BA3A8180756210075FD71 /* YSBaseInfoView.m in Sources */,
 				8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */,
 				8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
 				8EFFCFF71800C6BF00AE2288 /* YSReachabilityManager.m in Sources */,
 				8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
 				8EC2377C1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */,
-				8E7BA39C1807447A0075FD71 /* YSOfflineErrorView.m in Sources */,
+				8E7BA39C1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */,
 				8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
 				8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */,
 			);

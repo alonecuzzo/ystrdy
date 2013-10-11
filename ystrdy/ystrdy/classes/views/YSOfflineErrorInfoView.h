@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YSBaseInfoView.h"
 
-@interface YSOfflineErrorView : UIView
+@interface YSOfflineErrorInfoView : YSBaseInfoView
 
 @end
