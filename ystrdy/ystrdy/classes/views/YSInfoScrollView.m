@@ -8,6 +8,7 @@
 
 #import "YSInfoScrollView.h"
 #import "YSOfflineErrorInfoView.h"
+#import "YSWelcomeScreenOneInfoView.h"
 
 @implementation YSInfoScrollView
 
@@ -15,7 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        YSOfflineErrorInfoView *offlineViewOne = [[YSOfflineErrorInfoView alloc] initWithFrame:self.frame];
+        YSWelcomeScreenOneInfoView *offlineViewOne = [[YSWelcomeScreenOneInfoView alloc] initWithFrame:self.frame];
         YSOfflineErrorInfoView *offlineViewTwo = [[YSOfflineErrorInfoView alloc] initWithFrame:self.frame];
         YSOfflineErrorInfoView *offlineViewThree = [[YSOfflineErrorInfoView alloc] initWithFrame:self.frame];
        

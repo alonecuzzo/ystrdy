@@ -25,14 +25,14 @@
         [_iconView setBackgroundColor:[UIColor clearColor]];
         [self addSubview:_iconView];
         
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _iconView.y + 70.0f, self.width, 50.0f)];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, _iconView.y + 70.0f, self.width - 20.0f, 50.0f)];
         [_titleLabel setBackgroundColor:[UIColor clearColor]];
         [_titleLabel setFont:[YSFontHelper getFont:YSFontRalewayMedium withSize:YSFontSizeSmall]];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         [_titleLabel setTextColor:[YSColorHelper ystrdayWhite]];
         [self addSubview:_titleLabel];
         
-        _messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _iconView.y + 90.0f, self.width, 200.0f)];
+        _messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, _iconView.y + 90.0f, self.width - 20.0f, 200.0f)];
         [_messageLabel setBackgroundColor:[UIColor clearColor]];
         [_messageLabel setFont:[YSFontHelper getFont:YSFontRalewayExtraLight withSize:YSFontSizeSmall-3]];
         _messageLabel.numberOfLines = 8;
