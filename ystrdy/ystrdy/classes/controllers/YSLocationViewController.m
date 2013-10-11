@@ -104,6 +104,9 @@ NSString *kNeedLocationInfoString = @"need your location info";
             [self buildRefreshButton];
         }
         
+        if (_refreshButtonTimer) {
+            [_refreshButtonTimer invalidate];
+        }
         _refreshButtonTimer = nil;
         
         if (_refreshButton.y < 0) {
@@ -121,6 +124,9 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 - (void)hideRefreshButton:(id)sender
 {
+    if (_refreshButtonTimer) {
+        [_refreshButtonTimer invalidate];
+    }
     _refreshButtonTimer = nil;
     [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^ {
         [_refreshButton setY:-_refreshButton.height];
@@ -131,6 +137,10 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 - (void)hideRefreshButtonOnEnterBackground
 {
+    if (_refreshButtonTimer) {
+        [_refreshButtonTimer invalidate];
+    }
+    [_refreshButtonTimer invalidate];
     _refreshButtonTimer = nil;
     if (_refreshButton) {
         [_refreshButton setY:-_refreshButton.height];
