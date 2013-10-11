@@ -13,7 +13,7 @@
 #import "YSObjectConfiguration.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface YSLocationViewController : UIViewController <YSLocationManagerDelegate, CLLocationManagerDelegate>
+@interface YSLocationViewController : UIViewController <YSLocationManagerDelegate, CLLocationManagerDelegate, UIScrollViewDelegate>
     
 @property(strong, nonatomic) YSLocation *location;
 @property(strong, nonatomic) UILabel *temperatureLabel;

@@ -15,6 +15,7 @@
 #import "YSRefreshButton.h"
 #import "UIView+GCLibrary.h"
 #import "YSOfflineErrorInfoView.h"
+#import "YSInfoScrollView.h"
 
 @interface YSLocationViewController ()
 
@@ -23,6 +24,7 @@
 @property(strong, nonatomic) YSAnimatingLogo *animatingLogo;
 @property(strong, nonatomic) YSRefreshButton *refreshButton;
 @property(strong, nonatomic) YSOfflineErrorInfoView *offlineErrorView;
+@property(strong, nonatomic) YSInfoScrollView *infoScrollView;
 
 @end
 
@@ -95,6 +97,13 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [_refreshButton addTarget:self action:@selector(refreshDataOnButtonPress:) forControlEvents:UIControlEventTouchDown];
     [_refreshButton setX:(self.view.width / 2) - (_refreshButton.width / 2)];
     [_refreshButton setY:-_refreshButton.height];
+}
+
+- (void)buildInfoScrollView
+{
+    _infoScrollView = [[YSInfoScrollView alloc] initWithFrame:self.view.frame];
+    _infoScrollView.delegate = self;
+    [self.view addSubview:_infoScrollView];
 }
 
 - (void)toggleRefreshButton:(id)sender
@@ -193,19 +202,20 @@ NSString *kNeedLocationInfoString = @"need your location info";
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
-    [self populateAnimatingLogo];
-    [self populateTemperatureLabel];
-    [self populateLocationLabel];
-    [self populatePreloader];
-    
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRefreshButton:)];
-    [self.view setGestureRecognizers:@[tapRecognizer]];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
-    
-    _coreLocationManager = [[CLLocationManager alloc] init];
-    _coreLocationManager.delegate = self;
-    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    [self populateAnimatingLogo];
+//    [self populateTemperatureLabel];
+//    [self populateLocationLabel];
+//    [self populatePreloader];
+//    
+//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRefreshButton:)];
+//    [self.view setGestureRecognizers:@[tapRecognizer]];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
+//    
+//    _coreLocationManager = [[CLLocationManager alloc] init];
+//    _coreLocationManager.delegate = self;
+//    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self buildInfoScrollView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -370,6 +380,13 @@ NSString *kNeedLocationInfoString = @"need your location info";
             _locationLabel.alpha = 0.0f;
         }];
     }
+}
+
+#pragma mark - uiscrollviewdelegate stuff
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSLog(@"x: %f", _infoScrollView.contentOffset.x);
 }
 
 @end

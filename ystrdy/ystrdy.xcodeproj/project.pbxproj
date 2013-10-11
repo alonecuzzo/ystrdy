@@ -28,6 +28,7 @@
 		8E4BBBDC17E2B7B8007AC0C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */; };
 		8E4BBBDD17E2B89D007AC0C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */; };
 		8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
+		8E4D9EC61807A87B00941E41 /* YSInfoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */; };
 		8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */; };
 		8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */; };
 		8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
@@ -115,6 +116,8 @@
 		8E34248717D120050027A951 /* YSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocation.h; path = classes/model/YSLocation.h; sourceTree = "<group>"; };
 		8E34248817D120050027A951 /* YSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocation.m; path = classes/model/YSLocation.m; sourceTree = "<group>"; };
 		8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E4D9EC41807A87B00941E41 /* YSInfoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInfoScrollView.h; path = classes/views/YSInfoScrollView.h; sourceTree = "<group>"; };
+		8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInfoScrollView.m; path = classes/views/YSInfoScrollView.m; sourceTree = "<group>"; };
 		8E67F97917E113EB00B6C4B1 /* YSColorHelperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelperTest.h; path = helpers/YSColorHelperTest.h; sourceTree = "<group>"; };
 		8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelperTest.m; path = helpers/YSColorHelperTest.m; sourceTree = "<group>"; };
 		8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationBuilder.h; path = mocks/YSMockLocationBuilder.h; sourceTree = "<group>"; };
@@ -361,6 +364,8 @@
 				8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */,
 				8E7BA3A6180756210075FD71 /* YSBaseInfoView.h */,
 				8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */,
+				8E4D9EC41807A87B00941E41 /* YSInfoScrollView.h */,
+				8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -715,6 +720,7 @@
 				8EC237841804ED1200D66565 /* UIView+GCLibrary.m in Sources */,
 				8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */,
 				8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */,
+				8E4D9EC61807A87B00941E41 /* YSInfoScrollView.m in Sources */,
 				8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */,
 				8E767F5917D0F02D0039C788 /* main.m in Sources */,
 				8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */,
