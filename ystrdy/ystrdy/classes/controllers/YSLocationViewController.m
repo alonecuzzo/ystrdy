@@ -15,7 +15,7 @@
 #import "YSRefreshButton.h"
 #import "UIView+GCLibrary.h"
 #import "YSOfflineErrorInfoView.h"
-#import "YSInfoScrollView.h"
+#import "YSWelcomeInfoView.h"
 
 @interface YSLocationViewController ()
 
@@ -24,7 +24,7 @@
 @property(strong, nonatomic) YSAnimatingLogo *animatingLogo;
 @property(strong, nonatomic) YSRefreshButton *refreshButton;
 @property(strong, nonatomic) YSOfflineErrorInfoView *offlineErrorView;
-@property(strong, nonatomic) YSInfoScrollView *infoScrollView;
+@property(strong, nonatomic) YSWelcomeInfoView *welcomeInfoView;
 
 @end
 
@@ -99,11 +99,10 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [_refreshButton setY:-_refreshButton.height];
 }
 
-- (void)buildInfoScrollView
+- (void)buildWelcomeView
 {
-    _infoScrollView = [[YSInfoScrollView alloc] initWithFrame:self.view.frame];
-    _infoScrollView.delegate = self;
-    [self.view addSubview:_infoScrollView];
+    _welcomeInfoView = [[YSWelcomeInfoView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:_welcomeInfoView];
 }
 
 - (void)toggleRefreshButton:(id)sender
@@ -215,7 +214,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
 //    _coreLocationManager = [[CLLocationManager alloc] init];
 //    _coreLocationManager.delegate = self;
 //    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self buildInfoScrollView];
+    [self buildWelcomeView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -380,13 +379,6 @@ NSString *kNeedLocationInfoString = @"need your location info";
             _locationLabel.alpha = 0.0f;
         }];
     }
-}
-
-#pragma mark - uiscrollviewdelegate stuff
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    NSLog(@"x: %f", _infoScrollView.contentOffset.x);
 }
 
 @end

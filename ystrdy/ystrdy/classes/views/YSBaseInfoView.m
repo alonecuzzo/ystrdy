@@ -19,7 +19,7 @@
     if (self) {
         
         CGFloat iconViewHeight = [UIImage imageNamed:@"wifi-icon"].size.height / 2;
-        CGFloat iconViewOffset = 75.0f;
+        CGFloat iconViewOffset = 135.0f;
         
         _iconView = [[UIView alloc] initWithFrame:CGRectMake(0, (self.height / 2) - (iconViewHeight / 2) - iconViewOffset, self.width, iconViewHeight)];
         [_iconView setBackgroundColor:[UIColor clearColor]];

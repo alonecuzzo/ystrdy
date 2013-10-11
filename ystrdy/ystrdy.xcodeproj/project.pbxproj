@@ -29,6 +29,7 @@
 		8E4BBBDD17E2B89D007AC0C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */; };
 		8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
 		8E4D9EC61807A87B00941E41 /* YSInfoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */; };
+		8E4D9EC91807B08700941E41 /* YSInfoScrollProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D9EC81807B08700941E41 /* YSInfoScrollProgressView.m */; };
 		8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */; };
 		8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */; };
 		8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
@@ -60,6 +61,10 @@
 		8E7BA3A418074CCC0075FD71 /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */; };
 		8E7BA3A8180756210075FD71 /* YSBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */; };
 		8E7BA3A9180756210075FD71 /* YSBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */; };
+		8E8AC3471808346700DE2F82 /* YSWelcomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */; };
+		8E8AC3481808346700DE2F82 /* YSWelcomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */; };
+		8E8AC34A1808389200DE2F82 /* welcome-progress-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */; };
+		8E8AC34B1808389200DE2F82 /* welcome-progress-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */; };
 		8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
@@ -118,6 +123,8 @@
 		8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8E4D9EC41807A87B00941E41 /* YSInfoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInfoScrollView.h; path = classes/views/YSInfoScrollView.h; sourceTree = "<group>"; };
 		8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInfoScrollView.m; path = classes/views/YSInfoScrollView.m; sourceTree = "<group>"; };
+		8E4D9EC71807B08700941E41 /* YSInfoScrollProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInfoScrollProgressView.h; path = classes/views/YSInfoScrollProgressView.h; sourceTree = "<group>"; };
+		8E4D9EC81807B08700941E41 /* YSInfoScrollProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInfoScrollProgressView.m; path = classes/views/YSInfoScrollProgressView.m; sourceTree = "<group>"; };
 		8E67F97917E113EB00B6C4B1 /* YSColorHelperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelperTest.h; path = helpers/YSColorHelperTest.h; sourceTree = "<group>"; };
 		8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelperTest.m; path = helpers/YSColorHelperTest.m; sourceTree = "<group>"; };
 		8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationBuilder.h; path = mocks/YSMockLocationBuilder.h; sourceTree = "<group>"; };
@@ -152,6 +159,9 @@
 		8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.otf"; path = "assets/fonts/Raleway-Medium.otf"; sourceTree = "<group>"; };
 		8E7BA3A6180756210075FD71 /* YSBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSBaseInfoView.h; path = classes/views/YSBaseInfoView.h; sourceTree = "<group>"; };
 		8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSBaseInfoView.m; path = classes/views/YSBaseInfoView.m; sourceTree = "<group>"; };
+		8E8AC3451808346700DE2F82 /* YSWelcomeInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSWelcomeInfoView.h; path = classes/views/YSWelcomeInfoView.h; sourceTree = "<group>"; };
+		8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSWelcomeInfoView.m; path = classes/views/YSWelcomeInfoView.m; sourceTree = "<group>"; };
+		8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "welcome-progress-circle.png"; path = "assets/images/icons/welcome-progress-circle.png"; sourceTree = "<group>"; };
 		8E9F9EDE17D5466900C19CF4 /* YSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationManager.h; path = classes/management/YSLocationManager.h; sourceTree = "<group>"; };
 		8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationManager.m; path = classes/management/YSLocationManager.m; sourceTree = "<group>"; };
 		8E9F9EE217D5469E00C19CF4 /* YSLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilder.h; path = classes/management/YSLocationBuilder.h; sourceTree = "<group>"; };
@@ -366,6 +376,10 @@
 				8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */,
 				8E4D9EC41807A87B00941E41 /* YSInfoScrollView.h */,
 				8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */,
+				8E4D9EC71807B08700941E41 /* YSInfoScrollProgressView.h */,
+				8E4D9EC81807B08700941E41 /* YSInfoScrollProgressView.m */,
+				8E8AC3451808346700DE2F82 /* YSWelcomeInfoView.h */,
+				8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -410,6 +424,7 @@
 		8E7BA39E1807456A0075FD71 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */,
 				8E7BA39F180745790075FD71 /* wifi-icon.png */,
 			);
 			name = icons;
@@ -611,6 +626,7 @@
 				8E34247817D11CBD0027A951 /* Default.png in Resources */,
 				8E7BA3A418074CCC0075FD71 /* Raleway-Medium.otf in Resources */,
 				8E7BA3A1180745790075FD71 /* wifi-icon.png in Resources */,
+				8E8AC34B1808389200DE2F82 /* welcome-progress-circle.png in Resources */,
 				8E34247A17D11CBD0027A951 /* Default@2x.png in Resources */,
 				8E34247C17D11CBD0027A951 /* Default-568h@2x.png in Resources */,
 				8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */,
@@ -625,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7BA3A318074CCC0075FD71 /* Raleway-Medium.otf in Resources */,
+				8E8AC34A1808389200DE2F82 /* welcome-progress-circle.png in Resources */,
 				8E767F5717D0F02D0039C788 /* InfoPlist.strings in Resources */,
 				8E7BA39818072B4B0075FD71 /* refresh-button-orange.png in Resources */,
 				8EC237781804D9E400D66565 /* Raleway-ExtraLight.otf in Resources */,
@@ -692,6 +709,7 @@
 				8E9F9EEA17D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m in Sources */,
 				8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
 				8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */,
+				8E8AC3481808346700DE2F82 /* YSWelcomeInfoView.m in Sources */,
 				8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */,
 				8E092F3617EE08C200000441 /* YSMockLocationViewController.m in Sources */,
 				8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */,
@@ -722,6 +740,7 @@
 				8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */,
 				8E4D9EC61807A87B00941E41 /* YSInfoScrollView.m in Sources */,
 				8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */,
+				8E8AC3471808346700DE2F82 /* YSWelcomeInfoView.m in Sources */,
 				8E767F5917D0F02D0039C788 /* main.m in Sources */,
 				8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */,
 				8E34248917D120050027A951 /* YSLocation.m in Sources */,
@@ -736,6 +755,7 @@
 				8EC2377C1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */,
 				8E7BA39C1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */,
 				8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
+				8E4D9EC91807B08700941E41 /* YSInfoScrollProgressView.m in Sources */,
 				8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
