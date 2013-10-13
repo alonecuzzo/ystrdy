@@ -75,6 +75,10 @@
 		8E99B54D180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E99B54C180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.m */; };
 		8E99B550180A30F9009B4BA6 /* YSGetStartedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E99B54F180A30F9009B4BA6 /* YSGetStartedButton.m */; };
 		8E99B552180A3C7F009B4BA6 /* Raleway-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B551180A3C7F009B4BA6 /* Raleway-Heavy.otf */; };
+		8E99B558180A4B62009B4BA6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B554180A4B61009B4BA6 /* Icon-72.png */; };
+		8E99B559180A4B62009B4BA6 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B555180A4B61009B4BA6 /* Icon-72@2x.png */; };
+		8E99B55A180A4B62009B4BA6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B556180A4B61009B4BA6 /* Icon.png */; };
+		8E99B55B180A4B62009B4BA6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B557180A4B62009B4BA6 /* Icon@2x.png */; };
 		8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
 		8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
@@ -184,6 +188,10 @@
 		8E99B54E180A30F9009B4BA6 /* YSGetStartedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSGetStartedButton.h; path = classes/views/buttons/YSGetStartedButton.h; sourceTree = "<group>"; };
 		8E99B54F180A30F9009B4BA6 /* YSGetStartedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSGetStartedButton.m; path = classes/views/buttons/YSGetStartedButton.m; sourceTree = "<group>"; };
 		8E99B551180A3C7F009B4BA6 /* Raleway-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Heavy.otf"; path = "assets/fonts/Raleway-Heavy.otf"; sourceTree = "<group>"; };
+		8E99B554180A4B61009B4BA6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "assets/images/app_icons/Icon-72.png"; sourceTree = "<group>"; };
+		8E99B555180A4B61009B4BA6 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "assets/images/app_icons/Icon-72@2x.png"; sourceTree = "<group>"; };
+		8E99B556180A4B61009B4BA6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = assets/images/app_icons/Icon.png; sourceTree = "<group>"; };
+		8E99B557180A4B62009B4BA6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "assets/images/app_icons/Icon@2x.png"; sourceTree = "<group>"; };
 		8E9F9EDE17D5466900C19CF4 /* YSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationManager.h; path = classes/management/YSLocationManager.h; sourceTree = "<group>"; };
 		8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationManager.m; path = classes/management/YSLocationManager.m; sourceTree = "<group>"; };
 		8E9F9EE217D5469E00C19CF4 /* YSLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilder.h; path = classes/management/YSLocationBuilder.h; sourceTree = "<group>"; };
@@ -435,6 +443,7 @@
 		8E7BA3921807282C0075FD71 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8E99B553180A4B54009B4BA6 /* app-icons */,
 				8E7BA39E1807456A0075FD71 /* icons */,
 				8E7BA393180728300075FD71 /* buttons */,
 			);
@@ -461,6 +470,17 @@
 				8E7BA39F180745790075FD71 /* wifi-icon.png */,
 			);
 			name = icons;
+			sourceTree = "<group>";
+		};
+		8E99B553180A4B54009B4BA6 /* app-icons */ = {
+			isa = PBXGroup;
+			children = (
+				8E99B554180A4B61009B4BA6 /* Icon-72.png */,
+				8E99B555180A4B61009B4BA6 /* Icon-72@2x.png */,
+				8E99B556180A4B61009B4BA6 /* Icon.png */,
+				8E99B557180A4B62009B4BA6 /* Icon@2x.png */,
+			);
+			name = "app-icons";
 			sourceTree = "<group>";
 		};
 		8E9F9EDD17D5464500C19CF4 /* management */ = {
@@ -686,8 +706,12 @@
 				8E767F5F17D0F02D0039C788 /* Default.png in Resources */,
 				8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */,
 				8EC237791804D9E400D66565 /* Raleway-Thin.otf in Resources */,
+				8E99B558180A4B62009B4BA6 /* Icon-72.png in Resources */,
+				8E99B55A180A4B62009B4BA6 /* Icon.png in Resources */,
 				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
+				8E99B559180A4B62009B4BA6 /* Icon-72@2x.png in Resources */,
 				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
+				8E99B55B180A4B62009B4BA6 /* Icon@2x.png in Resources */,
 				8E7BA39618072B4B0075FD71 /* refresh-button-green.png in Resources */,
 				8E8AC3511808406E00DE2F82 /* welcome-blue-thermometer-circle.png in Resources */,
 				8E7BA390180728230075FD71 /* refresh-button-blue.png in Resources */,
