@@ -236,7 +236,15 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [super viewDidLoad];
     [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
     [self populateAnimatingLogo];
-    [self buildWelcomeView];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"firstRun"]) {
+        [defaults setObject:[NSDate date] forKey:@"firstRun"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self buildWelcomeView];
+    } else {
+        [self initWeatherCalls];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
