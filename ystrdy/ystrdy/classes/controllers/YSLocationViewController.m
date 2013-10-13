@@ -54,7 +54,7 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 - (void)populateLocationLabel
 {
-    _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(-30.0f, self.view.frame.size.height - 80, self.view.frame.size.width, 100)];
+    _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(-30.0f, self.view.frame.size.height - 95, self.view.frame.size.width, 100)];
     _locationLabel.backgroundColor = [UIColor clearColor];
     _locationLabel.font = [YSFontHelper getFont:YSFontRalewayExtraLight withSize:YSFontSizeCityNameLarge];
     _locationLabel.textAlignment = NSTextAlignmentRight;
@@ -113,6 +113,8 @@ NSString *kNeedLocationInfoString = @"need your location info";
     }completion:^(BOOL completed) {
         [_welcomeInfoView removeFromSuperview];
         _welcomeInfoView = nil;
+        //startup normally
+        [self initWeatherCalls];
     }];
 }
 
@@ -208,34 +210,38 @@ NSString *kNeedLocationInfoString = @"need your location info";
     return self;
 }
 
+- (void)initWeatherCalls
+{
+    [self populateTemperatureLabel];
+    [self populateLocationLabel];
+    [self populatePreloader];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRefreshButton:)];
+    [self.view setGestureRecognizers:@[tapRecognizer]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
+    
+    _coreLocationManager = [[CLLocationManager alloc] init];
+    _coreLocationManager.delegate = self;
+    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    _manager = [_objectConfiguration locationManager];
+    _manager.delegate = self;
+    
+    [self startLocationServicesManager];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[YSColorHelper ystrdayBlue]];
-//    [self populateAnimatingLogo];
-//    [self populateTemperatureLabel];
-//    [self populateLocationLabel];
-//    [self populatePreloader];
-//    
-//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRefreshButton:)];
-//    [self.view setGestureRecognizers:@[tapRecognizer]];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
-//    
-//    _coreLocationManager = [[CLLocationManager alloc] init];
-//    _coreLocationManager.delegate = self;
-//    _coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self populateAnimatingLogo];
     [self buildWelcomeView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    _manager = [_objectConfiguration locationManager];
-    _manager.delegate = self;
-    
-    [self startLocationServicesManager];
 }
 
 - (void)viewDidAppear:(BOOL)animated
