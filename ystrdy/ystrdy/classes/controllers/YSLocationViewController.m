@@ -217,7 +217,9 @@ NSString *kNeedLocationInfoString = @"need your location info";
     [self populatePreloader];
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRefreshButton:)];
-    [self.view setGestureRecognizers:@[tapRecognizer]];
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRefreshButton:)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view setGestureRecognizers:@[tapRecognizer, swipeRecognizer]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];
     
