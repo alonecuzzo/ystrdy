@@ -42,17 +42,17 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (_infoScrollView.contentOffset.x == 0) {
-        _progressView.circleOne.alpha = 0.4;
-        _progressView.circleTwo.alpha = 1.0;
-        _progressView.circleThree.alpha = 1.0;
-    } else if (_infoScrollView.contentOffset.x == 320) {
         _progressView.circleOne.alpha = 1.0;
         _progressView.circleTwo.alpha = 0.4;
-        _progressView.circleThree.alpha = 1.0;
-    } else if (_infoScrollView.contentOffset.x == 640) {
-       _progressView.circleOne.alpha = 1.0;
+        _progressView.circleThree.alpha = 0.4;
+    } else if (_infoScrollView.contentOffset.x == 320) {
+        _progressView.circleOne.alpha = 0.4;
         _progressView.circleTwo.alpha = 1.0;
         _progressView.circleThree.alpha = 0.4;
+    } else if (_infoScrollView.contentOffset.x == 640) {
+       _progressView.circleOne.alpha = 0.4;
+        _progressView.circleTwo.alpha = 0.4;
+        _progressView.circleThree.alpha = 1.0;
     }
 }
 

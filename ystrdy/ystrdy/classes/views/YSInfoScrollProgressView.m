@@ -37,7 +37,9 @@
         [_circleOne setX:_circleTwo.x - circleXOffsetFromCenter];
         [_circleThree setX:_circleTwo.x + circleXOffsetFromCenter];
         
-        _circleOne.alpha = 0.4f;
+        _circleOne.alpha = 1.0f;
+        _circleTwo.alpha = 0.4f;
+        _circleThree.alpha = 0.4f;
     }
     return self;
 }
