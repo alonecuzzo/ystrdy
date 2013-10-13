@@ -101,8 +101,19 @@ NSString *kNeedLocationInfoString = @"need your location info";
 
 - (void)buildWelcomeView
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onWelcomeScreenClose:) name:@"WELCOME_SCREEN_CLOSED" object:nil];
     _welcomeInfoView = [[YSWelcomeInfoView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:_welcomeInfoView];
+}
+
+- (void)onWelcomeScreenClose:(NSNotification*)note
+{
+    [UIView animateWithDuration:kAnimationFadeTime animations:^ {
+        _welcomeInfoView.alpha = 0;
+    }completion:^(BOOL completed) {
+        [_welcomeInfoView removeFromSuperview];
+        _welcomeInfoView = nil;
+    }];
 }
 
 - (void)toggleRefreshButton:(id)sender

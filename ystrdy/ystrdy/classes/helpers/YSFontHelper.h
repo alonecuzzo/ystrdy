@@ -11,7 +11,8 @@
 enum {
     YSFontRalewayThin,
     YSFontRalewayExtraLight,
-    YSFontRalewayMedium
+    YSFontRalewayMedium,
+    YSFontRalewayHeavy
 };
 typedef NSInteger YSFont;
 
