@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon@2x.png</string>
+		<string>Icon.png</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Raleway-Heavy.otf</string>
@@ -18,7 +23,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>twentythreebit.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>io.ystrdy</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
