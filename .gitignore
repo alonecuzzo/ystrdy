@@ -17,5 +17,9 @@ profile
 DerivedData
 .idea/
 
-#vim stuff
+#vim 
 *.swp
+
+#pods
+Podfile.lock
+**/*contents.xcworkspacedata

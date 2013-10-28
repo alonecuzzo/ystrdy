@@ -1,0 +1,995 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */; };
+		8E02CE6817E20A2400705A43 /* YSObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */; };
+		8E092F3617EE08C200000441 /* YSMockLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E092F3517EE08C200000441 /* YSMockLocationViewController.m */; };
+		8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E0BC9EE17DA7DC40010969E /* ny-location-data.json */; };
+		8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */; };
+		8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */; };
+		8E34246817D11CBC0027A951 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
+		8E34246917D11CBC0027A951 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4E17D0F02D0039C788 /* Foundation.framework */; };
+		8E34246A17D11CBC0027A951 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F5017D0F02D0039C788 /* CoreGraphics.framework */; };
+		8E34247017D11CBC0027A951 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E34246E17D11CBC0027A951 /* InfoPlist.strings */; };
+		8E34247217D11CBC0027A951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34247117D11CBC0027A951 /* main.m */; };
+		8E34247817D11CBD0027A951 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E34247717D11CBD0027A951 /* Default.png */; };
+		8E34247A17D11CBD0027A951 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E34247917D11CBD0027A951 /* Default@2x.png */; };
+		8E34247C17D11CBD0027A951 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E34247B17D11CBD0027A951 /* Default-568h@2x.png */; };
+		8E34248317D11E7A0027A951 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E34248217D11E7A0027A951 /* libPods.a */; };
+		8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248517D11EF90027A951 /* YSLocationTest.m */; };
+		8E34248917D120050027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
+		8E34248B17D1217F0027A951 /* YSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34248817D120050027A951 /* YSLocation.m */; };
+		8E4BBBDC17E2B7B8007AC0C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */; };
+		8E4BBBDD17E2B89D007AC0C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */; };
+		8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
+		8E4D9EC61807A87B00941E41 /* YSInfoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */; };
+		8E4D9EC91807B08700941E41 /* YSInfoScrollProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D9EC81807B08700941E41 /* YSInfoScrollProgressView.m */; };
+		8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */; };
+		8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */; };
+		8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4C17D0F02D0039C788 /* UIKit.framework */; };
+		8E767F4F17D0F02D0039C788 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F4E17D0F02D0039C788 /* Foundation.framework */; };
+		8E767F5117D0F02D0039C788 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E767F5017D0F02D0039C788 /* CoreGraphics.framework */; };
+		8E767F5717D0F02D0039C788 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F5517D0F02D0039C788 /* InfoPlist.strings */; };
+		8E767F5917D0F02D0039C788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E767F5817D0F02D0039C788 /* main.m */; };
+		8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E767F5C17D0F02D0039C788 /* YSAppDelegate.m */; };
+		8E767F5F17D0F02D0039C788 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F5E17D0F02D0039C788 /* Default.png */; };
+		8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F6017D0F02D0039C788 /* Default@2x.png */; };
+		8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E767F6217D0F02D0039C788 /* Default-568h@2x.png */; };
+		8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42217D1899600D5979E /* YSLocationViewController.m */; };
+		8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E78B42317D1899600D5979E /* YSLocationViewController.xib */; };
+		8E78B42917D18A4200D5979E /* YSLocationViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */; };
+		8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78B42217D1899600D5979E /* YSLocationViewController.m */; };
+		8E7BA38D180725F70075FD71 /* YSRefreshButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA38C180725F70075FD71 /* YSRefreshButton.m */; };
+		8E7BA38E180725F70075FD71 /* YSRefreshButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA38C180725F70075FD71 /* YSRefreshButton.m */; };
+		8E7BA390180728230075FD71 /* refresh-button-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA38F180728230075FD71 /* refresh-button-blue.png */; };
+		8E7BA391180728230075FD71 /* refresh-button-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA38F180728230075FD71 /* refresh-button-blue.png */; };
+		8E7BA39618072B4B0075FD71 /* refresh-button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39418072B4B0075FD71 /* refresh-button-green.png */; };
+		8E7BA39718072B4B0075FD71 /* refresh-button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39418072B4B0075FD71 /* refresh-button-green.png */; };
+		8E7BA39818072B4B0075FD71 /* refresh-button-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */; };
+		8E7BA39918072B4B0075FD71 /* refresh-button-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */; };
+		8E7BA39C1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */; };
+		8E7BA39D1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */; };
+		8E7BA3A0180745790075FD71 /* wifi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39F180745790075FD71 /* wifi-icon.png */; };
+		8E7BA3A1180745790075FD71 /* wifi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA39F180745790075FD71 /* wifi-icon.png */; };
+		8E7BA3A318074CCC0075FD71 /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */; };
+		8E7BA3A418074CCC0075FD71 /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */; };
+		8E7BA3A8180756210075FD71 /* YSBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */; };
+		8E7BA3A9180756210075FD71 /* YSBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */; };
+		8E8AC3471808346700DE2F82 /* YSWelcomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */; };
+		8E8AC3481808346700DE2F82 /* YSWelcomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */; };
+		8E8AC34A1808389200DE2F82 /* welcome-progress-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */; };
+		8E8AC34B1808389200DE2F82 /* welcome-progress-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */; };
+		8E8AC34E18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AC34D18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m */; };
+		8E8AC34F18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AC34D18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m */; };
+		8E8AC3511808406E00DE2F82 /* welcome-blue-thermometer-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AC3501808406E00DE2F82 /* welcome-blue-thermometer-circle.png */; };
+		8E8AC3521808406E00DE2F82 /* welcome-blue-thermometer-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AC3501808406E00DE2F82 /* welcome-blue-thermometer-circle.png */; };
+		8E99B545180A2C41009B4BA6 /* welcome-screen-two-thermometers.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B544180A2C41009B4BA6 /* welcome-screen-two-thermometers.png */; };
+		8E99B548180A2C67009B4BA6 /* YSWelcomeScreenTwoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E99B547180A2C67009B4BA6 /* YSWelcomeScreenTwoInfoView.m */; };
+		8E99B54A180A2EEB009B4BA6 /* globe-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B549180A2EEB009B4BA6 /* globe-icon.png */; };
+		8E99B54D180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E99B54C180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.m */; };
+		8E99B550180A30F9009B4BA6 /* YSGetStartedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E99B54F180A30F9009B4BA6 /* YSGetStartedButton.m */; };
+		8E99B552180A3C7F009B4BA6 /* Raleway-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B551180A3C7F009B4BA6 /* Raleway-Heavy.otf */; };
+		8E99B558180A4B62009B4BA6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B554180A4B61009B4BA6 /* Icon-72.png */; };
+		8E99B559180A4B62009B4BA6 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B555180A4B61009B4BA6 /* Icon-72@2x.png */; };
+		8E99B55A180A4B62009B4BA6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B556180A4B61009B4BA6 /* Icon.png */; };
+		8E99B55B180A4B62009B4BA6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E99B557180A4B62009B4BA6 /* Icon@2x.png */; };
+		8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
+		8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */; };
+		8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
+		8E9F9EE517D5469E00C19CF4 /* YSLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */; };
+		8E9F9EEA17D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EE817D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m */; };
+		8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
+		8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */; };
+		8EAD642617DB8FFE009BC594 /* YSCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD642517DB8FFE009BC594 /* YSCommunicatorTests.m */; };
+		8EAD642917DB9177009BC594 /* YSInspectableCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD642817DB9177009BC594 /* YSInspectableCommunicator.m */; };
+		8EC237781804D9E400D66565 /* Raleway-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC237761804D9E400D66565 /* Raleway-ExtraLight.otf */; };
+		8EC237791804D9E400D66565 /* Raleway-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC237771804D9E400D66565 /* Raleway-Thin.otf */; };
+		8EC2377C1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */; };
+		8EC2377D1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */; };
+		8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */; };
+		8EC237811804DF7100D66565 /* YSAnimatingLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */; };
+		8EC237841804ED1200D66565 /* UIView+GCLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC237831804ED1200D66565 /* UIView+GCLibrary.m */; };
+		8EC237851804ED1200D66565 /* UIView+GCLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC237831804ED1200D66565 /* UIView+GCLibrary.m */; };
+		8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9347817E27ED20034DD4E /* YSFontHelper.m */; };
+		8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */; };
+		8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */; };
+		8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */; };
+		8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED59C9917DBC7D200FBF203 /* YSFakeURLResponse.m */; };
+		8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */; };
+		8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */; };
+		8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */; };
+		8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */; };
+		8EFFCFF71800C6BF00AE2288 /* YSReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */; };
+		8EFFCFF81800C6BF00AE2288 /* YSReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */; };
+		8EFFCFFC1800C73E00AE2288 /* YSReachabilityManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFCFFB1800C73E00AE2288 /* YSReachabilityManagerTest.m */; };
+		9002522197014C9E93947551 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C61303797E4672A4B47D83 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		64C61303797E4672A4B47D83 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F951293D3EC4789983A6D10 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8E02CE6517E20A2400705A43 /* YSObjectConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSObjectConfiguration.h; path = classes/management/YSObjectConfiguration.h; sourceTree = "<group>"; };
+		8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSObjectConfiguration.m; path = classes/management/YSObjectConfiguration.m; sourceTree = "<group>"; };
+		8E092F3417EE08C200000441 /* YSMockLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationViewController.h; path = mocks/YSMockLocationViewController.h; sourceTree = "<group>"; };
+		8E092F3517EE08C200000441 /* YSMockLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationViewController.m; path = mocks/YSMockLocationViewController.m; sourceTree = "<group>"; };
+		8E0BC9EE17DA7DC40010969E /* ny-location-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ny-location-data.json"; path = "fixtures/ny-location-data.json"; sourceTree = "<group>"; };
+		8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSCommunicatorDelegate.h; path = classes/management/YSCommunicatorDelegate.h; sourceTree = "<group>"; };
+		8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YSLocationManagerDelegate.h; path = classes/management/YSLocationManagerDelegate.h; sourceTree = "<group>"; };
+		8E34246717D11CBC0027A951 /* tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E34246D17D11CBC0027A951 /* tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tests-Info.plist"; sourceTree = "<group>"; };
+		8E34246F17D11CBC0027A951 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E34247117D11CBC0027A951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8E34247317D11CBC0027A951 /* tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tests-Prefix.pch"; sourceTree = "<group>"; };
+		8E34247717D11CBD0027A951 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8E34247917D11CBD0027A951 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8E34247B17D11CBD0027A951 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8E34248217D11E7A0027A951 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		8E34248417D11EF90027A951 /* YSLocationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocationTest.h; sourceTree = "<group>"; };
+		8E34248517D11EF90027A951 /* YSLocationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocationTest.m; sourceTree = "<group>"; };
+		8E34248717D120050027A951 /* YSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocation.h; path = classes/model/YSLocation.h; sourceTree = "<group>"; };
+		8E34248817D120050027A951 /* YSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocation.m; path = classes/model/YSLocation.m; sourceTree = "<group>"; };
+		8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E4D9EC41807A87B00941E41 /* YSInfoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInfoScrollView.h; path = classes/views/YSInfoScrollView.h; sourceTree = "<group>"; };
+		8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInfoScrollView.m; path = classes/views/YSInfoScrollView.m; sourceTree = "<group>"; };
+		8E4D9EC71807B08700941E41 /* YSInfoScrollProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInfoScrollProgressView.h; path = classes/views/YSInfoScrollProgressView.h; sourceTree = "<group>"; };
+		8E4D9EC81807B08700941E41 /* YSInfoScrollProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInfoScrollProgressView.m; path = classes/views/YSInfoScrollProgressView.m; sourceTree = "<group>"; };
+		8E67F97917E113EB00B6C4B1 /* YSColorHelperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelperTest.h; path = helpers/YSColorHelperTest.h; sourceTree = "<group>"; };
+		8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelperTest.m; path = helpers/YSColorHelperTest.m; sourceTree = "<group>"; };
+		8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationBuilder.h; path = mocks/YSMockLocationBuilder.h; sourceTree = "<group>"; };
+		8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationBuilder.m; path = mocks/YSMockLocationBuilder.m; sourceTree = "<group>"; };
+		8E767F4917D0F02D0039C788 /* ystrdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ystrdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E767F4C17D0F02D0039C788 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8E767F4E17D0F02D0039C788 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8E767F5017D0F02D0039C788 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8E767F5417D0F02D0039C788 /* ystrdy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ystrdy-Info.plist"; sourceTree = "<group>"; };
+		8E767F5617D0F02D0039C788 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E767F5817D0F02D0039C788 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8E767F5A17D0F02D0039C788 /* ystrdy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ystrdy-Prefix.pch"; sourceTree = "<group>"; };
+		8E767F5B17D0F02D0039C788 /* YSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSAppDelegate.h; sourceTree = "<group>"; };
+		8E767F5C17D0F02D0039C788 /* YSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSAppDelegate.m; sourceTree = "<group>"; };
+		8E767F5E17D0F02D0039C788 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8E767F6017D0F02D0039C788 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8E767F6217D0F02D0039C788 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8E767F7017D0F02D0039C788 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8E78B42117D1899600D5979E /* YSLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationViewController.h; path = classes/controllers/YSLocationViewController.h; sourceTree = "<group>"; };
+		8E78B42217D1899600D5979E /* YSLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationViewController.m; path = classes/controllers/YSLocationViewController.m; sourceTree = "<group>"; };
+		8E78B42317D1899600D5979E /* YSLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YSLocationViewController.xib; path = classes/controllers/YSLocationViewController.xib; sourceTree = "<group>"; };
+		8E78B42717D18A4200D5979E /* YSLocationViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationViewControllerTest.h; path = controllers/YSLocationViewControllerTest.h; sourceTree = "<group>"; };
+		8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationViewControllerTest.m; path = controllers/YSLocationViewControllerTest.m; sourceTree = "<group>"; };
+		8E7BA38B180725F70075FD71 /* YSRefreshButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSRefreshButton.h; path = classes/views/buttons/YSRefreshButton.h; sourceTree = "<group>"; };
+		8E7BA38C180725F70075FD71 /* YSRefreshButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSRefreshButton.m; path = classes/views/buttons/YSRefreshButton.m; sourceTree = "<group>"; };
+		8E7BA38F180728230075FD71 /* refresh-button-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-blue.png"; path = "assets/images/buttons/refresh-button-blue.png"; sourceTree = "<group>"; };
+		8E7BA39418072B4B0075FD71 /* refresh-button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-green.png"; path = "assets/images/buttons/refresh-button-green.png"; sourceTree = "<group>"; };
+		8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-button-orange.png"; path = "assets/images/buttons/refresh-button-orange.png"; sourceTree = "<group>"; };
+		8E7BA39A1807447A0075FD71 /* YSOfflineErrorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSOfflineErrorInfoView.h; path = classes/views/YSOfflineErrorInfoView.h; sourceTree = "<group>"; };
+		8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSOfflineErrorInfoView.m; path = classes/views/YSOfflineErrorInfoView.m; sourceTree = "<group>"; };
+		8E7BA39F180745790075FD71 /* wifi-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wifi-icon.png"; path = "assets/images/icons/wifi-icon.png"; sourceTree = "<group>"; };
+		8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.otf"; path = "assets/fonts/Raleway-Medium.otf"; sourceTree = "<group>"; };
+		8E7BA3A6180756210075FD71 /* YSBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSBaseInfoView.h; path = classes/views/YSBaseInfoView.h; sourceTree = "<group>"; };
+		8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSBaseInfoView.m; path = classes/views/YSBaseInfoView.m; sourceTree = "<group>"; };
+		8E8AC3451808346700DE2F82 /* YSWelcomeInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSWelcomeInfoView.h; path = classes/views/YSWelcomeInfoView.h; sourceTree = "<group>"; };
+		8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSWelcomeInfoView.m; path = classes/views/YSWelcomeInfoView.m; sourceTree = "<group>"; };
+		8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "welcome-progress-circle.png"; path = "assets/images/icons/welcome-progress-circle.png"; sourceTree = "<group>"; };
+		8E8AC34C18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSWelcomeScreenOneInfoView.h; path = classes/views/YSWelcomeScreenOneInfoView.h; sourceTree = "<group>"; };
+		8E8AC34D18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSWelcomeScreenOneInfoView.m; path = classes/views/YSWelcomeScreenOneInfoView.m; sourceTree = "<group>"; };
+		8E8AC3501808406E00DE2F82 /* welcome-blue-thermometer-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "welcome-blue-thermometer-circle.png"; path = "assets/images/icons/welcome-blue-thermometer-circle.png"; sourceTree = "<group>"; };
+		8E99B544180A2C41009B4BA6 /* welcome-screen-two-thermometers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "welcome-screen-two-thermometers.png"; path = "assets/images/icons/welcome-screen-two-thermometers.png"; sourceTree = "<group>"; };
+		8E99B546180A2C67009B4BA6 /* YSWelcomeScreenTwoInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSWelcomeScreenTwoInfoView.h; path = classes/views/YSWelcomeScreenTwoInfoView.h; sourceTree = "<group>"; };
+		8E99B547180A2C67009B4BA6 /* YSWelcomeScreenTwoInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSWelcomeScreenTwoInfoView.m; path = classes/views/YSWelcomeScreenTwoInfoView.m; sourceTree = "<group>"; };
+		8E99B549180A2EEB009B4BA6 /* globe-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "globe-icon.png"; path = "assets/images/icons/globe-icon.png"; sourceTree = "<group>"; };
+		8E99B54B180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSWelcomeScreenThreeInfoView.h; path = classes/views/YSWelcomeScreenThreeInfoView.h; sourceTree = "<group>"; };
+		8E99B54C180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSWelcomeScreenThreeInfoView.m; path = classes/views/YSWelcomeScreenThreeInfoView.m; sourceTree = "<group>"; };
+		8E99B54E180A30F9009B4BA6 /* YSGetStartedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSGetStartedButton.h; path = classes/views/buttons/YSGetStartedButton.h; sourceTree = "<group>"; };
+		8E99B54F180A30F9009B4BA6 /* YSGetStartedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSGetStartedButton.m; path = classes/views/buttons/YSGetStartedButton.m; sourceTree = "<group>"; };
+		8E99B551180A3C7F009B4BA6 /* Raleway-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Heavy.otf"; path = "assets/fonts/Raleway-Heavy.otf"; sourceTree = "<group>"; };
+		8E99B554180A4B61009B4BA6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "assets/images/app_icons/Icon-72.png"; sourceTree = "<group>"; };
+		8E99B555180A4B61009B4BA6 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "assets/images/app_icons/Icon-72@2x.png"; sourceTree = "<group>"; };
+		8E99B556180A4B61009B4BA6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = assets/images/app_icons/Icon.png; sourceTree = "<group>"; };
+		8E99B557180A4B62009B4BA6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "assets/images/app_icons/Icon@2x.png"; sourceTree = "<group>"; };
+		8E9F9EDE17D5466900C19CF4 /* YSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationManager.h; path = classes/management/YSLocationManager.h; sourceTree = "<group>"; };
+		8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationManager.m; path = classes/management/YSLocationManager.m; sourceTree = "<group>"; };
+		8E9F9EE217D5469E00C19CF4 /* YSLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilder.h; path = classes/management/YSLocationBuilder.h; sourceTree = "<group>"; };
+		8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationBuilder.m; path = classes/management/YSLocationBuilder.m; sourceTree = "<group>"; };
+		8E9F9EE717D5473E00C19CF4 /* YSLocationCreationWorkflowTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationCreationWorkflowTest.h; path = management/YSLocationCreationWorkflowTest.h; sourceTree = "<group>"; };
+		8E9F9EE817D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationCreationWorkflowTest.m; path = management/YSLocationCreationWorkflowTest.m; sourceTree = "<group>"; };
+		8E9F9EEB17D55E5F00C19CF4 /* YSCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSCommunicator.h; path = classes/management/YSCommunicator.h; sourceTree = "<group>"; };
+		8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSCommunicator.m; path = classes/management/YSCommunicator.m; sourceTree = "<group>"; };
+		8EAD642417DB8FFE009BC594 /* YSCommunicatorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSCommunicatorTests.h; path = management/YSCommunicatorTests.h; sourceTree = "<group>"; };
+		8EAD642517DB8FFE009BC594 /* YSCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSCommunicatorTests.m; path = management/YSCommunicatorTests.m; sourceTree = "<group>"; };
+		8EAD642717DB9177009BC594 /* YSInspectableCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSInspectableCommunicator.h; path = mocks/YSInspectableCommunicator.h; sourceTree = "<group>"; };
+		8EAD642817DB9177009BC594 /* YSInspectableCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSInspectableCommunicator.m; path = mocks/YSInspectableCommunicator.m; sourceTree = "<group>"; };
+		8EC237761804D9E400D66565 /* Raleway-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraLight.otf"; path = "assets/fonts/Raleway-ExtraLight.otf"; sourceTree = "<group>"; };
+		8EC237771804D9E400D66565 /* Raleway-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Thin.otf"; path = "assets/fonts/Raleway-Thin.otf"; sourceTree = "<group>"; };
+		8EC2377A1804DE7E00D66565 /* YSAnimatingLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSAnimatingLogo.h; path = classes/views/YSAnimatingLogo.h; sourceTree = "<group>"; };
+		8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSAnimatingLogo.m; path = classes/views/YSAnimatingLogo.m; sourceTree = "<group>"; };
+		8EC2377E1804DF7100D66565 /* YSAnimatingLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSAnimatingLetter.h; path = classes/views/YSAnimatingLetter.h; sourceTree = "<group>"; };
+		8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSAnimatingLetter.m; path = classes/views/YSAnimatingLetter.m; sourceTree = "<group>"; };
+		8EC237821804ED1200D66565 /* UIView+GCLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+GCLibrary.h"; path = "classes/helpers/UIView+GCLibrary.h"; sourceTree = "<group>"; };
+		8EC237831804ED1200D66565 /* UIView+GCLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+GCLibrary.m"; path = "classes/helpers/UIView+GCLibrary.m"; sourceTree = "<group>"; };
+		8EC9347717E27ED20034DD4E /* YSFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFontHelper.h; path = classes/helpers/YSFontHelper.h; sourceTree = "<group>"; };
+		8EC9347817E27ED20034DD4E /* YSFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFontHelper.m; path = classes/helpers/YSFontHelper.m; sourceTree = "<group>"; };
+		8ECBBA9917D7FFA400C1449C /* YSLocationBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSLocationBuilderTests.h; path = management/YSLocationBuilderTests.h; sourceTree = "<group>"; };
+		8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocationBuilderTests.m; path = management/YSLocationBuilderTests.m; sourceTree = "<group>"; };
+		8ED59C8F17DBC6A900FBF203 /* YSMockLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManager.h; path = mocks/YSMockLocationManager.h; sourceTree = "<group>"; };
+		8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationManager.m; path = mocks/YSMockLocationManager.m; sourceTree = "<group>"; };
+		8ED59C9217DBC70400FBF203 /* YSNonNetworkedCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSNonNetworkedCommunicator.h; path = mocks/YSNonNetworkedCommunicator.h; sourceTree = "<group>"; };
+		8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSNonNetworkedCommunicator.m; path = mocks/YSNonNetworkedCommunicator.m; sourceTree = "<group>"; };
+		8ED59C9817DBC7D200FBF203 /* YSFakeURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSFakeURLResponse.h; path = mocks/YSFakeURLResponse.h; sourceTree = "<group>"; };
+		8ED59C9917DBC7D200FBF203 /* YSFakeURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSFakeURLResponse.m; path = mocks/YSFakeURLResponse.m; sourceTree = "<group>"; };
+		8ED5D31517DFB6E900ACA9AE /* YSColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSColorHelper.h; path = classes/helpers/YSColorHelper.h; sourceTree = "<group>"; };
+		8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSColorHelper.m; path = classes/helpers/YSColorHelper.m; sourceTree = "<group>"; };
+		8EDD33DF17D58C120020E0D2 /* YSMockCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockCommunicator.h; path = mocks/YSMockCommunicator.h; sourceTree = "<group>"; };
+		8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockCommunicator.m; path = mocks/YSMockCommunicator.m; sourceTree = "<group>"; };
+		8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSMockLocationManagerDelegate.h; path = mocks/YSMockLocationManagerDelegate.h; sourceTree = "<group>"; };
+		8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSMockLocationManagerDelegate.m; path = mocks/YSMockLocationManagerDelegate.m; sourceTree = "<group>"; };
+		8EFFCFF51800C6BF00AE2288 /* YSReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSReachabilityManager.h; path = classes/reachability/YSReachabilityManager.h; sourceTree = "<group>"; };
+		8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSReachabilityManager.m; path = classes/reachability/YSReachabilityManager.m; sourceTree = "<group>"; };
+		8EFFCFFA1800C73E00AE2288 /* YSReachabilityManagerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSReachabilityManagerTest.h; path = reachability/YSReachabilityManagerTest.h; sourceTree = "<group>"; };
+		8EFFCFFB1800C73E00AE2288 /* YSReachabilityManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSReachabilityManagerTest.m; path = reachability/YSReachabilityManagerTest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E34246417D11CBC0027A951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E4BBBDD17E2B89D007AC0C6 /* CoreLocation.framework in Frameworks */,
+				8E34248317D11E7A0027A951 /* libPods.a in Frameworks */,
+				8E34246817D11CBC0027A951 /* UIKit.framework in Frameworks */,
+				8E34246917D11CBC0027A951 /* Foundation.framework in Frameworks */,
+				8E34246A17D11CBC0027A951 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E767F4617D0F02D0039C788 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E4BBBDC17E2B7B8007AC0C6 /* CoreLocation.framework in Frameworks */,
+				8E767F4D17D0F02D0039C788 /* UIKit.framework in Frameworks */,
+				8E767F4F17D0F02D0039C788 /* Foundation.framework in Frameworks */,
+				8E767F5117D0F02D0039C788 /* CoreGraphics.framework in Frameworks */,
+				9002522197014C9E93947551 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E34246B17D11CBC0027A951 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				8EFFCFF91800C6FC00AE2288 /* reachability */,
+				8ED5D31417DFB6C600ACA9AE /* helpers */,
+				8EDD33DE17D58BF00020E0D2 /* mocks */,
+				8E9F9EE617D546AF00C19CF4 /* management */,
+				8E78B42617D189D500D5979E /* controllers */,
+				8E34248C17D12F710027A951 /* model */,
+				8ECBBA9C17D8290A00C1449C /* fixtures */,
+				8E34246C17D11CBC0027A951 /* Supporting Files */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		8E34246C17D11CBC0027A951 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E34246D17D11CBC0027A951 /* tests-Info.plist */,
+				8E34246E17D11CBC0027A951 /* InfoPlist.strings */,
+				8E34247117D11CBC0027A951 /* main.m */,
+				8E34247317D11CBC0027A951 /* tests-Prefix.pch */,
+				8E34247717D11CBD0027A951 /* Default.png */,
+				8E34247917D11CBD0027A951 /* Default@2x.png */,
+				8E34247B17D11CBD0027A951 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E34248C17D12F710027A951 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8E34248417D11EF90027A951 /* YSLocationTest.h */,
+				8E34248517D11EF90027A951 /* YSLocationTest.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		8E767F4017D0F02D0039C788 = {
+			isa = PBXGroup;
+			children = (
+				8E767F5217D0F02D0039C788 /* ystrdy */,
+				8E34246B17D11CBC0027A951 /* tests */,
+				8E767F4B17D0F02D0039C788 /* Frameworks */,
+				8E767F4A17D0F02D0039C788 /* Products */,
+				7F951293D3EC4789983A6D10 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		8E767F4A17D0F02D0039C788 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E767F4917D0F02D0039C788 /* ystrdy.app */,
+				8E34246717D11CBC0027A951 /* tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E767F4B17D0F02D0039C788 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E4BBBDB17E2B7B8007AC0C6 /* CoreLocation.framework */,
+				8E34248217D11E7A0027A951 /* libPods.a */,
+				8E767F4C17D0F02D0039C788 /* UIKit.framework */,
+				8E767F4E17D0F02D0039C788 /* Foundation.framework */,
+				8E767F5017D0F02D0039C788 /* CoreGraphics.framework */,
+				8E767F7017D0F02D0039C788 /* SenTestingKit.framework */,
+				64C61303797E4672A4B47D83 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E767F5217D0F02D0039C788 /* ystrdy */ = {
+			isa = PBXGroup;
+			children = (
+				8EFFCFF11800C64B00AE2288 /* reachability */,
+				8ED5D31317DFB6A200ACA9AE /* helpers */,
+				8E9F9EDD17D5464500C19CF4 /* management */,
+				8E767F8A17D113940039C788 /* views */,
+				8E767F8917D112E60039C788 /* delegate */,
+				8E767F8817D112BA0039C788 /* controllers */,
+				8E767F8717D112AF0039C788 /* model */,
+				8E767F5317D0F02D0039C788 /* Supporting Files */,
+			);
+			path = ystrdy;
+			sourceTree = "<group>";
+		};
+		8E767F5317D0F02D0039C788 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8EC9347B17E2820F0034DD4E /* assets */,
+				8E767F5417D0F02D0039C788 /* ystrdy-Info.plist */,
+				8E767F5517D0F02D0039C788 /* InfoPlist.strings */,
+				8E767F5817D0F02D0039C788 /* main.m */,
+				8E767F5A17D0F02D0039C788 /* ystrdy-Prefix.pch */,
+				8E767F5E17D0F02D0039C788 /* Default.png */,
+				8E767F6017D0F02D0039C788 /* Default@2x.png */,
+				8E767F6217D0F02D0039C788 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E767F8717D112AF0039C788 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8E34248717D120050027A951 /* YSLocation.h */,
+				8E34248817D120050027A951 /* YSLocation.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		8E767F8817D112BA0039C788 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E78B42117D1899600D5979E /* YSLocationViewController.h */,
+				8E78B42217D1899600D5979E /* YSLocationViewController.m */,
+				8E78B42317D1899600D5979E /* YSLocationViewController.xib */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		8E767F8917D112E60039C788 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8E767F5B17D0F02D0039C788 /* YSAppDelegate.h */,
+				8E767F5C17D0F02D0039C788 /* YSAppDelegate.m */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
+		8E767F8A17D113940039C788 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BA38A180725BD0075FD71 /* buttons */,
+				8EC2377A1804DE7E00D66565 /* YSAnimatingLogo.h */,
+				8EC2377B1804DE7E00D66565 /* YSAnimatingLogo.m */,
+				8EC2377E1804DF7100D66565 /* YSAnimatingLetter.h */,
+				8EC2377F1804DF7100D66565 /* YSAnimatingLetter.m */,
+				8E7BA39A1807447A0075FD71 /* YSOfflineErrorInfoView.h */,
+				8E7BA39B1807447A0075FD71 /* YSOfflineErrorInfoView.m */,
+				8E4D9EC41807A87B00941E41 /* YSInfoScrollView.h */,
+				8E4D9EC51807A87B00941E41 /* YSInfoScrollView.m */,
+				8E4D9EC71807B08700941E41 /* YSInfoScrollProgressView.h */,
+				8E4D9EC81807B08700941E41 /* YSInfoScrollProgressView.m */,
+				8E7BA3A6180756210075FD71 /* YSBaseInfoView.h */,
+				8E7BA3A7180756210075FD71 /* YSBaseInfoView.m */,
+				8E8AC3451808346700DE2F82 /* YSWelcomeInfoView.h */,
+				8E8AC3461808346700DE2F82 /* YSWelcomeInfoView.m */,
+				8E8AC34C18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.h */,
+				8E8AC34D18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m */,
+				8E99B546180A2C67009B4BA6 /* YSWelcomeScreenTwoInfoView.h */,
+				8E99B547180A2C67009B4BA6 /* YSWelcomeScreenTwoInfoView.m */,
+				8E99B54B180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.h */,
+				8E99B54C180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		8E78B42617D189D500D5979E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E78B42717D18A4200D5979E /* YSLocationViewControllerTest.h */,
+				8E78B42817D18A4200D5979E /* YSLocationViewControllerTest.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		8E7BA38A180725BD0075FD71 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BA38B180725F70075FD71 /* YSRefreshButton.h */,
+				8E7BA38C180725F70075FD71 /* YSRefreshButton.m */,
+				8E99B54E180A30F9009B4BA6 /* YSGetStartedButton.h */,
+				8E99B54F180A30F9009B4BA6 /* YSGetStartedButton.m */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
+		8E7BA3921807282C0075FD71 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8E99B553180A4B54009B4BA6 /* app-icons */,
+				8E7BA39E1807456A0075FD71 /* icons */,
+				8E7BA393180728300075FD71 /* buttons */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		8E7BA393180728300075FD71 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BA39418072B4B0075FD71 /* refresh-button-green.png */,
+				8E7BA39518072B4B0075FD71 /* refresh-button-orange.png */,
+				8E7BA38F180728230075FD71 /* refresh-button-blue.png */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
+		8E7BA39E1807456A0075FD71 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				8E99B549180A2EEB009B4BA6 /* globe-icon.png */,
+				8E99B544180A2C41009B4BA6 /* welcome-screen-two-thermometers.png */,
+				8E8AC3501808406E00DE2F82 /* welcome-blue-thermometer-circle.png */,
+				8E8AC3491808389200DE2F82 /* welcome-progress-circle.png */,
+				8E7BA39F180745790075FD71 /* wifi-icon.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		8E99B553180A4B54009B4BA6 /* app-icons */ = {
+			isa = PBXGroup;
+			children = (
+				8E99B554180A4B61009B4BA6 /* Icon-72.png */,
+				8E99B555180A4B61009B4BA6 /* Icon-72@2x.png */,
+				8E99B556180A4B61009B4BA6 /* Icon.png */,
+				8E99B557180A4B62009B4BA6 /* Icon@2x.png */,
+			);
+			name = "app-icons";
+			sourceTree = "<group>";
+		};
+		8E9F9EDD17D5464500C19CF4 /* management */ = {
+			isa = PBXGroup;
+			children = (
+				8E9F9EDE17D5466900C19CF4 /* YSLocationManager.h */,
+				8E9F9EDF17D5466900C19CF4 /* YSLocationManager.m */,
+				8E122B6817DE4DF000266F1A /* YSLocationManagerDelegate.h */,
+				8E9F9EE217D5469E00C19CF4 /* YSLocationBuilder.h */,
+				8E9F9EE317D5469E00C19CF4 /* YSLocationBuilder.m */,
+				8E9F9EEB17D55E5F00C19CF4 /* YSCommunicator.h */,
+				8E9F9EEC17D55E5F00C19CF4 /* YSCommunicator.m */,
+				8E122B6717DE4C8000266F1A /* YSCommunicatorDelegate.h */,
+				8E02CE6517E20A2400705A43 /* YSObjectConfiguration.h */,
+				8E02CE6617E20A2400705A43 /* YSObjectConfiguration.m */,
+			);
+			name = management;
+			sourceTree = "<group>";
+		};
+		8E9F9EE617D546AF00C19CF4 /* management */ = {
+			isa = PBXGroup;
+			children = (
+				8E9F9EE717D5473E00C19CF4 /* YSLocationCreationWorkflowTest.h */,
+				8E9F9EE817D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m */,
+				8ECBBA9917D7FFA400C1449C /* YSLocationBuilderTests.h */,
+				8ECBBA9A17D7FFA400C1449C /* YSLocationBuilderTests.m */,
+				8EAD642417DB8FFE009BC594 /* YSCommunicatorTests.h */,
+				8EAD642517DB8FFE009BC594 /* YSCommunicatorTests.m */,
+			);
+			name = management;
+			sourceTree = "<group>";
+		};
+		8EC9347B17E2820F0034DD4E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				8E7BA3921807282C0075FD71 /* images */,
+				8EC9347C17E282180034DD4E /* fonts */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		8EC9347C17E282180034DD4E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8E99B551180A3C7F009B4BA6 /* Raleway-Heavy.otf */,
+				8E7BA3A218074CCC0075FD71 /* Raleway-Medium.otf */,
+				8EC237761804D9E400D66565 /* Raleway-ExtraLight.otf */,
+				8EC237771804D9E400D66565 /* Raleway-Thin.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		8ECBBA9C17D8290A00C1449C /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				8E0BC9EE17DA7DC40010969E /* ny-location-data.json */,
+			);
+			name = fixtures;
+			sourceTree = "<group>";
+		};
+		8ED5D31317DFB6A200ACA9AE /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8ED5D31517DFB6E900ACA9AE /* YSColorHelper.h */,
+				8ED5D31617DFB6E900ACA9AE /* YSColorHelper.m */,
+				8EC9347717E27ED20034DD4E /* YSFontHelper.h */,
+				8EC9347817E27ED20034DD4E /* YSFontHelper.m */,
+				8EC237821804ED1200D66565 /* UIView+GCLibrary.h */,
+				8EC237831804ED1200D66565 /* UIView+GCLibrary.m */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		8ED5D31417DFB6C600ACA9AE /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8E67F97917E113EB00B6C4B1 /* YSColorHelperTest.h */,
+				8E67F97A17E113EB00B6C4B1 /* YSColorHelperTest.m */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		8EDD33DE17D58BF00020E0D2 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8EDD33DF17D58C120020E0D2 /* YSMockCommunicator.h */,
+				8EAD642717DB9177009BC594 /* YSInspectableCommunicator.h */,
+				8EAD642817DB9177009BC594 /* YSInspectableCommunicator.m */,
+				8EDD33E017D58C120020E0D2 /* YSMockCommunicator.m */,
+				8EDD33E217D595CC0020E0D2 /* YSMockLocationManagerDelegate.h */,
+				8EDD33E317D595CC0020E0D2 /* YSMockLocationManagerDelegate.m */,
+				8E6BF59C17D62B1600C1A5F1 /* YSMockLocationBuilder.h */,
+				8E6BF59D17D62B1600C1A5F1 /* YSMockLocationBuilder.m */,
+				8ED59C8F17DBC6A900FBF203 /* YSMockLocationManager.h */,
+				8ED59C9017DBC6A900FBF203 /* YSMockLocationManager.m */,
+				8ED59C9217DBC70400FBF203 /* YSNonNetworkedCommunicator.h */,
+				8ED59C9317DBC70400FBF203 /* YSNonNetworkedCommunicator.m */,
+				8ED59C9817DBC7D200FBF203 /* YSFakeURLResponse.h */,
+				8ED59C9917DBC7D200FBF203 /* YSFakeURLResponse.m */,
+				8E092F3417EE08C200000441 /* YSMockLocationViewController.h */,
+				8E092F3517EE08C200000441 /* YSMockLocationViewController.m */,
+			);
+			name = mocks;
+			sourceTree = "<group>";
+		};
+		8EFFCFF11800C64B00AE2288 /* reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8EFFCFF51800C6BF00AE2288 /* YSReachabilityManager.h */,
+				8EFFCFF61800C6BF00AE2288 /* YSReachabilityManager.m */,
+			);
+			name = reachability;
+			sourceTree = "<group>";
+		};
+		8EFFCFF91800C6FC00AE2288 /* reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8EFFCFFA1800C73E00AE2288 /* YSReachabilityManagerTest.h */,
+				8EFFCFFB1800C73E00AE2288 /* YSReachabilityManagerTest.m */,
+			);
+			name = reachability;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E34246617D11CBC0027A951 /* tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E34247D17D11CBD0027A951 /* Build configuration list for PBXNativeTarget "tests" */;
+			buildPhases = (
+				8E34246317D11CBC0027A951 /* Sources */,
+				8E34246417D11CBC0027A951 /* Frameworks */,
+				8E34246517D11CBC0027A951 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tests;
+			productName = tests;
+			productReference = 8E34246717D11CBC0027A951 /* tests.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E767F4817D0F02D0039C788 /* ystrdy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E767F8117D0F02D0039C788 /* Build configuration list for PBXNativeTarget "ystrdy" */;
+			buildPhases = (
+				EDA003D284424ECAA2B45569 /* Check Pods Manifest.lock */,
+				8E767F4517D0F02D0039C788 /* Sources */,
+				8E767F4617D0F02D0039C788 /* Frameworks */,
+				8E767F4717D0F02D0039C788 /* Resources */,
+				0A16797E81BE4DFF80F218EE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ystrdy;
+			productName = ystrdy;
+			productReference = 8E767F4917D0F02D0039C788 /* ystrdy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E767F4117D0F02D0039C788 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = 23bit;
+			};
+			buildConfigurationList = 8E767F4417D0F02D0039C788 /* Build configuration list for PBXProject "ystrdy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8E767F4017D0F02D0039C788;
+			productRefGroup = 8E767F4A17D0F02D0039C788 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E767F4817D0F02D0039C788 /* ystrdy */,
+				8E34246617D11CBC0027A951 /* tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E34246517D11CBC0027A951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E34247017D11CBC0027A951 /* InfoPlist.strings in Resources */,
+				8E34247817D11CBD0027A951 /* Default.png in Resources */,
+				8E7BA3A418074CCC0075FD71 /* Raleway-Medium.otf in Resources */,
+				8E7BA3A1180745790075FD71 /* wifi-icon.png in Resources */,
+				8E8AC34B1808389200DE2F82 /* welcome-progress-circle.png in Resources */,
+				8E34247A17D11CBD0027A951 /* Default@2x.png in Resources */,
+				8E34247C17D11CBD0027A951 /* Default-568h@2x.png in Resources */,
+				8E8AC3521808406E00DE2F82 /* welcome-blue-thermometer-circle.png in Resources */,
+				8E0BC9EF17DA7DC40010969E /* ny-location-data.json in Resources */,
+				8E7BA39918072B4B0075FD71 /* refresh-button-orange.png in Resources */,
+				8E7BA39718072B4B0075FD71 /* refresh-button-green.png in Resources */,
+				8E7BA391180728230075FD71 /* refresh-button-blue.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E767F4717D0F02D0039C788 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E99B54A180A2EEB009B4BA6 /* globe-icon.png in Resources */,
+				8E99B552180A3C7F009B4BA6 /* Raleway-Heavy.otf in Resources */,
+				8E7BA3A318074CCC0075FD71 /* Raleway-Medium.otf in Resources */,
+				8E8AC34A1808389200DE2F82 /* welcome-progress-circle.png in Resources */,
+				8E767F5717D0F02D0039C788 /* InfoPlist.strings in Resources */,
+				8E7BA39818072B4B0075FD71 /* refresh-button-orange.png in Resources */,
+				8E99B545180A2C41009B4BA6 /* welcome-screen-two-thermometers.png in Resources */,
+				8EC237781804D9E400D66565 /* Raleway-ExtraLight.otf in Resources */,
+				8E767F5F17D0F02D0039C788 /* Default.png in Resources */,
+				8E767F6117D0F02D0039C788 /* Default@2x.png in Resources */,
+				8EC237791804D9E400D66565 /* Raleway-Thin.otf in Resources */,
+				8E99B558180A4B62009B4BA6 /* Icon-72.png in Resources */,
+				8E99B55A180A4B62009B4BA6 /* Icon.png in Resources */,
+				8E767F6317D0F02D0039C788 /* Default-568h@2x.png in Resources */,
+				8E99B559180A4B62009B4BA6 /* Icon-72@2x.png in Resources */,
+				8E78B42517D1899600D5979E /* YSLocationViewController.xib in Resources */,
+				8E99B55B180A4B62009B4BA6 /* Icon@2x.png in Resources */,
+				8E7BA39618072B4B0075FD71 /* refresh-button-green.png in Resources */,
+				8E8AC3511808406E00DE2F82 /* welcome-blue-thermometer-circle.png in Resources */,
+				8E7BA390180728230075FD71 /* refresh-button-blue.png in Resources */,
+				8E7BA3A0180745790075FD71 /* wifi-icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A16797E81BE4DFF80F218EE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDA003D284424ECAA2B45569 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E34246317D11CBC0027A951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E4BBBDE17E2B9D7007AC0C6 /* YSFontHelper.m in Sources */,
+				8E78B42B17D18A5A00D5979E /* YSLocationViewController.m in Sources */,
+				8EC237811804DF7100D66565 /* YSAnimatingLetter.m in Sources */,
+				8EFFCFF81800C6BF00AE2288 /* YSReachabilityManager.m in Sources */,
+				8E34248B17D1217F0027A951 /* YSLocation.m in Sources */,
+				8E34247217D11CBC0027A951 /* main.m in Sources */,
+				8E34248617D11EF90027A951 /* YSLocationTest.m in Sources */,
+				8E78B42917D18A4200D5979E /* YSLocationViewControllerTest.m in Sources */,
+				8E9F9EE117D5466900C19CF4 /* YSLocationManager.m in Sources */,
+				8E9F9EE517D5469E00C19CF4 /* YSLocationBuilder.m in Sources */,
+				8E9F9EEA17D5473E00C19CF4 /* YSLocationCreationWorkflowTest.m in Sources */,
+				8E9F9EEE17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
+				8EDD33E117D58C120020E0D2 /* YSMockCommunicator.m in Sources */,
+				8E8AC3481808346700DE2F82 /* YSWelcomeInfoView.m in Sources */,
+				8EDD33E417D595CC0020E0D2 /* YSMockLocationManagerDelegate.m in Sources */,
+				8E092F3617EE08C200000441 /* YSMockLocationViewController.m in Sources */,
+				8E6BF59E17D62B1600C1A5F1 /* YSMockLocationBuilder.m in Sources */,
+				8EFFCFFC1800C73E00AE2288 /* YSReachabilityManagerTest.m in Sources */,
+				8ECBBA9B17D7FFA400C1449C /* YSLocationBuilderTests.m in Sources */,
+				8EAD642617DB8FFE009BC594 /* YSCommunicatorTests.m in Sources */,
+				8EAD642917DB9177009BC594 /* YSInspectableCommunicator.m in Sources */,
+				8E8AC34F18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m in Sources */,
+				8EC237851804ED1200D66565 /* UIView+GCLibrary.m in Sources */,
+				8E7BA39D1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */,
+				8ED59C9117DBC6A900FBF203 /* YSMockLocationManager.m in Sources */,
+				8E7BA3A9180756210075FD71 /* YSBaseInfoView.m in Sources */,
+				8ED59C9417DBC70400FBF203 /* YSNonNetworkedCommunicator.m in Sources */,
+				8E7BA38E180725F70075FD71 /* YSRefreshButton.m in Sources */,
+				8ED59C9A17DBC7D200FBF203 /* YSFakeURLResponse.m in Sources */,
+				8ED5D31817DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
+				8EC2377D1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */,
+				8E67F97B17E113EB00B6C4B1 /* YSColorHelperTest.m in Sources */,
+				8E02CE6817E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E767F4517D0F02D0039C788 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC237841804ED1200D66565 /* UIView+GCLibrary.m in Sources */,
+				8E122B6C17DE503300266F1A /* YSLocationManagerDelegate.h in Sources */,
+				8E99B550180A30F9009B4BA6 /* YSGetStartedButton.m in Sources */,
+				8E122B6D17DE503300266F1A /* YSCommunicatorDelegate.h in Sources */,
+				8E4D9EC61807A87B00941E41 /* YSInfoScrollView.m in Sources */,
+				8EC237801804DF7100D66565 /* YSAnimatingLetter.m in Sources */,
+				8E8AC3471808346700DE2F82 /* YSWelcomeInfoView.m in Sources */,
+				8E767F5917D0F02D0039C788 /* main.m in Sources */,
+				8E8AC34E18083D5E00DE2F82 /* YSWelcomeScreenOneInfoView.m in Sources */,
+				8E99B548180A2C67009B4BA6 /* YSWelcomeScreenTwoInfoView.m in Sources */,
+				8E99B54D180A2F0D009B4BA6 /* YSWelcomeScreenThreeInfoView.m in Sources */,
+				8E767F5D17D0F02D0039C788 /* YSAppDelegate.m in Sources */,
+				8E34248917D120050027A951 /* YSLocation.m in Sources */,
+				8E7BA38D180725F70075FD71 /* YSRefreshButton.m in Sources */,
+				8E78B42417D1899600D5979E /* YSLocationViewController.m in Sources */,
+				8E9F9EE017D5466900C19CF4 /* YSLocationManager.m in Sources */,
+				8E7BA3A8180756210075FD71 /* YSBaseInfoView.m in Sources */,
+				8E9F9EE417D5469E00C19CF4 /* YSLocationBuilder.m in Sources */,
+				8E9F9EED17D55E5F00C19CF4 /* YSCommunicator.m in Sources */,
+				8EFFCFF71800C6BF00AE2288 /* YSReachabilityManager.m in Sources */,
+				8ED5D31717DFB6E900ACA9AE /* YSColorHelper.m in Sources */,
+				8EC2377C1804DE7E00D66565 /* YSAnimatingLogo.m in Sources */,
+				8E7BA39C1807447A0075FD71 /* YSOfflineErrorInfoView.m in Sources */,
+				8E02CE6717E20A2400705A43 /* YSObjectConfiguration.m in Sources */,
+				8E4D9EC91807B08700941E41 /* YSInfoScrollProgressView.m in Sources */,
+				8EC9347917E27ED20034DD4E /* YSFontHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8E34246E17D11CBC0027A951 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E34246F17D11CBC0027A951 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8E767F5517D0F02D0039C788 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E767F5617D0F02D0039C788 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E34247E17D11CBD0027A951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F951293D3EC4789983A6D10 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Eric J Bell (GGW8P5ZF85)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eric J Bell (GGW8P5ZF85)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tests/tests-Prefix.pch";
+				INFOPLIST_FILE = "tests/tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ACC48AFE-8E6F-4319-BB1F-375612DBCE8C";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8E34247F17D11CBD0027A951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Eric J Bell (GGW8P5ZF85)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eric J Bell (GGW8P5ZF85)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tests/tests-Prefix.pch";
+				INFOPLIST_FILE = "tests/tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ACC48AFE-8E6F-4319-BB1F-375612DBCE8C";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8E767F7F17D0F02D0039C788 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8E767F8017D0F02D0039C788 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E767F8217D0F02D0039C788 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F951293D3EC4789983A6D10 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ystrdy/ystrdy-Prefix.pch";
+				INFOPLIST_FILE = "ystrdy/ystrdy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8E767F8317D0F02D0039C788 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F951293D3EC4789983A6D10 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ystrdy/ystrdy-Prefix.pch";
+				INFOPLIST_FILE = "ystrdy/ystrdy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E34247D17D11CBD0027A951 /* Build configuration list for PBXNativeTarget "tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E34247E17D11CBD0027A951 /* Debug */,
+				8E34247F17D11CBD0027A951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E767F4417D0F02D0039C788 /* Build configuration list for PBXProject "ystrdy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E767F7F17D0F02D0039C788 /* Debug */,
+				8E767F8017D0F02D0039C788 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E767F8117D0F02D0039C788 /* Build configuration list for PBXNativeTarget "ystrdy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E767F8217D0F02D0039C788 /* Debug */,
+				8E767F8317D0F02D0039C788 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E767F4117D0F02D0039C788 /* Project object */;
+}
