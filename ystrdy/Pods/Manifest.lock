@@ -1,5 +1,5 @@
 PODS:
-  - GHUnitIOS (0.5.6)
+  - GHUnitIOS (0.5.8)
   - Reachability (3.1.1)
 
 DEPENDENCIES:
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Reachability (~> 3.1.1)
 
 SPEC CHECKSUMS:
-  GHUnitIOS: bf149b2c44084eee2785ce4ac3675c3a699e509d
-  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
+  GHUnitIOS: 0fe5a01896673a7768ee76158fbae02ad8fde853
+  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
 
-COCOAPODS: 0.26.2
+COCOAPODS: 0.33.1

@@ -31,28 +31,34 @@
 #import "GHUnit.h"
 #import <QuartzCore/QuartzCore.h>
 
-typedef struct {
-  unsigned char r, g, b, a;
-} GHPixel;
-
 @implementation GHViewTestCase
 
 #pragma mark File Operations
 
++ (NSString *)documentsDirectory {
+  // When run from the command line, the documents directory is the User's documents directory,
+  // so allow it to be overriden through an environment variable.
+  if (getenv("GHUNIT_CLI") && getenv("GHUNIT_DOCS_DIR")) {
+    return @(getenv("GHUNIT_DOCS_DIR"));
+  }
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  return [paths objectAtIndex:0];
+}
+
 + (NSString *)approvedTestImagesDirectory {
-  return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TestImages"];
+  return [[self documentsDirectory] stringByAppendingPathComponent:@"TestImages"];
 }
 
 + (NSString *)failedTestImagesDirectory {
-  return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/FailedTestImages"];
+  return [[self documentsDirectory] stringByAppendingPathComponent:@"FailedTestImages"];
 }
 
 + (NSString *)approvedTestImagePathForFilename:(NSString *)filename {
-  return [NSString stringWithFormat:@"%@/%@", [self approvedTestImagesDirectory], filename];
+  return [[self approvedTestImagesDirectory] stringByAppendingPathComponent:filename];
 }
 
 + (NSString *)failedTestImagePathForFilename:(NSString *)filename {
-  return [NSString stringWithFormat:@"%@/%@", [self failedTestImagesDirectory], filename];
+  return [[self failedTestImagesDirectory] stringByAppendingPathComponent:filename];
 }
 
 + (void)createDirectory:(NSString *)directory {
@@ -85,11 +91,13 @@ typedef struct {
   NSString *filePath = [self approvedTestImagePathForFilename:filename];
   GHUDebug(@"Trying to load image at path %@", filePath);
   // First look in the documents directory for the image
-  UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+  UIImage *image = [GHViewTestCase _imageFromFilePath:filePath];
   // Otherwise look in the app bundle
   if (image) GHUDebug(@"Found image in documents directory");
   if (!image) {
-    image = [UIImage imageNamed:filename];
+    NSString* extension = [filename pathExtension];
+    filePath = [[NSBundle mainBundle] pathForResource:[filename stringByDeletingPathExtension] ofType:extension];
+    image = [GHViewTestCase _imageFromFilePath:filePath];
     if (image) GHUDebug(@"Found image in app bundle");
   }
   return image;
@@ -115,7 +123,7 @@ typedef struct {
 
 + (UIImage *)imageWithView:(UIView *)view {
   [view setNeedsDisplay];
-  UIGraphicsBeginImageContext(view.frame.size);
+  UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, [[UIScreen mainScreen] scale]);
   CALayer *layer = view.layer;
   CGContextRef context = UIGraphicsGetCurrentContext();
   [layer renderInContext:context];
@@ -127,13 +135,25 @@ typedef struct {
 + (BOOL)compareImage:(UIImage *)image withRenderedImage:(UIImage *)renderedImage {
   if (!image || !renderedImage) return NO;
   // If the images are different sizes, just fail
-  if ((image.size.width != renderedImage.size.width) || (image.size.height != renderedImage.size.height)) {
-    GHUDebug(@"Images are differnt sizes");
+  if (CGImageGetWidth(image.CGImage) != CGImageGetWidth(renderedImage.CGImage) || CGImageGetHeight(image.CGImage) != CGImageGetHeight(renderedImage.CGImage)) {
+    GHUDebug(@"Images are different sizes");
     return NO;
   }
+  
+  if (CGImageGetBitsPerComponent(image.CGImage) != CGImageGetBitsPerComponent(renderedImage.CGImage)) {
+    GHUDebug(@"Images have different component sizes");
+    return NO;
+  }
+  
+  // CALayer's renderInContext: can add byte padding, so we just choose
+  // the smaller number of bytes per row, since we already know the
+  // images are the same size at this point
+  size_t bytesPerRow = MIN(CGImageGetBytesPerRow(image.CGImage), CGImageGetBytesPerRow(renderedImage.CGImage));
+  
   // Allocate a buffer big enough to hold all the pixels
-  GHPixel *imagePixels = (GHPixel *) calloc(1, image.size.width * image.size.height * sizeof(GHPixel));
-  GHPixel *renderedImagePixels = (GHPixel *) calloc(1, image.size.width * image.size.height * sizeof(GHPixel));
+  size_t imageSizeBytes = CGImageGetHeight(image.CGImage) * bytesPerRow;
+  void *imagePixels = calloc(1, imageSizeBytes);
+  void *renderedImagePixels = calloc(1, imageSizeBytes);
   
   if (!imagePixels || !renderedImagePixels) {
     GHUDebug(@"Unable to create pixel array for image comparison.");
@@ -141,22 +161,23 @@ typedef struct {
     if (renderedImagePixels) free(renderedImagePixels);
     return NO;
   }
-  CGContextRef imageContext = CGBitmapContextCreate((void *)imagePixels,
-                                                    image.size.width,
-                                                    image.size.height,
-                                                    8,
-                                                    image.size.width * 4,
+  
+  CGContextRef imageContext = CGBitmapContextCreate(imagePixels,
+                                                    CGImageGetWidth(image.CGImage),
+                                                    CGImageGetHeight(image.CGImage),
+                                                    CGImageGetBitsPerComponent(image.CGImage),
+                                                    bytesPerRow,
                                                     CGImageGetColorSpace(image.CGImage),
                                                     kCGImageAlphaPremultipliedLast
                                                     );
-  CGContextRef renderedImageContext = CGBitmapContextCreate((void *)renderedImagePixels,
-                                                       renderedImage.size.width,
-                                                       renderedImage.size.height,
-                                                       8,
-                                                       renderedImage.size.width * 4,
-                                                       CGImageGetColorSpace(renderedImage.CGImage),
-                                                       kCGImageAlphaPremultipliedLast
-                                                       );
+  CGContextRef renderedImageContext = CGBitmapContextCreate(renderedImagePixels,
+                                                    CGImageGetWidth(renderedImage.CGImage),
+                                                    CGImageGetHeight(renderedImage.CGImage),
+                                                    CGImageGetBitsPerComponent(renderedImage.CGImage),
+                                                    bytesPerRow,
+                                                    CGImageGetColorSpace(renderedImage.CGImage),
+                                                    kCGImageAlphaPremultipliedLast
+                                                    );
   if (!imageContext || !renderedImageContext) {
     GHUDebug(@"Unable to create image contexts for image comparison");
     CGContextRelease(imageContext);
@@ -168,31 +189,14 @@ typedef struct {
   // Draw the image in the bitmap
   CGContextDrawImage(imageContext, CGRectMake(0.0f, 0.0f, image.size.width, image.size.height), image.CGImage);
   CGContextDrawImage(renderedImageContext, CGRectMake(0.0f, 0.0f, renderedImage.size.width, renderedImage.size.height), renderedImage.CGImage);
-
-  for (int x = 0; x < image.size.width; x++) {
-    for (int y = 0; y < image.size.height; y++) {
-      NSInteger pixelIndex = x * y;
-      if ((imagePixels[pixelIndex].r != renderedImagePixels[pixelIndex].r)
-          || (imagePixels[pixelIndex].g != renderedImagePixels[pixelIndex].g)
-          || (imagePixels[pixelIndex].b != renderedImagePixels[pixelIndex].b)) {
-        NSLog(@"Image was different at pixel (%d, %d). Old was (r%d, g%d, b%d), new was (r%d, g%d, b%d)", x, y,
-              imagePixels[pixelIndex].r, imagePixels[pixelIndex].g, imagePixels[pixelIndex].b,
-              renderedImagePixels[pixelIndex].r, renderedImagePixels[pixelIndex].g, renderedImagePixels[pixelIndex].b);
-        CGContextRelease(imageContext);
-        CGContextRelease(renderedImageContext);
-        free(imagePixels);
-        free(renderedImagePixels);
-        return NO;
-      }
-    }
-  }
-  
   CGContextRelease(imageContext);
   CGContextRelease(renderedImageContext);
+  
+  // compare image
+  BOOL compareVal = (memcmp(imagePixels, renderedImagePixels, imageSizeBytes) == 0);
   free(imagePixels);
   free(renderedImagePixels);
-  
-  return YES;
+  return compareVal;
 }
 
 + (UIImage *)diffWithImage:(UIImage *)image renderedImage:(UIImage *)renderedImage {
@@ -221,6 +225,21 @@ typedef struct {
 
 - (void)_setUp {
   imageVerifyCount_ = 0;
+}
+
++ (UIImage *)_imageFromFilePath:(NSString *)filePath {
+  UIImage *image;
+    
+  NSData *imageData = [NSData dataWithContentsOfFile:filePath];
+  CGFloat scale = [UIScreen mainScreen].scale;
+  if ([UIImage respondsToSelector:@selector(imageWithData:scale:)]) {
+    image = [UIImage imageWithData:imageData scale:scale];
+  }
+  else {
+    UIImage *imageWithoutScale = [UIImage imageWithData:imageData];
+    image = [UIImage imageWithCGImage:imageWithoutScale.CGImage scale:scale orientation:UIImageOrientationUp];
+  }
+  return image;
 }
 
 #pragma mark Public
