@@ -1,6 +1,3 @@
-[submodule "ystrdy/ReactiveCocoa"]
-	path = ystrdy/ReactiveCocoa
-	url = https://github.com/yusefnapora/ReactiveCocoa.git
 [submodule "ystrdy/XCodeCoverage"]
 	path = ystrdy/XCodeCoverage
 	url = https://github.com/alonecuzzo/XcodeCoverage
