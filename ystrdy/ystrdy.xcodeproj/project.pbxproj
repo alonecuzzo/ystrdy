@@ -8,11 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		8E483B5E19B2A0D400454BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483B5D19B2A0D400454BDA /* AppDelegate.swift */; };
-		8E483B6019B2A0D400454BDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483B5F19B2A0D400454BDA /* ViewController.swift */; };
-		8E483B6319B2A0D400454BDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E483B6119B2A0D400454BDA /* Main.storyboard */; };
+		8E483B6019B2A0D400454BDA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483B5F19B2A0D400454BDA /* WeatherViewController.swift */; };
 		8E483B6519B2A0D400454BDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E483B6419B2A0D400454BDA /* Images.xcassets */; };
 		8E483B7119B2A0D400454BDA /* ystrdyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483B7019B2A0D400454BDA /* ystrdyTests.swift */; };
+		8E5759C219B430A00098A0DA /* NSURLConnection+RACSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5759C119B430A00098A0DA /* NSURLConnection+RACSignal.swift */; };
 		8E75ED3C19B3C24600126C6C /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC0A08B19B3C04C003DB22C /* libReactiveCocoa-iOS.a */; };
+		8E9D0AA719B3CF8500756C17 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AA619B3CF8500756C17 /* WeatherViewModel.swift */; };
+		8E9D0AA919B3CFC700756C17 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AA819B3CFC700756C17 /* ViewModelServices.swift */; };
+		8E9D0AAB19B3D1AD00756C17 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D0AAA19B3D1AD00756C17 /* WeatherViewController.xib */; };
+		8E9D0AAD19B3D25600756C17 /* WeatherViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AAC19B3D25600756C17 /* WeatherViewModelServices.swift */; };
+		8E9D0AB219B3D5F000756C17 /* UIColor+Ystrdy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AB119B3D5F000756C17 /* UIColor+Ystrdy.swift */; };
+		8E9D0ABD19B422EB00756C17 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0ABA19B422EB00756C17 /* RAC.swift */; };
+		8E9D0ABE19B422EB00756C17 /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0ABB19B422EB00756C17 /* RACObserve.swift */; };
+		8E9D0ABF19B422EB00756C17 /* TableViewBindingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0ABC19B422EB00756C17 /* TableViewBindingHelper.swift */; };
+		8E9D0AC119B4269000756C17 /* WeatherSearchImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AC019B4269000756C17 /* WeatherSearchImp.swift */; };
+		8EAE5FE919B3C5F400C028E7 /* RACSignal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAE5FE819B3C5F400C028E7 /* RACSignal+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,13 +88,23 @@
 		8E483B5819B2A0D400454BDA /* ystrdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ystrdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E483B5C19B2A0D400454BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E483B5D19B2A0D400454BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E483B5F19B2A0D400454BDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8E483B6219B2A0D400454BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E483B5F19B2A0D400454BDA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		8E483B6419B2A0D400454BDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8E483B6A19B2A0D400454BDA /* ystrdyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ystrdyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E483B6F19B2A0D400454BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E483B7019B2A0D400454BDA /* ystrdyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ystrdyTests.swift; sourceTree = "<group>"; };
+		8E5759C119B430A00098A0DA /* NSURLConnection+RACSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLConnection+RACSignal.swift"; path = "classes/Util/NSURLConnection+RACSignal.swift"; sourceTree = "<group>"; };
 		8E75ED3F19B3C33900126C6C /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		8E9D0AA619B3CF8500756C17 /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewModel.swift; path = classes/ViewModel/WeatherViewModel.swift; sourceTree = "<group>"; };
+		8E9D0AA819B3CFC700756C17 /* ViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelServices.swift; path = classes/ViewModel/ViewModelServices.swift; sourceTree = "<group>"; };
+		8E9D0AAA19B3D1AD00756C17 /* WeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
+		8E9D0AAC19B3D25600756C17 /* WeatherViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewModelServices.swift; path = classes/ViewModel/WeatherViewModelServices.swift; sourceTree = "<group>"; };
+		8E9D0AB119B3D5F000756C17 /* UIColor+Ystrdy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Ystrdy.swift"; path = "classes/Util/UIColor+Ystrdy.swift"; sourceTree = "<group>"; };
+		8E9D0ABA19B422EB00756C17 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
+		8E9D0ABB19B422EB00756C17 /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
+		8E9D0ABC19B422EB00756C17 /* TableViewBindingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingHelper.swift; sourceTree = "<group>"; };
+		8E9D0AC019B4269000756C17 /* WeatherSearchImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherSearchImp.swift; path = classes/Model/WeatherSearchImp.swift; sourceTree = "<group>"; };
+		8EAE5FE819B3C5F400C028E7 /* RACSignal+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RACSignal+Extensions.swift"; path = "classes/Util/RACSignal+Extensions.swift"; sourceTree = "<group>"; };
 		8EC0A07E19B3C04C003DB22C /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,9 +149,11 @@
 		8E483B5A19B2A0D400454BDA /* ystrdy */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D0AA519B3CF6A00756C17 /* Model */,
+				8E9D0AA419B3CF6300756C17 /* ViewModel */,
+				8E75ED4819B3C57C00126C6C /* Util */,
+				8E75ED4719B3C57100126C6C /* View */,
 				8E483B5D19B2A0D400454BDA /* AppDelegate.swift */,
-				8E483B5F19B2A0D400454BDA /* ViewController.swift */,
-				8E483B6119B2A0D400454BDA /* Main.storyboard */,
 				8E483B6419B2A0D400454BDA /* Images.xcassets */,
 				8E483B5B19B2A0D400454BDA /* Supporting Files */,
 				8E75ED3F19B3C33900126C6C /* BridgingHeader.h */,
@@ -164,6 +186,46 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8E75ED4719B3C57100126C6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D0AAA19B3D1AD00756C17 /* WeatherViewController.xib */,
+				8E483B5F19B2A0D400454BDA /* WeatherViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8E75ED4819B3C57C00126C6C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D0ABA19B422EB00756C17 /* RAC.swift */,
+				8E9D0ABB19B422EB00756C17 /* RACObserve.swift */,
+				8E9D0ABC19B422EB00756C17 /* TableViewBindingHelper.swift */,
+				8EAE5FE819B3C5F400C028E7 /* RACSignal+Extensions.swift */,
+				8E9D0AB119B3D5F000756C17 /* UIColor+Ystrdy.swift */,
+				8E5759C119B430A00098A0DA /* NSURLConnection+RACSignal.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		8E9D0AA419B3CF6300756C17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D0AA619B3CF8500756C17 /* WeatherViewModel.swift */,
+				8E9D0AA819B3CFC700756C17 /* ViewModelServices.swift */,
+				8E9D0AAC19B3D25600756C17 /* WeatherViewModelServices.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E9D0AA519B3CF6A00756C17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D0AC019B4269000756C17 /* WeatherSearchImp.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		8EC0A07F19B3C04C003DB22C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +250,7 @@
 				8E483B5419B2A0D400454BDA /* Sources */,
 				8E483B5519B2A0D400454BDA /* Frameworks */,
 				8E483B5619B2A0D400454BDA /* Resources */,
+				8E9D0AB319B41D4100756C17 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -316,8 +379,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E483B6319B2A0D400454BDA /* Main.storyboard in Resources */,
 				8E483B6519B2A0D400454BDA /* Images.xcassets in Resources */,
+				8E9D0AAB19B3D1AD00756C17 /* WeatherViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,13 +393,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8E9D0AB319B41D4100756C17 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "XcodeCoverage/exportenv.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E483B5419B2A0D400454BDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E483B6019B2A0D400454BDA /* ViewController.swift in Sources */,
+				8E483B6019B2A0D400454BDA /* WeatherViewController.swift in Sources */,
+				8E9D0AAD19B3D25600756C17 /* WeatherViewModelServices.swift in Sources */,
+				8E9D0ABD19B422EB00756C17 /* RAC.swift in Sources */,
+				8E9D0AA719B3CF8500756C17 /* WeatherViewModel.swift in Sources */,
+				8E9D0AB219B3D5F000756C17 /* UIColor+Ystrdy.swift in Sources */,
+				8E9D0AC119B4269000756C17 /* WeatherSearchImp.swift in Sources */,
+				8E9D0ABF19B422EB00756C17 /* TableViewBindingHelper.swift in Sources */,
+				8E9D0AA919B3CFC700756C17 /* ViewModelServices.swift in Sources */,
 				8E483B5E19B2A0D400454BDA /* AppDelegate.swift in Sources */,
+				8E5759C219B430A00098A0DA /* NSURLConnection+RACSignal.swift in Sources */,
+				8E9D0ABE19B422EB00756C17 /* RACObserve.swift in Sources */,
+				8EAE5FE919B3C5F400C028E7 /* RACSignal+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,17 +446,6 @@
 			targetProxy = 8E483B6B19B2A0D400454BDA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8E483B6119B2A0D400454BDA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8E483B6219B2A0D400454BDA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8E483B7219B2A0D400454BDA /* Debug */ = {
@@ -454,6 +532,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
