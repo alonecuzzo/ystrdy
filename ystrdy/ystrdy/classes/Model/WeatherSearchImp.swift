@@ -8,40 +8,60 @@
 
 import UIKit
 
-class WeatherSearchImp: NSObject {
+class WeatherSearchImp: NSObject, WeatherSearch {
     
     //MARK: properties
+    let APIKey = "b22cafbf884cf6f6ff7f56cbe1f4c20a"
+    let BaseURL = "http://api.openweathermap.org/data/2.5/"
+    let CurrentWeatherEndPoint = "weather?q="
+    let HistoricalWeatherEndPoint = ""
     
-    let apiKey = "b22cafbf884cf6f6ff7f56cbe1f4c20a"
+    var CurrentWeatherURLString :String {
+        return self.BaseURL + self.CurrentWeatherEndPoint
+    }
+    
+    var HistoricalWeatherURLString :String {
+        return self.BaseURL + self.HistoricalWeatherEndPoint
+    }
     
     //MARK: init
     override init() {
-        
-        
-        
         super.init()
-        
-        getWeatherData().subscribeNextAs {
-            (anyObject: AnyObject) -> () in
-            println("got some datat")
-        }
-        
     }
     
+    //MARK: WeatherSearch protocol stuff
+    func weatherCurrentSearchSignal(cityName: String) -> RACSignal {
+        let url = NSURL(string: CurrentWeatherURLString + cityName)
+        return self.getCurrentWeatherForURL(url);
+    }
     
-    //MARK: Get
+    func weatherHistoricalSearchSignal(cityName: String) -> RACSignal {
+        let url = NSURL(string: HistoricalWeatherURLString + cityName)
+        return self.getHistoricalWeatherForURL(url)
+    }
     
-    func getWeatherData() -> RACSignal {
-        let request = NSURLRequest(URL: NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=London"))
-        return NSURLConnection.ystrdy_sendAsynchronously(request).mapAs({
-            (x: ystrdy_RACTuple) -> AnyObject in
-            
-            println("REQUEST \(request)")
-            let json = NSJSONSerialization.JSONObjectWithData(x.data, options: nil, error: nil)
-            println("Data \(json)")
-            
-            return RACSignal.empty()
+    //MARK: Privates
+    private func getCurrentWeatherForURL(url :NSURL) -> RACSignal {
+        let request = NSURLRequest(URL: url)
+        return NSURLConnection.rac_sendAsynchronousRequest(request).mapAs({
+            (x: RACTuple) -> Weather in
+            let json: AnyObject = NSJSONSerialization.JSONObjectWithData(x.second as NSData, options: nil, error: nil)!
+            return self.parseWeatherObjectFromJSON(json as String)
         })
+    }
+    
+    private func getHistoricalWeatherForURL(url :NSURL) -> RACSignal {
+//        let request = NSURLRequest(URL: url)
+//        return NSURLConnection.ystrdy_sendAsynchronously(request).mapAs({
+//            (tuple: ystrdy_RACTuple) -> AnyObject in
+//            
+//            return RACSignal.empty()
+//        })
+        return RACSignal.empty()
+    }
+    
+    private func parseWeatherObjectFromJSON(json :String) -> Weather {
+        //parse that stuffs here!
     }
    
 }

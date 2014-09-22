@@ -12,4 +12,6 @@ protocol ViewModelServices {
     
     func pushViewModel(viewModel: AnyObject)
     
+    //here's the search api
+    var weatherSearchService :WeatherSearch { get }
 }

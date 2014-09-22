@@ -11,18 +11,20 @@
 		8E483B6019B2A0D400454BDA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483B5F19B2A0D400454BDA /* WeatherViewController.swift */; };
 		8E483B6519B2A0D400454BDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E483B6419B2A0D400454BDA /* Images.xcassets */; };
 		8E483B7119B2A0D400454BDA /* ystrdyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E483B7019B2A0D400454BDA /* ystrdyTests.swift */; };
-		8E5759C219B430A00098A0DA /* NSURLConnection+RACSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5759C119B430A00098A0DA /* NSURLConnection+RACSignal.swift */; };
 		8E75ED3C19B3C24600126C6C /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC0A08B19B3C04C003DB22C /* libReactiveCocoa-iOS.a */; };
 		8E9D0AA719B3CF8500756C17 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AA619B3CF8500756C17 /* WeatherViewModel.swift */; };
 		8E9D0AA919B3CFC700756C17 /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AA819B3CFC700756C17 /* ViewModelServices.swift */; };
 		8E9D0AAB19B3D1AD00756C17 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D0AAA19B3D1AD00756C17 /* WeatherViewController.xib */; };
-		8E9D0AAD19B3D25600756C17 /* WeatherViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AAC19B3D25600756C17 /* WeatherViewModelServices.swift */; };
 		8E9D0AB219B3D5F000756C17 /* UIColor+Ystrdy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AB119B3D5F000756C17 /* UIColor+Ystrdy.swift */; };
 		8E9D0ABD19B422EB00756C17 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0ABA19B422EB00756C17 /* RAC.swift */; };
 		8E9D0ABE19B422EB00756C17 /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0ABB19B422EB00756C17 /* RACObserve.swift */; };
 		8E9D0ABF19B422EB00756C17 /* TableViewBindingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0ABC19B422EB00756C17 /* TableViewBindingHelper.swift */; };
 		8E9D0AC119B4269000756C17 /* WeatherSearchImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D0AC019B4269000756C17 /* WeatherSearchImp.swift */; };
 		8EAE5FE919B3C5F400C028E7 /* RACSignal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAE5FE819B3C5F400C028E7 /* RACSignal+Extensions.swift */; };
+		8ECC06D619C63833001218EC /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC06D519C63833001218EC /* Weather.swift */; };
+		8ECC06D819C6393E001218EC /* WeatherSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC06D719C6393E001218EC /* WeatherSearch.swift */; };
+		8ECC06DA19C643FD001218EC /* WeatherSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC06D919C643FD001218EC /* WeatherSearchResult.swift */; };
+		8ECC06DC19C64F1A001218EC /* ViewModelServicesImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC06DB19C64F1A001218EC /* ViewModelServicesImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,12 +95,10 @@
 		8E483B6A19B2A0D400454BDA /* ystrdyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ystrdyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E483B6F19B2A0D400454BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E483B7019B2A0D400454BDA /* ystrdyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ystrdyTests.swift; sourceTree = "<group>"; };
-		8E5759C119B430A00098A0DA /* NSURLConnection+RACSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLConnection+RACSignal.swift"; path = "classes/Util/NSURLConnection+RACSignal.swift"; sourceTree = "<group>"; };
 		8E75ED3F19B3C33900126C6C /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		8E9D0AA619B3CF8500756C17 /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewModel.swift; path = classes/ViewModel/WeatherViewModel.swift; sourceTree = "<group>"; };
 		8E9D0AA819B3CFC700756C17 /* ViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelServices.swift; path = classes/ViewModel/ViewModelServices.swift; sourceTree = "<group>"; };
 		8E9D0AAA19B3D1AD00756C17 /* WeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
-		8E9D0AAC19B3D25600756C17 /* WeatherViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewModelServices.swift; path = classes/ViewModel/WeatherViewModelServices.swift; sourceTree = "<group>"; };
 		8E9D0AB119B3D5F000756C17 /* UIColor+Ystrdy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Ystrdy.swift"; path = "classes/Util/UIColor+Ystrdy.swift"; sourceTree = "<group>"; };
 		8E9D0ABA19B422EB00756C17 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
 		8E9D0ABB19B422EB00756C17 /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
@@ -106,6 +106,10 @@
 		8E9D0AC019B4269000756C17 /* WeatherSearchImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherSearchImp.swift; path = classes/Model/WeatherSearchImp.swift; sourceTree = "<group>"; };
 		8EAE5FE819B3C5F400C028E7 /* RACSignal+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RACSignal+Extensions.swift"; path = "classes/Util/RACSignal+Extensions.swift"; sourceTree = "<group>"; };
 		8EC0A07E19B3C04C003DB22C /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
+		8ECC06D519C63833001218EC /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = classes/Model/Weather.swift; sourceTree = "<group>"; };
+		8ECC06D719C6393E001218EC /* WeatherSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherSearch.swift; path = classes/Model/WeatherSearch.swift; sourceTree = "<group>"; };
+		8ECC06D919C643FD001218EC /* WeatherSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherSearchResult.swift; path = classes/Model/WeatherSearchResult.swift; sourceTree = "<group>"; };
+		8ECC06DB19C64F1A001218EC /* ViewModelServicesImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelServicesImp.swift; path = classes/ViewModel/ViewModelServicesImp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,10 +204,9 @@
 			children = (
 				8E9D0ABA19B422EB00756C17 /* RAC.swift */,
 				8E9D0ABB19B422EB00756C17 /* RACObserve.swift */,
-				8E9D0ABC19B422EB00756C17 /* TableViewBindingHelper.swift */,
 				8EAE5FE819B3C5F400C028E7 /* RACSignal+Extensions.swift */,
+				8E9D0ABC19B422EB00756C17 /* TableViewBindingHelper.swift */,
 				8E9D0AB119B3D5F000756C17 /* UIColor+Ystrdy.swift */,
-				8E5759C119B430A00098A0DA /* NSURLConnection+RACSignal.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -213,7 +216,7 @@
 			children = (
 				8E9D0AA619B3CF8500756C17 /* WeatherViewModel.swift */,
 				8E9D0AA819B3CFC700756C17 /* ViewModelServices.swift */,
-				8E9D0AAC19B3D25600756C17 /* WeatherViewModelServices.swift */,
+				8ECC06DB19C64F1A001218EC /* ViewModelServicesImp.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -221,7 +224,10 @@
 		8E9D0AA519B3CF6A00756C17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8ECC06D519C63833001218EC /* Weather.swift */,
+				8ECC06D719C6393E001218EC /* WeatherSearch.swift */,
 				8E9D0AC019B4269000756C17 /* WeatherSearchImp.swift */,
+				8ECC06D919C643FD001218EC /* WeatherSearchResult.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -415,16 +421,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E483B6019B2A0D400454BDA /* WeatherViewController.swift in Sources */,
-				8E9D0AAD19B3D25600756C17 /* WeatherViewModelServices.swift in Sources */,
+				8ECC06DC19C64F1A001218EC /* ViewModelServicesImp.swift in Sources */,
+				8ECC06DA19C643FD001218EC /* WeatherSearchResult.swift in Sources */,
 				8E9D0ABD19B422EB00756C17 /* RAC.swift in Sources */,
 				8E9D0AA719B3CF8500756C17 /* WeatherViewModel.swift in Sources */,
 				8E9D0AB219B3D5F000756C17 /* UIColor+Ystrdy.swift in Sources */,
 				8E9D0AC119B4269000756C17 /* WeatherSearchImp.swift in Sources */,
 				8E9D0ABF19B422EB00756C17 /* TableViewBindingHelper.swift in Sources */,
 				8E9D0AA919B3CFC700756C17 /* ViewModelServices.swift in Sources */,
+				8ECC06D619C63833001218EC /* Weather.swift in Sources */,
 				8E483B5E19B2A0D400454BDA /* AppDelegate.swift in Sources */,
-				8E5759C219B430A00098A0DA /* NSURLConnection+RACSignal.swift in Sources */,
 				8E9D0ABE19B422EB00756C17 /* RACObserve.swift in Sources */,
+				8ECC06D819C6393E001218EC /* WeatherSearch.swift in Sources */,
 				8EAE5FE919B3C5F400C028E7 /* RACSignal+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +549,7 @@
 				);
 				INFOPLIST_FILE = ystrdy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ystrdy/BridgingHeader.h";
 			};
@@ -558,6 +567,7 @@
 				);
 				INFOPLIST_FILE = ystrdy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ystrdy/BridgingHeader.h";
 			};

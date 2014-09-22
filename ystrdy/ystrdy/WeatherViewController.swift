@@ -12,10 +12,9 @@ class WeatherViewController: UIViewController {
     
     //MARK: variables
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchButton: UIButton!
     
     let viewModel: WeatherViewModel
-    
     private var bindingHelper: TableViewBindingHelper!
     
     //MARK: init stuff
@@ -38,10 +37,8 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        bindingHelper = TableViewBindingHelper(tableView: tableView, sourceSignal: RACObserve(viewModel, "items"), nibName: "", selectionCommand: nil)
-        
-        let wsi = WeatherSearchImp()
-        wsi.getWeatherData()
+        viewModel.cityName = "Tokyo"
+        searchButton.rac_command = viewModel.executeSearch
     }
 
     override func didReceiveMemoryWarning() {
