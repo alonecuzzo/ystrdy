@@ -37,7 +37,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.cityName = "Tokyo"
+        viewModel.cityName = "Vancouver,%20ca"
         searchButton.rac_command = viewModel.executeSearch
     }
 

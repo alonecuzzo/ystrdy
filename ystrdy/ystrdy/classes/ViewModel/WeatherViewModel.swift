@@ -28,7 +28,7 @@ class WeatherViewModel: NSObject {
         
         executeSearch = RACCommand() {
             (any: AnyObject!) -> RACSignal in
-            return self.executeSearchSignal()
+            return RACSignal.combineLatest([self.executeTodaysWeatherSearchSignal(), self.executeYesterdaysWeatherSearchSignal()])
         }
         
         //need to set up a watcher for the weather result
@@ -36,19 +36,23 @@ class WeatherViewModel: NSObject {
     
     //MARK: Privates
     
-    private func executeSearchSignal() -> RACSignal {
-        var todaysWeather :Weather?
-        var yesterdaysWeather :Weather?
+    private func executeTodaysWeatherSearchSignal() -> RACSignal {
+        var todaysWeather :WeatherModel?
         return services.weatherSearchService.weatherCurrentSearchSignal(self.cityName).doNextAs {
-            (tw :Weather) -> () in
+            (tw :WeatherModel) -> () in
             todaysWeather = tw
-            println("HI \(tw.maxFarenheit)")
-//            self.services.weatherSearchService.weatherHistoricalSearchSignal(self.cityName).doNextAs {
-//                (yw :Weather) -> () in
-//                yesterdaysWeather = yw
-//                self.weather = WeatherSearchResult(todaysWeather: todaysWeather!, yesterdaysWeather: yesterdaysWeather!)
-//                //we want the view to be updated here somehow
-//            }
+            let weather = todaysWeather?.weather
+            println("HI \(weather?.temp)")
+        }
+    }
+    
+    private func executeYesterdaysWeatherSearchSignal() -> RACSignal {
+        var yesterdaysWeather :WeatherModel?
+        return self.services.weatherSearchService.weatherHistoricalSearchSignal(self.cityName).doNextAs {
+            (yw :WeatherModel) -> () in
+            yesterdaysWeather = yw
+            let yesterday = yesterdaysWeather?.weather
+            println("YSTERDAY \(yesterday?.temp)")
         }
     }
 }

@@ -8,15 +8,29 @@
 
 import Foundation
 
-class Weather {
+struct Weather : JSONDecode {
     
-    let date: NSDate
-    let maxFarenheit: Float
-    let minFarenheit: Float
+    let temp: Double
     
-    init (date: NSDate, maxFarenheit: Float, minFarenheit: Float) {
-        self.date = date
-        self.maxFarenheit = maxFarenheit
-        self.minFarenheit = minFarenheit
+    typealias J = Weather
+    static func fromJSON(j: JSValue) -> J? {
+        switch j {
+            case let .JSObject(d):
+                let temp = d["temp"] >>= JSDouble.fromJSON ||= 0
+                return Weather(temp: temp)
+            default:
+                println("Expected to be passed a type object")
+                return nil
+        }
+    }
+}
+
+//going to use this to wrap our structs... can't pass stuff around that's not any object which seems dumb
+class WeatherModel : NSObject {
+    let weather: Weather
+    
+    init(weather: Weather) {
+        self.weather = weather
+        super.init()
     }
 }
