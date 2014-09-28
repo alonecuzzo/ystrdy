@@ -17,7 +17,15 @@ class WeatherViewModel: NSObject {
     let executeSearch: RACCommand!
     let services: ViewModelServices
     
-    //city name property?
+    private var yesterdayTemp = Double.infinity
+    private var todayTemp = Double.infinity
+    
+    var tempDifference :Double {
+        get {
+            return self.todayTemp - self.yesterdayTemp
+        }
+    }
+    
     dynamic var cityName = ""
     
     init(services: ViewModelServices) {
@@ -28,31 +36,23 @@ class WeatherViewModel: NSObject {
         
         executeSearch = RACCommand() {
             (any: AnyObject!) -> RACSignal in
-            return RACSignal.combineLatest([self.executeTodaysWeatherSearchSignal(), self.executeYesterdaysWeatherSearchSignal()])
+            return RACSignal.combineLatest([self.executeYesterdaysWeatherSearchSignal(), self.executeTodaysWeatherSearchSignal()])
         }
-        
-        //need to set up a watcher for the weather result
     }
     
     //MARK: Privates
     
     private func executeTodaysWeatherSearchSignal() -> RACSignal {
-        var todaysWeather :WeatherModel?
         return services.weatherSearchService.weatherCurrentSearchSignal(self.cityName).doNextAs {
-            (tw :WeatherModel) -> () in
-            todaysWeather = tw
-            let weather = todaysWeather?.weather
-            println("HI \(weather?.temp)")
+            (w :WeatherModel) -> () in
+            self.todayTemp = w.weather.temp
         }
     }
     
     private func executeYesterdaysWeatherSearchSignal() -> RACSignal {
-        var yesterdaysWeather :WeatherModel?
         return self.services.weatherSearchService.weatherHistoricalSearchSignal(self.cityName).doNextAs {
-            (yw :WeatherModel) -> () in
-            yesterdaysWeather = yw
-            let yesterday = yesterdaysWeather?.weather
-            println("YSTERDAY \(yesterday?.temp)")
+            (w :WeatherModel) -> () in
+            self.yesterdayTemp = w.weather.temp
         }
     }
 }

@@ -24,7 +24,7 @@ enum JSValue {
         var options: NSJSONReadingOptions = .AllowFragments
         let object: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: options, error: &error)
         
-        println("json \(object)")
+//        println("json \(object)")
         
         if let json: AnyObject = object {
             return make(json as NSObject)

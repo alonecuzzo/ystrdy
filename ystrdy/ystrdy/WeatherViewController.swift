@@ -13,6 +13,8 @@ class WeatherViewController: UIViewController {
     //MARK: variables
     
     @IBOutlet var searchButton: UIButton!
+    @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var cityLabel: UILabel!
     
     let viewModel: WeatherViewModel
     private var bindingHelper: TableViewBindingHelper!
@@ -28,7 +30,7 @@ class WeatherViewController: UIViewController {
         
         super.init(nibName: "WeatherViewController", bundle: nil)
         
-        self.view.backgroundColor = UIColor.ystrdyWarm()
+        self.view.backgroundColor = UIColor.whiteColor()
         
         // we want a font and background color struct
         edgesForExtendedLayout = .None
@@ -37,8 +39,42 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.cityName = "Vancouver,%20ca"
+        viewModel.cityName = "Tokyo"
         searchButton.rac_command = viewModel.executeSearch
+        
+        cityLabel.text = viewModel.cityName
+        
+        searchButton.rac_command.executionSignals.subscribeNext {
+            (s: AnyObject!) -> Void in
+            let signal: RACSignal? = s as? RACSignal
+            if let signal = signal {
+                signal.subscribeCompleted({
+                    () -> Void in
+                    //we can get the difference!
+                    let difference = self.viewModel.tempDifference
+                    let roundedDifference = Int(difference)
+                    var backgroundColor :UIColor
+                    
+                    //have no idea how to put bools in a switch statement.... wth
+                    if roundedDifference > 0 {
+                        backgroundColor = UIColor.ystrdyWarm()
+                    } else if roundedDifference < 0 {
+                        backgroundColor = UIColor.ystrdyCool()
+                    } else {
+                        backgroundColor = UIColor.ystrdyIdentical()
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.refreshWithBackgroundColor(backgroundColor, temp: "\(abs(roundedDifference))")
+                    })
+                })
+            }
+        }
+    }
+    
+    func refreshWithBackgroundColor(backgroundColor: UIColor, temp: String) -> Void {
+        self.view.backgroundColor = backgroundColor;
+        self.temperatureLabel.text = temp
     }
 
     override func didReceiveMemoryWarning() {
