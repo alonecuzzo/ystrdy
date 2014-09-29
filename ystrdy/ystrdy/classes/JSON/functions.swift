@@ -1,0 +1,33 @@
+//
+//  functions.swift
+//  ystrdy
+//
+//  Created by Jabari on 9/28/14.
+//  Copyright (c) 2014 twenty.three.bit. All rights reserved.
+//
+
+
+func compact<T>(collection: [T?]) -> [T] {
+    return filter(collection) {
+        if $0 != nil {
+            return true
+        } else {
+            return false
+        }
+    }.map { $0! }
+}
+
+func >>=<A, B>(source: A?, f: A -> B?) -> B? {
+    if source != nil {
+        return f(source!)
+    } else {
+        return nil
+    }
+}
+
+func ||=<T>(value: T?, defaultValue: T) -> T {
+    if let actValue = value {
+        return actValue
+    }
+    return defaultValue
+}
