@@ -7,12 +7,11 @@
 //
 
 import Foundation
+import CoreLocation
 
 class WeatherViewModel: NSObject {
     
     //MARK: Props
-    
-    dynamic var weather :WeatherSearchResult!
     
     let executeSearch: RACCommand!
     let services: ViewModelServices
@@ -20,13 +19,25 @@ class WeatherViewModel: NSObject {
     private var yesterdayTemp = Double.infinity
     private var todayTemp = Double.infinity
     
+    var location :CLLocation?
+    
+    var locationString :String {
+        get {
+            if let location = location {
+                return "lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)"
+            } else {
+                return ""
+            }
+        }
+    }
+    
+    var cityName = ""
+    
     var tempDifference :Double {
         get {
             return self.todayTemp - self.yesterdayTemp
         }
     }
-    
-    dynamic var cityName = ""
     
     init(services: ViewModelServices) {
         
@@ -36,8 +47,12 @@ class WeatherViewModel: NSObject {
         
         executeSearch = RACCommand() {
             (any: AnyObject!) -> RACSignal in
-            return RACSignal.combineLatest([self.executeYesterdaysWeatherSearchSignal(), self.executeTodaysWeatherSearchSignal()])
+            return self.searchSignal()
         }
+    }
+    
+    func searchSignal() -> RACSignal {
+        return RACSignal.combineLatest([self.executeYesterdaysWeatherSearchSignal(), self.executeTodaysWeatherSearchSignal()])
     }
     
     //MARK: Privates

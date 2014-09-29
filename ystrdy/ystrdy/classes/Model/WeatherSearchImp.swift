@@ -31,12 +31,12 @@ class WeatherSearchImp: NSObject, WeatherSearch {
     
     //MARK: WeatherSearch protocol stuff
     func weatherCurrentSearchSignal(cityName: String) -> RACSignal {
-        let url = NSURL(string: CurrentWeatherURLString + cityName)
+        let url = NSURL(string: CurrentWeatherURLString + cityName.escapeStr)
         return self.getCurrentWeatherForURL(url);
     }
     
     func weatherHistoricalSearchSignal(cityName: String) -> RACSignal {
-        let url = NSURL(string: HistoricalWeatherURLString + cityName)
+        let url = NSURL(string: HistoricalWeatherURLString + cityName.escapeStr)
         return self.getHistoricalWeatherForURL(url)
     }
     

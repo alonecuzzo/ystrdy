@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: variables
     
@@ -18,6 +19,8 @@ class WeatherViewController: UIViewController {
     
     let viewModel: WeatherViewModel
     private var bindingHelper: TableViewBindingHelper!
+    
+    let coreLocationManager :CLLocationManager = CLLocationManager()
     
     //MARK: init stuff
     
@@ -36,13 +39,18 @@ class WeatherViewController: UIViewController {
         edgesForExtendedLayout = .None
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        coreLocationManager.startUpdatingLocation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.cityName = "Tokyo"
-        searchButton.rac_command = viewModel.executeSearch
+        coreLocationManager.delegate = self
+        coreLocationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         
-        cityLabel.text = viewModel.cityName
+        searchButton.rac_command = viewModel.executeSearch
         
         searchButton.rac_command.executionSignals.subscribeNext {
             (s: AnyObject!) -> Void in
@@ -50,31 +58,35 @@ class WeatherViewController: UIViewController {
             if let signal = signal {
                 signal.subscribeCompleted({
                     () -> Void in
-                    //we can get the difference!
-                    let difference = self.viewModel.tempDifference
-                    let roundedDifference = Int(difference)
-                    var backgroundColor :UIColor
-                    
-                    //have no idea how to put bools in a switch statement.... wth
-                    if roundedDifference > 0 {
-                        backgroundColor = UIColor.ystrdyWarm()
-                    } else if roundedDifference < 0 {
-                        backgroundColor = UIColor.ystrdyCool()
-                    } else {
-                        backgroundColor = UIColor.ystrdyIdentical()
-                    }
-                    
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.refreshWithBackgroundColor(backgroundColor, temp: "\(abs(roundedDifference))")
-                    })
+                    self.refreshViewWithWeatherDifference(self.viewModel.tempDifference)
                 })
             }
         }
     }
     
-    func refreshWithBackgroundColor(backgroundColor: UIColor, temp: String) -> Void {
+    func refreshViewWithWeatherDifference(difference: Double) {
+        let difference = self.viewModel.tempDifference
+        let roundedDifference = Int(difference)
+        var backgroundColor :UIColor
+        
+        //have no idea how to put bools in a switch statement.... wth
+        if roundedDifference > 0 {
+            backgroundColor = UIColor.ystrdyWarm()
+        } else if roundedDifference < 0 {
+            backgroundColor = UIColor.ystrdyCool()
+        } else {
+            backgroundColor = UIColor.ystrdyIdentical()
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.refreshWithBackgroundColor(backgroundColor, temp: "\(abs(roundedDifference))")
+        })
+    }
+    
+    func refreshWithBackgroundColor(backgroundColor: UIColor, temp: String) {
         self.view.backgroundColor = backgroundColor;
         self.temperatureLabel.text = temp
+        self.cityLabel.text = viewModel.cityName
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +96,40 @@ class WeatherViewController: UIViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true;
+    }
+    
+    //MARK: core location
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
+        coreLocationManager.stopUpdatingLocation()
+        //we'll probably use this at a later time
+        viewModel.location = newLocation
+        getPlacemarkFromLocation(newLocation)
+        println(newLocation.coordinate.latitude)
+        println(newLocation.coordinate.longitude)
+    }
+    
+    func getPlacemarkFromLocation(location: CLLocation) {
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler:
+            { (placemarks, error) in
+                if (error != nil) {println("reverse geodcode fail: \(error.localizedDescription)")}
+                let pm = placemarks as [CLPlacemark]
+                if pm.count > 0 {
+                    let pm: AnyObject = placemarks[0]
+                    let city = pm.locality
+                    self.viewModel.cityName = city
+                    self.viewModel.searchSignal().subscribeCompleted {
+                        () -> Void in
+                        self.refreshViewWithWeatherDifference(self.viewModel.tempDifference)
+                    }
+                }
+        })
     }
 }
 
