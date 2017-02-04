@@ -17,11 +17,9 @@
 		067CD8C01E4634F2004BC3CB /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8BE1E4634F2004BC3CB /* Fabric.framework */; };
 		067CD8C91E46352A004BC3CB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C11E46352A004BC3CB /* Alamofire.framework */; };
 		067CD8CA1E46352A004BC3CB /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C21E46352A004BC3CB /* AlamofireImage.framework */; };
-		067CD8CB1E46352A004BC3CB /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C31E46352A004BC3CB /* RxBlocking.framework */; };
 		067CD8CC1E46352A004BC3CB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C41E46352A004BC3CB /* RxCocoa.framework */; };
 		067CD8CD1E46352A004BC3CB /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C51E46352A004BC3CB /* RxDataSources.framework */; };
 		067CD8CE1E46352A004BC3CB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C61E46352A004BC3CB /* RxSwift.framework */; };
-		067CD8CF1E46352A004BC3CB /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C71E46352A004BC3CB /* RxTest.framework */; };
 		067CD8D01E46352A004BC3CB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C81E46352A004BC3CB /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +63,6 @@
 			files = (
 				067CD8CC1E46352A004BC3CB /* RxCocoa.framework in Frameworks */,
 				067CD8BF1E4634F2004BC3CB /* Crashlytics.framework in Frameworks */,
-				067CD8CF1E46352A004BC3CB /* RxTest.framework in Frameworks */,
-				067CD8CB1E46352A004BC3CB /* RxBlocking.framework in Frameworks */,
 				067CD8CD1E46352A004BC3CB /* RxDataSources.framework in Frameworks */,
 				067CD8CE1E46352A004BC3CB /* RxSwift.framework in Frameworks */,
 				067CD8C91E46352A004BC3CB /* Alamofire.framework in Frameworks */,
@@ -155,6 +151,7 @@
 				067CD8911E463028004BC3CB /* Frameworks */,
 				067CD8921E463028004BC3CB /* Resources */,
 				067CD8B71E46338E004BC3CB /* Crashlytics */,
+				067CD8D11E463649004BC3CB /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -258,7 +255,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run bbdbbb6ed95b28b6a2a49bc7eec9fc1b4e0da3db 502331fb78573181656a074dc0c285bbb0e973e648a785983e1effeaa5724702";
+			shellScript = "./frameworks/Fabric.framework/run bbdbbb6ed95b28b6a2a49bc7eec9fc1b4e0da3db 502331fb78573181656a074dc0c285bbb0e973e648a785983e1effeaa5724702";
+		};
+		067CD8D11E463649004BC3CB /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
