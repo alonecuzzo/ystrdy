@@ -13,6 +13,16 @@
 		067CD89F1E463029004BC3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 067CD89E1E463028004BC3CB /* Assets.xcassets */; };
 		067CD8A21E463029004BC3CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067CD8A01E463029004BC3CB /* LaunchScreen.storyboard */; };
 		067CD8AD1E463029004BC3CB /* ystrdyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CD8AC1E463029004BC3CB /* ystrdyTests.swift */; };
+		067CD8BF1E4634F2004BC3CB /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8BD1E4634F2004BC3CB /* Crashlytics.framework */; };
+		067CD8C01E4634F2004BC3CB /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8BE1E4634F2004BC3CB /* Fabric.framework */; };
+		067CD8C91E46352A004BC3CB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C11E46352A004BC3CB /* Alamofire.framework */; };
+		067CD8CA1E46352A004BC3CB /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C21E46352A004BC3CB /* AlamofireImage.framework */; };
+		067CD8CB1E46352A004BC3CB /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C31E46352A004BC3CB /* RxBlocking.framework */; };
+		067CD8CC1E46352A004BC3CB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C41E46352A004BC3CB /* RxCocoa.framework */; };
+		067CD8CD1E46352A004BC3CB /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C51E46352A004BC3CB /* RxDataSources.framework */; };
+		067CD8CE1E46352A004BC3CB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C61E46352A004BC3CB /* RxSwift.framework */; };
+		067CD8CF1E46352A004BC3CB /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C71E46352A004BC3CB /* RxTest.framework */; };
+		067CD8D01E46352A004BC3CB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C81E46352A004BC3CB /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +46,16 @@
 		067CD8A81E463029004BC3CB /* ystrdyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ystrdyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		067CD8AC1E463029004BC3CB /* ystrdyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ystrdyTests.swift; sourceTree = "<group>"; };
 		067CD8AE1E463029004BC3CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		067CD8BD1E4634F2004BC3CB /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = frameworks/Crashlytics.framework; sourceTree = "<group>"; };
+		067CD8BE1E4634F2004BC3CB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = frameworks/Fabric.framework; sourceTree = "<group>"; };
+		067CD8C11E46352A004BC3CB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		067CD8C21E46352A004BC3CB /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		067CD8C31E46352A004BC3CB /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		067CD8C41E46352A004BC3CB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		067CD8C51E46352A004BC3CB /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		067CD8C61E46352A004BC3CB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		067CD8C71E46352A004BC3CB /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		067CD8C81E46352A004BC3CB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +63,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067CD8CC1E46352A004BC3CB /* RxCocoa.framework in Frameworks */,
+				067CD8BF1E4634F2004BC3CB /* Crashlytics.framework in Frameworks */,
+				067CD8CF1E46352A004BC3CB /* RxTest.framework in Frameworks */,
+				067CD8CB1E46352A004BC3CB /* RxBlocking.framework in Frameworks */,
+				067CD8CD1E46352A004BC3CB /* RxDataSources.framework in Frameworks */,
+				067CD8CE1E46352A004BC3CB /* RxSwift.framework in Frameworks */,
+				067CD8C91E46352A004BC3CB /* Alamofire.framework in Frameworks */,
+				067CD8C01E4634F2004BC3CB /* Fabric.framework in Frameworks */,
+				067CD8CA1E46352A004BC3CB /* AlamofireImage.framework in Frameworks */,
+				067CD8D01E46352A004BC3CB /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +92,7 @@
 				067CD8961E463028004BC3CB /* ystrdy */,
 				067CD8AB1E463029004BC3CB /* ystrdyTests */,
 				067CD8951E463028004BC3CB /* Products */,
+				067CD8BC1E4634CE004BC3CB /* frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +127,23 @@
 			path = ystrdyTests;
 			sourceTree = "<group>";
 		};
+		067CD8BC1E4634CE004BC3CB /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				067CD8C11E46352A004BC3CB /* Alamofire.framework */,
+				067CD8C21E46352A004BC3CB /* AlamofireImage.framework */,
+				067CD8C31E46352A004BC3CB /* RxBlocking.framework */,
+				067CD8C41E46352A004BC3CB /* RxCocoa.framework */,
+				067CD8C51E46352A004BC3CB /* RxDataSources.framework */,
+				067CD8C61E46352A004BC3CB /* RxSwift.framework */,
+				067CD8C71E46352A004BC3CB /* RxTest.framework */,
+				067CD8C81E46352A004BC3CB /* SnapKit.framework */,
+				067CD8BD1E4634F2004BC3CB /* Crashlytics.framework */,
+				067CD8BE1E4634F2004BC3CB /* Fabric.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +154,7 @@
 				067CD8901E463028004BC3CB /* Sources */,
 				067CD8911E463028004BC3CB /* Frameworks */,
 				067CD8921E463028004BC3CB /* Resources */,
+				067CD8B71E46338E004BC3CB /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -195,6 +244,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		067CD8B71E46338E004BC3CB /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run bbdbbb6ed95b28b6a2a49bc7eec9fc1b4e0da3db 502331fb78573181656a074dc0c285bbb0e973e648a785983e1effeaa5724702";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		067CD8901E463028004BC3CB /* Sources */ = {
@@ -340,6 +406,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GGW8P5ZF85;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ystrdy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ai.theowl.ystrdy;
@@ -353,6 +425,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GGW8P5ZF85;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ystrdy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ai.theowl.ystrdy;
@@ -410,6 +488,7 @@
 				067CD8B31E463029004BC3CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		067CD8B41E463029004BC3CB /* Build configuration list for PBXNativeTarget "ystrdyTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +497,7 @@
 				067CD8B61E463029004BC3CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
