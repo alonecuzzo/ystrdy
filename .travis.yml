@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode8.1
+script:
+- ./fastlane/travis.sh
+# hello
