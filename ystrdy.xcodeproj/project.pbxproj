@@ -201,8 +201,8 @@
 		0C81F5B91E490B3F008940FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */,
 				0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */,
+				0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";

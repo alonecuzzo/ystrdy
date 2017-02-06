@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 
+/// Returns color based on a delta string value
 struct WeatherDeltaColorViewModel {
     static func colorForDelta(_ deltaString: String) -> UIColor? {
         guard let delta = Int(deltaString) else { return nil }
