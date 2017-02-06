@@ -15,8 +15,8 @@ fastlane_version "2.9.0"
 
 default_platform :ios
 
-$crashlytics_api_token = "bbdbbb6ed95b28b6a2a49bc7eec9fc1b4e0da3db"
-$crashlytics_build_secret = "502331fb78573181656a074dc0c285bbb0e973e648a785983e1effeaa5724702"
+$crashlytics_api_token = "ea826076f6464abcf65b67898f68b3ab3755c824"
+$crashlytics_build_secret = "7e4fb60a026f99e708be70a52c2f266a93a89e9eebf8bb4c06602e34de677e6b"
 
 platform :ios do
   before_all do
