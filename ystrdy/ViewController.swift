@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import Alamofire
+import RxSwift
+import SnapKit
 
 
 class ViewController: UIViewController {
+    
+    //MARK: Property
+    private let disposeBag = DisposeBag()
+    
 
+    //MARK: Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.backgroundColor = UIColor.ystrdyDarkPurple()
+        
+        let nycCoordinates = CGPoint(x: 40.712784, y: -74.005941)
+        let vm = WeatherDifferenceViewModel()
+        vm.updateWeatherDifferenceForLocation(nycCoordinates)
+        
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.fsmeLightFontWithSize(100)
+        label.textAlignment = .center
+        label.textColor = UIColor.ystrdyWarm()
+        view.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.center.equalTo(view)
+        }
+        
+        vm.weatherDelta.asObservable().filter{ $0.characters.count > 0 }.subscribe(onNext: { delta in
+            label.text = delta
+            let truncated = delta.substring(to: delta.index(before: delta.endIndex)) //truncate ° symbol
+            label.textColor = WeatherDeltaColorViewModel.colorForDelta(truncated)
+        }).addDisposableTo(disposeBag)
     }
 }
