@@ -27,6 +27,7 @@
 		0C81F5B61E490AE7008940FB /* CurrentTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B51E490AE7008940FB /* CurrentTemp.swift */; };
 		0C81F5B81E490B14008940FB /* YesterdayTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B71E490B14008940FB /* YesterdayTemp.swift */; };
 		0C81F5BB1E490B51008940FB /* WeatherDifferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */; };
+		0C81F5BE1E4912B9008940FB /* UIColor+Ystrdy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5BD1E4912B9008940FB /* UIColor+Ystrdy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		0C81F5B51E490AE7008940FB /* CurrentTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentTemp.swift; path = Model/CurrentTemp.swift; sourceTree = "<group>"; };
 		0C81F5B71E490B14008940FB /* YesterdayTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YesterdayTemp.swift; path = Model/YesterdayTemp.swift; sourceTree = "<group>"; };
 		0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDifferenceViewModel.swift; path = ViewModel/WeatherDifferenceViewModel.swift; sourceTree = "<group>"; };
+		0C81F5BD1E4912B9008940FB /* UIColor+Ystrdy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Ystrdy.swift"; path = "Common/UIColor+Ystrdy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		067CD8961E463028004BC3CB /* ystrdy */ = {
 			isa = PBXGroup;
 			children = (
+				0C81F5BC1E49129D008940FB /* Common */,
 				0C81F5B91E490B3F008940FB /* ViewModel */,
 				0C81F5B21E490A50008940FB /* Model */,
 				0C6DCC3C1E48FA7B004432E6 /* Network */,
@@ -180,6 +183,14 @@
 				0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0C81F5BC1E49129D008940FB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0C81F5BD1E4912B9008940FB /* UIColor+Ystrdy.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				067CD89A1E463028004BC3CB /* ViewController.swift in Sources */,
+				0C81F5BE1E4912B9008940FB /* UIColor+Ystrdy.swift in Sources */,
 				0C6DCC3E1E48FA93004432E6 /* Serialization.swift in Sources */,
 				0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */,
 				0C81F5B11E490A12008940FB /* API.swift in Sources */,
