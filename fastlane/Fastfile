@@ -15,15 +15,19 @@ fastlane_version "2.9.0"
 
 default_platform :ios
 
+$crashlytics_api_token = "ea826076f6464abcf65b67898f68b3ab3755c824"
+$crashlytics_build_secret = "7e4fb60a026f99e708be70a52c2f266a93a89e9eebf8bb4c06602e34de677e6b"
+
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    
-    
+
+
   end
 
   desc "Runs all the tests"
   lane :test do
+    match
     scan
   end
 
@@ -31,8 +35,19 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym # Build your app - more options available
-    pilot
+    # gym # Build your app - more options available
+    # pilot
+    gym(
+      use_legacy_build_api: true,
+      scheme: "ystrdy"
+    )
+
+    crashlytics(
+      api_token: $crashlytics_api_token,
+      build_secret: $crashlytics_build_secret,
+      groups: "ustwo-internal-team",
+      notes: ""
+    )
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
