@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import RxSwift
+import SnapKit
 
 
 class ViewController: UIViewController {
@@ -25,8 +26,16 @@ class ViewController: UIViewController {
         let vm = WeatherDifferenceViewModel()
         vm.updateWeatherDifferenceForLocation(nycCoordinates)
         
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.systemFont(ofSize: 50)
+        label.textAlignment = .center
+        view.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.center.equalTo(view)
+        }
+        
         vm.weatherDelta.asObservable().filter{ $0.characters.count > 0 }.subscribe(onNext: { delta in
-            print("DELTA: \(delta)")
+            label.text = delta
         }).addDisposableTo(disposeBag)
     }
 }
