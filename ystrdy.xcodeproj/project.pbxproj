@@ -37,6 +37,7 @@
 		0C81F5CF1E4917FA008940FB /* FS Me-Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C71E4917FA008940FB /* FS Me-Light Italic.otf */; };
 		0C81F5D01E4917FA008940FB /* FS Me-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C81E4917FA008940FB /* FS Me-Light.otf */; };
 		0C81F5D11E4917FA008940FB /* FS Me-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C91E4917FA008940FB /* FS Me-Regular.otf */; };
+		0C81F5D41E491D96008940FB /* WeatherDeltaColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		0C81F5C71E4917FA008940FB /* FS Me-Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Light Italic.otf"; path = "Resources/Fonts/FS Me-Light Italic.otf"; sourceTree = "<group>"; };
 		0C81F5C81E4917FA008940FB /* FS Me-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Light.otf"; path = "Resources/Fonts/FS Me-Light.otf"; sourceTree = "<group>"; };
 		0C81F5C91E4917FA008940FB /* FS Me-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Regular.otf"; path = "Resources/Fonts/FS Me-Regular.otf"; sourceTree = "<group>"; };
+		0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDeltaColorViewModel.swift; path = ViewModel/WeatherDeltaColorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */,
+				0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				0C6DCC3E1E48FA93004432E6 /* Serialization.swift in Sources */,
 				0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */,
 				0C81F5B11E490A12008940FB /* API.swift in Sources */,
+				0C81F5D41E491D96008940FB /* WeatherDeltaColorViewModel.swift in Sources */,
 				0C81F5C01E49177A008940FB /* UIFont+Ystrdy.swift in Sources */,
 				0C81F5BB1E490B51008940FB /* WeatherDifferenceViewModel.swift in Sources */,
 				067CD8981E463028004BC3CB /* AppDelegate.swift in Sources */,

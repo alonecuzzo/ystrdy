@@ -39,6 +39,8 @@ class ViewController: UIViewController {
         
         vm.weatherDelta.asObservable().filter{ $0.characters.count > 0 }.subscribe(onNext: { delta in
             label.text = delta
+            let truncated = delta.substring(to: delta.index(before: delta.endIndex)) //truncate ° symbol
+            label.textColor = WeatherDeltaColorViewModel.colorForDelta(truncated)
         }).addDisposableTo(disposeBag)
     }
 }

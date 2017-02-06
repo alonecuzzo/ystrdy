@@ -21,7 +21,7 @@ class WeatherDifferenceViewModel {
     //MARK: Method
     func updateWeatherDifferenceForLocation(_ location: CGPoint) {
         Observable.combineLatest(API.getYesterdaysWeatherForLocation(location), API.getCurrentWeatherForLocation(location)) { $1.tempF - $0.tempF }.subscribe(onNext: { delta in
-            self.weatherDelta.value = "\(Int(delta))"
+            self.weatherDelta.value = "\(Int(delta))°"
         }).addDisposableTo(disposeBag)
     }
 }
