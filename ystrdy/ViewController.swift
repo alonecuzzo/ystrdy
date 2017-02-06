@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
 struct API {
     static func getCurrentWeatherForLocation(_ location: CGPoint) {
-       Alamofire.request(OpenWeatherRouter.getCurrentWeatherForLocation(location)).responseJSON { response in
+       Alamofire.request(WeatherUndergroundRouter.getCurrentWeatherForLocation(location)).responseJSON { response in
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
             }
@@ -31,11 +31,14 @@ struct API {
     }
 }
 
-enum OpenWeatherRouter: URLRequestConvertible {
-    case getCurrentWeatherForLocation(CGPoint)
+enum WeatherUndergroundRouter: URLRequestConvertible {
     
-    private static let baseURLString = "http://api.openweathermap.org/data/2.5/"
-    private static let APPID = "&APPID=b22cafbf884cf6f6ff7f56cbe1f4c20a"
+    case getCurrentWeatherForLocation(CGPoint), getYesterdaysWeatherForLocation(CGPoint)
+    
+    private static let baseURLString = "http://api.wunderground.com/api/9caa09c5d1399971/"
+    
+    
+    //for historical: dailysummary - 1st object - meantempi
     
     
     var method: HTTPMethod {
@@ -45,26 +48,33 @@ enum OpenWeatherRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case .getCurrentWeatherForLocation(_):
-            return "weather"
+            return "conditions" //"current_observation" -> temp_f
+        case .getYesterdaysWeatherForLocation(_):
+            return "yesterday"
         }
     }
     
     func asURLRequest() throws -> URLRequest {
-        let url = try OpenWeatherRouter.baseURLString.asURL()
-        let urlWithPath = url.appendingPathComponent(path)
-        var params = ["APPID": "b22cafbf884cf6f6ff7f56cbe1f4c20a"]
         
-        var urlRequest = URLRequest(url: urlWithPath)
-        urlRequest.httpMethod = method.rawValue
+        //http://api.wunderground.com/api/9caa09c5d1399971/conditions/q/40.712784,-74.005941.json
+        let url = try WeatherUndergroundRouter.baseURLString.asURL()
+        let urlWithPath = url.appendingPathComponent(path)
+        let urlWithQ = urlWithPath.appendingPathComponent("q")
+        var finalURL: URL? = nil
         
         switch self {
+        case let .getYesterdaysWeatherForLocation(location):
+            finalURL = urlWithQ.appendingPathComponent("\(location.x),\(location.y).json")
         case let .getCurrentWeatherForLocation(location):
-            params["lat"] = "\(location.x)"
-            params["lon"] = "\(location.y)"
+            finalURL = urlWithQ.appendingPathComponent("\(location.x),\(location.y).json")
         }
         
+        var urlRequest = URLRequest(url: finalURL!)
+        urlRequest.httpMethod = method.rawValue
+        
+        
         print("url: \(urlRequest.url?.absoluteString)")
-        urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+//        urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
         return urlRequest
     }
 }
