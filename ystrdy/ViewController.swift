@@ -14,25 +14,32 @@ import RxSwift
 class ViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let nycCoordinates = CGPoint(x: 40.712784, y: -74.005941)
-        API.getCurrentWeatherForLocation(nycCoordinates).subscribe(onNext: { temp in
-            print("temp obj: \(temp)")
+        let vm = WeatherDifferenceViewModel()
+        vm.updateWeatherDifferenceForLocation(nycCoordinates)
+        
+        vm.weatherDelta.asObservable().subscribe(onNext: { delta in
+            print("DELTA: \(delta)")
         }).addDisposableTo(disposeBag)
-//        API.getYesterdaysWeatherForLocation(nycCoordinates)
+        
     }
 }
 
 class WeatherDifferenceViewModel {
     //get the difference - fires both api calls and returns with difference
     
-    let weatherDelta = Variable(0.0)
+    let weatherDelta = Variable("") //its a string
+    let disposeBag = DisposeBag()
     
-    func updateWeatherDifferenceForLocation(location: CGPoint) {
-       //cool now we make the calls... wait for both to come back then update!
+    func updateWeatherDifferenceForLocation(_ location: CGPoint) {
+        Observable.combineLatest(API.getYesterdaysWeatherForLocation(location), API.getCurrentWeatherForLocation(location)) { $1.tempF - $0.tempF }.subscribe(onNext: { delta in
+            self.weatherDelta.value = "\(delta)"
+        }).addDisposableTo(disposeBag)
     }
 }
 
@@ -52,24 +59,37 @@ struct API {
         }
     }
     
-    static func getYesterdaysWeatherForLocation(_ location: CGPoint) {
-       Alamofire.request(WeatherUndergroundRouter.getYesterdaysWeatherForLocation(location)).responseJSON { response in
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
+    static func getYesterdaysWeatherForLocation(_ location: CGPoint) -> Observable<YesterdayTemp> {
+        return Observable.create { observer -> Disposable in
+            Alamofire.request(WeatherUndergroundRouter.getYesterdaysWeatherForLocation(location)).responseObject(completionHandler: { (response: DataResponse<YesterdayTemp>) in
+                if let results = response.result.value {
+                    observer.on(.next(results))
+                    observer.on(.completed)
+                }
+           })
+            return Disposables.create()
         }
     }
-//    static func getContentResultsForSection(_ sectionID: Int) -> Observable<[ContentResult]> {
-//        return Observable.create { observer -> Disposable in
-//            Alamofire.request(Router.getCategoryContent(sectionID)).responseCollection(completionHandler: { (response: DataResponse<[ContentResult]>) in
-//                if let results  = response.result.value {
-//                    observer.on(.next(results))
-//                    observer.on(.completed)
-//                }
-//            })
-//            return Disposables.create()
-//        }
-//    }
+}
+
+struct YesterdayTemp {
+    let tempF: CGFloat
+}
+
+extension YesterdayTemp: ResponseObjectSerializable {
+    init?(response: HTTPURLResponse, representation: Any) {
+        guard let innerRepresentation = representation as? [String: Any],
+        let history = innerRepresentation["history"] as? [String: Any],
+        let summary = history["dailysummary"] as? [Any],
+        let summaryObj = summary.first as? [String: Any],
+        let tempFString = summaryObj["meantempi"] as? String
+        else {
+           return nil
+        }
+        
+        let n = NumberFormatter().number(from: tempFString)!
+        self.tempF = CGFloat(n)
+    }
 }
 
 struct CurrentTemp {
