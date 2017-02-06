@@ -11,7 +11,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.9.0"
+fastlane_version "2.12.0"
 
 default_platform :ios
 
@@ -42,10 +42,12 @@ platform :ios do
       scheme: "ystrdy"
     )
 
+    # upload to Beta by Crashlytics
+    # will move to env variables - jabari@ustwo.com
     crashlytics(
       api_token: $crashlytics_api_token,
       build_secret: $crashlytics_build_secret,
-      groups: "ustwo-internal-team",
+      groups: "family",
       notes: ""
     )
 
