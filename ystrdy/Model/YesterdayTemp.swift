@@ -19,9 +19,9 @@ extension YesterdayTemp: ResponseObjectSerializable {
     init?(response: HTTPURLResponse, representation: Any) {
         guard let innerRepresentation = representation as? [String: Any],
             let history = innerRepresentation["history"] as? [String: Any],
-            let summary = history["dailysummary"] as? [Any],
+            let summary = history["observations"] as? [Any],
             let summaryObj = summary.first as? [String: Any],
-            let tempFString = summaryObj["meantempi"] as? String
+            let tempFString = summaryObj["tempi"] as? String
             else {
                 return nil
         }
