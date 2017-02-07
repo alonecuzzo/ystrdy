@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.font = UIFont.fsmeLightFontWithSize(100)
         label.textAlignment = .center
+        label.text = "loading"
         label.textColor = UIColor.ystrdyWarm()
         view.addSubview(label)
         label.snp.makeConstraints { make in
