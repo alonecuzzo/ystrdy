@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 import RxSwift
 
 
@@ -19,7 +18,7 @@ class WeatherDifferenceViewModel {
     
     
     //MARK: Method
-    func updateWeatherDifferenceForLocation(_ location: CGPoint) {
+    func updateWeatherDifferenceForLocation(_ location: LocationCoordinate) {
         Observable.combineLatest(API.getYesterdaysWeatherForLocation(location), API.getCurrentWeatherForLocation(location)) { $1.tempF - $0.tempF }.subscribe(onNext: { delta in
             self.weatherDelta.value = "\(Int(delta))°"
         }).addDisposableTo(disposeBag)

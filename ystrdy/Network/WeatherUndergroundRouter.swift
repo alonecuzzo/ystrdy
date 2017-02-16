@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 import Alamofire
 
 
@@ -21,7 +20,7 @@ import Alamofire
 enum WeatherUndergroundRouter: URLRequestConvertible {
     
     //MARK: Case
-    case getCurrentWeatherForLocation(CGPoint), getYesterdaysWeatherForLocation(CGPoint)
+    case getCurrentWeatherForLocation(LocationCoordinate), getYesterdaysWeatherForLocation(LocationCoordinate), getLocationDataForLocation(LocationCoordinate)
     
     
     //MARK: Property
@@ -37,6 +36,8 @@ enum WeatherUndergroundRouter: URLRequestConvertible {
             return "conditions"
         case .getYesterdaysWeatherForLocation(_):
             return "yesterday"
+        case .getLocationDataForLocation(_):
+            return "geolookup"
         }
     }
     
@@ -50,8 +51,8 @@ enum WeatherUndergroundRouter: URLRequestConvertible {
         var finalURL: URL? = nil
         
         switch self {
-        case let .getYesterdaysWeatherForLocation(location), let .getCurrentWeatherForLocation(location):
-            finalURL = urlWithQ.appendingPathComponent("\(location.x),\(location.y).json")
+        case let .getYesterdaysWeatherForLocation(location), let .getCurrentWeatherForLocation(location), let .getLocationDataForLocation(location):
+            finalURL = urlWithQ.appendingPathComponent("\(location.longitude),\(location.latitude).json")
         }
         
         var urlRequest = URLRequest(url: finalURL!)

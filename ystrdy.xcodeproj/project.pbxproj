@@ -26,6 +26,7 @@
 		067CD8CD1E46352A004BC3CB /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C51E46352A004BC3CB /* RxDataSources.framework */; };
 		067CD8CE1E46352A004BC3CB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C61E46352A004BC3CB /* RxSwift.framework */; };
 		067CD8D01E46352A004BC3CB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C81E46352A004BC3CB /* SnapKit.framework */; };
+		0C07D55F1E55FCD100AF4820 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D55E1E55FCD100AF4820 /* Location.swift */; };
 		0C6DCC3E1E48FA93004432E6 /* Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6DCC3D1E48FA93004432E6 /* Serialization.swift */; };
 		0C81F5B11E490A12008940FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B01E490A12008940FB /* API.swift */; };
 		0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B31E490A97008940FB /* WeatherUndergroundRouter.swift */; };
@@ -73,6 +74,7 @@
 		067CD8C61E46352A004BC3CB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		067CD8C71E46352A004BC3CB /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		067CD8C81E46352A004BC3CB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		0C07D55E1E55FCD100AF4820 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Model/Location.swift; sourceTree = "<group>"; };
 		0C6DCC3D1E48FA93004432E6 /* Serialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Serialization.swift; path = Network/Serialization.swift; sourceTree = "<group>"; };
 		0C81F5B01E490A12008940FB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Network/API.swift; sourceTree = "<group>"; };
 		0C81F5B31E490A97008940FB /* WeatherUndergroundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherUndergroundRouter.swift; path = Network/WeatherUndergroundRouter.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				0C81F5B51E490AE7008940FB /* CurrentTemp.swift */,
 				0C81F5B71E490B14008940FB /* YesterdayTemp.swift */,
+				0C07D55E1E55FCD100AF4820 /* Location.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */,
 				0C81F5B11E490A12008940FB /* API.swift in Sources */,
 				0C81F5D41E491D96008940FB /* WeatherDeltaColorViewModel.swift in Sources */,
+				0C07D55F1E55FCD100AF4820 /* Location.swift in Sources */,
 				0C81F5C01E49177A008940FB /* UIFont+Ystrdy.swift in Sources */,
 				0C81F5BB1E490B51008940FB /* WeatherDifferenceViewModel.swift in Sources */,
 				067CD8981E463028004BC3CB /* AppDelegate.swift in Sources */,

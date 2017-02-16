@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import UIKit
 import RxSwift
 import Alamofire
 
 
 struct API {
     
-    static func getCurrentWeatherForLocation(_ location: CGPoint) -> Observable<CurrentTemp> {
+    static func getCurrentWeatherForLocation(_ location: LocationCoordinate) -> Observable<CurrentTemp> {
         return Observable.create { observer -> Disposable in
             Alamofire.request(WeatherUndergroundRouter.getCurrentWeatherForLocation(location)).responseObject(completionHandler: { (response: DataResponse<CurrentTemp>) in
                 if let results = response.result.value {
@@ -26,7 +25,7 @@ struct API {
         }
     }
     
-    static func getYesterdaysWeatherForLocation(_ location: CGPoint) -> Observable<YesterdayTemp> {
+    static func getYesterdaysWeatherForLocation(_ location: LocationCoordinate) -> Observable<YesterdayTemp> {
         return Observable.create { observer -> Disposable in
             Alamofire.request(WeatherUndergroundRouter.getYesterdaysWeatherForLocation(location)).responseObject(completionHandler: { (response: DataResponse<YesterdayTemp>) in
                 if let results = response.result.value {

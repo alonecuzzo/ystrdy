@@ -26,7 +26,7 @@ class TemperatureViewController: UIViewController {
         
         view.backgroundColor = UIColor.ystrdyDarkPurple()
         
-        let nycCoordinates = CGPoint(x: 40.712784, y: -74.005941)
+        let nycCoordinates = LocationCoordinate(longitude: 40.712784, latitude: -74.005941)
         let vm = WeatherDifferenceViewModel()
         vm.updateWeatherDifferenceForLocation(nycCoordinates)
         
