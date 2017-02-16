@@ -11,8 +11,9 @@
 		065D320A1E55CE2800D4548B /* Raleway-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065D32061E55CE2800D4548B /* Raleway-Heavy.otf */; };
 		065D320B1E55CE2800D4548B /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065D32071E55CE2800D4548B /* Raleway-Medium.otf */; };
 		065D320C1E55CE2800D4548B /* Raleway-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065D32081E55CE2800D4548B /* Raleway-Thin.otf */; };
+		065D320E1E55D58E00D4548B /* TemperatureDeltaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D320D1E55D58E00D4548B /* TemperatureDeltaViewModel.swift */; };
 		067CD8981E463028004BC3CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CD8971E463028004BC3CB /* AppDelegate.swift */; };
-		067CD89A1E463028004BC3CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CD8991E463028004BC3CB /* ViewController.swift */; };
+		067CD89A1E463028004BC3CB /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CD8991E463028004BC3CB /* TemperatureViewController.swift */; };
 		067CD89D1E463028004BC3CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067CD89B1E463028004BC3CB /* Main.storyboard */; };
 		067CD89F1E463029004BC3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 067CD89E1E463028004BC3CB /* Assets.xcassets */; };
 		067CD8A21E463029004BC3CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067CD8A01E463029004BC3CB /* LaunchScreen.storyboard */; };
@@ -51,9 +52,10 @@
 		065D32061E55CE2800D4548B /* Raleway-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Heavy.otf"; path = "Resources/Fonts/Raleway-Heavy.otf"; sourceTree = "<group>"; };
 		065D32071E55CE2800D4548B /* Raleway-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.otf"; path = "Resources/Fonts/Raleway-Medium.otf"; sourceTree = "<group>"; };
 		065D32081E55CE2800D4548B /* Raleway-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Thin.otf"; path = "Resources/Fonts/Raleway-Thin.otf"; sourceTree = "<group>"; };
+		065D320D1E55D58E00D4548B /* TemperatureDeltaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureDeltaViewModel.swift; path = ViewModel/TemperatureDeltaViewModel.swift; sourceTree = "<group>"; };
 		067CD8941E463028004BC3CB /* ystrdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ystrdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		067CD8971E463028004BC3CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		067CD8991E463028004BC3CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		067CD8991E463028004BC3CB /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		067CD89C1E463028004BC3CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		067CD89E1E463028004BC3CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		067CD8A11E463029004BC3CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -136,7 +138,7 @@
 				0C6DCC3C1E48FA7B004432E6 /* Network */,
 				0C81F5C11E4917EB008940FB /* Resources */,
 				067CD8971E463028004BC3CB /* AppDelegate.swift */,
-				067CD8991E463028004BC3CB /* ViewController.swift */,
+				067CD8991E463028004BC3CB /* TemperatureViewController.swift */,
 				067CD89B1E463028004BC3CB /* Main.storyboard */,
 				067CD89E1E463028004BC3CB /* Assets.xcassets */,
 				067CD8A01E463029004BC3CB /* LaunchScreen.storyboard */,
@@ -193,6 +195,7 @@
 		0C81F5B91E490B3F008940FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				065D320D1E55D58E00D4548B /* TemperatureDeltaViewModel.swift */,
 				0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */,
 				0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */,
 			);
@@ -375,7 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				067CD89A1E463028004BC3CB /* ViewController.swift in Sources */,
+				067CD89A1E463028004BC3CB /* TemperatureViewController.swift in Sources */,
 				0C81F5BE1E4912B9008940FB /* UIColor+Ystrdy.swift in Sources */,
 				0C6DCC3E1E48FA93004432E6 /* Serialization.swift in Sources */,
 				0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */,
@@ -386,6 +389,7 @@
 				067CD8981E463028004BC3CB /* AppDelegate.swift in Sources */,
 				0C81F5B81E490B14008940FB /* YesterdayTemp.swift in Sources */,
 				0C81F5B61E490AE7008940FB /* CurrentTemp.swift in Sources */,
+				065D320E1E55D58E00D4548B /* TemperatureDeltaViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

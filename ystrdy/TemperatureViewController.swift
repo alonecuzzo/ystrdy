@@ -12,7 +12,7 @@ import RxSwift
 import SnapKit
 
 
-class ViewController: UIViewController {
+class TemperatureViewController: UIViewController {
     
     //MARK: Property
     private let disposeBag = DisposeBag()
@@ -40,10 +40,23 @@ class ViewController: UIViewController {
             make.center.equalTo(view)
         }
         
+        let locationLabel = UILabel(frame: .zero)
+        locationLabel.font = UIFont.ralewayExtraLightFontWithSize(24)
+        locationLabel.textAlignment = .center
+        locationLabel.text = "Ridgewood, Queens"
+        locationLabel.textColor = UIColor.ystrdyWarm()
+        view.addSubview(locationLabel)
+        
+        locationLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(view).inset(32)
+        }
+        
         vm.weatherDelta.asObservable().filter{ $0.characters.count > 0 }.subscribe(onNext: { delta in
             label.text = delta
             let truncated = delta.substring(to: delta.index(before: delta.endIndex)) //truncate ° symbol
             label.textColor = WeatherDeltaColorViewModel.colorForDelta(truncated)
+            locationLabel.textColor = label.textColor
         }).addDisposableTo(disposeBag)
     }
 }
