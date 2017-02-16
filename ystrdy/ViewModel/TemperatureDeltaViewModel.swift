@@ -8,24 +8,26 @@
 
 import Foundation
 import RxSwift
-import UIKit
 
-
-struct TemperatureDeltaModel {
-    let temperatureDelta: Int
-    let yesterdayTemperature: Int
-    let todayTemperature: Int
-    let locationName: String
+struct TemperatureDifference {
+    let location: Location
+    let yesterdayTemp: TemperatureType
+    let todayTemp: TemperatureType
 }
 
 struct TemperatureDeltaViewModel {
     
     //MARK: Property
-    let delta: Variable<TemperatureDeltaModel?> = Variable(nil)
+    let delta: Variable<TemperatureDifference?> = Variable(nil)
+    let disposeBag = DisposeBag()
     
     
     //MARK: Method
-    func updateWeatherDifferenceForLocation(_ location: CGPoint) {
-        //make api call and then do conversion here
+    func updateWeatherDifferenceForLocation(_ location: LocationCoordinate) {
+        Observable.combineLatest(API.getYesterdaysWeatherForLocation(location), API.getCurrentWeatherForLocation(location), API.getLocationDataForLocation(location)) { yesterdayTemp, currentTemp, locationData in
+                return TemperatureDifference(location: locationData, yesterdayTemp: yesterdayTemp, todayTemp: currentTemp)
+            }.subscribe(onNext: { delta in
+                self.delta.value = delta
+        }).addDisposableTo(disposeBag)
     }
 }

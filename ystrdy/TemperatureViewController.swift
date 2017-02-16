@@ -26,9 +26,10 @@ class TemperatureViewController: UIViewController {
         
         view.backgroundColor = UIColor.ystrdyDarkPurple()
         
-        let nycCoordinates = LocationCoordinate(longitude: 40.712784, latitude: -74.005941)
-        let vm = WeatherDifferenceViewModel()
-        vm.updateWeatherDifferenceForLocation(nycCoordinates)
+        let nycCoordinates = LocationCoordinate(latitude: -74.005941, longitude: 40.712784)
+        
+        let ovm = TemperatureDeltaViewModel()
+        ovm.updateWeatherDifferenceForLocation(nycCoordinates)
         
         let label = UILabel(frame: .zero)
         label.font = UIFont.ralewayExtraLightFontWithSize(100)
@@ -52,10 +53,13 @@ class TemperatureViewController: UIViewController {
             make.bottom.equalTo(view).inset(32)
         }
         
-        vm.weatherDelta.asObservable().filter{ $0.characters.count > 0 }.subscribe(onNext: { delta in
-            label.text = delta
-            let truncated = delta.substring(to: delta.index(before: delta.endIndex)) //truncate ° symbol
-            label.textColor = WeatherDeltaColorViewModel.colorForDelta(truncated)
+        ovm.delta.asObservable().subscribe(onNext: { deltaModel in
+            
+            guard let model = deltaModel else { return }
+            locationLabel.text = "\(model.location.cityName), \(model.location.stateName)"
+            let deltaInt = Int(model.todayTemp.tempF - model.yesterdayTemp.tempF)
+            label.text = "\(deltaInt)°"
+            label.textColor = WeatherDeltaColorViewModel.colorForDelta(deltaInt)
             locationLabel.textColor = label.textColor
         }).addDisposableTo(disposeBag)
     }

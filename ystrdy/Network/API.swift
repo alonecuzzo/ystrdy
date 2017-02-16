@@ -36,4 +36,16 @@ struct API {
             return Disposables.create()
         }
     }
+    
+    static func getLocationDataForLocation(_ location: LocationCoordinate) -> Observable<Location> {
+        return Observable.create { observer -> Disposable in
+            Alamofire.request(WeatherUndergroundRouter.getLocationDataForLocation(location)).responseObject(completionHandler: { (response: DataResponse<Location>) in
+                if let results = response.result.value {
+                    observer.on(.next(results))
+                    observer.on(.completed)
+                }
+           })
+            return Disposables.create()
+        }
+    }
 }

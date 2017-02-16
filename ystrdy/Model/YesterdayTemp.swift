@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import UIKit
 
 
-struct YesterdayTemp {
-    let tempF: CGFloat
+struct YesterdayTemp: TemperatureType {
+    var tempF: Double
 }
 
 
@@ -27,6 +26,6 @@ extension YesterdayTemp: ResponseObjectSerializable {
         }
         
         let n = NumberFormatter().number(from: tempFString)!
-        self.tempF = CGFloat(n)
+        self.tempF = Double(n)
     }
 }
