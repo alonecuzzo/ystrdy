@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     //MARK: Property
     private let disposeBag = DisposeBag()
     
+    override var prefersStatusBarHidden: Bool { return true }
+    
 
     //MARK: Method
     override func viewDidLoad() {
