@@ -4,14 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>FS Me-Bold Italic.otf</string>
-		<string>FS Me-Bold.otf</string>
-		<string>FS Me-Heavy Italic.otf</string>
-		<string>FS Me-Heavy.otf</string>
-		<string>FS Me-Italic.otf</string>
-		<string>FS Me-Light Italic.otf</string>
-		<string>FS Me-Light.otf</string>
-		<string>FS Me-Regular.otf</string>
+		<string>Raleway-ExtraLight.otf</string>
+		<string>Raleway-Heavy.otf</string>
+		<string>Raleway-Medium.otf</string>
+		<string>Raleway-Thin.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

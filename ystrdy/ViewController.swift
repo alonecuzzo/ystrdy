@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         vm.updateWeatherDifferenceForLocation(nycCoordinates)
         
         let label = UILabel(frame: .zero)
-        label.font = UIFont.fsmeLightFontWithSize(100)
+        label.font = UIFont.ralewayExtraLightFontWithSize(100)
         label.textAlignment = .center
         label.text = "loading"
         label.textColor = UIColor.ystrdyWarm()
