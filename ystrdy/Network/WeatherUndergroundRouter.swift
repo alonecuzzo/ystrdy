@@ -10,13 +10,6 @@ import Foundation
 import Alamofire
 
 
-//looks like we'll have to add a call to this endpoint: http://api.wunderground.com/api/9caa09c5d1399971/geolookup/q/37.776289,-122.395234.json
-
-//there's a "city" key which tells you if its a us city or not
-
-//here are the docs: https://www.wunderground.com/weather/api/d/docs?d=data/geolookup
-
-
 enum WeatherUndergroundRouter: URLRequestConvertible {
     
     //MARK: Case
