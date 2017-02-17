@@ -7,14 +7,20 @@
 //
 
 import Foundation
-import UIKit
 import Alamofire
+
+
+//looks like we'll have to add a call to this endpoint: http://api.wunderground.com/api/9caa09c5d1399971/geolookup/q/37.776289,-122.395234.json
+
+//there's a "city" key which tells you if its a us city or not
+
+//here are the docs: https://www.wunderground.com/weather/api/d/docs?d=data/geolookup
 
 
 enum WeatherUndergroundRouter: URLRequestConvertible {
     
     //MARK: Case
-    case getCurrentWeatherForLocation(CGPoint), getYesterdaysWeatherForLocation(CGPoint)
+    case getCurrentWeatherForLocation(LocationCoordinate), getYesterdaysWeatherForLocation(LocationCoordinate), getLocationDataForLocation(LocationCoordinate)
     
     
     //MARK: Property
@@ -30,6 +36,8 @@ enum WeatherUndergroundRouter: URLRequestConvertible {
             return "conditions"
         case .getYesterdaysWeatherForLocation(_):
             return "yesterday"
+        case .getLocationDataForLocation(_):
+            return "geolookup"
         }
     }
     
@@ -43,8 +51,8 @@ enum WeatherUndergroundRouter: URLRequestConvertible {
         var finalURL: URL? = nil
         
         switch self {
-        case let .getYesterdaysWeatherForLocation(location), let .getCurrentWeatherForLocation(location):
-            finalURL = urlWithQ.appendingPathComponent("\(location.x),\(location.y).json")
+        case let .getYesterdaysWeatherForLocation(location), let .getCurrentWeatherForLocation(location), let .getLocationDataForLocation(location):
+            finalURL = urlWithQ.appendingPathComponent("\(location.latitude),\(location.longitude).json")
         }
         
         var urlRequest = URLRequest(url: finalURL!)

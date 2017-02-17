@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065D32091E55CE2800D4548B /* Raleway-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065D32051E55CE2800D4548B /* Raleway-ExtraLight.otf */; };
+		065D320A1E55CE2800D4548B /* Raleway-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065D32061E55CE2800D4548B /* Raleway-Heavy.otf */; };
+		065D320B1E55CE2800D4548B /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065D32071E55CE2800D4548B /* Raleway-Medium.otf */; };
+		065D320C1E55CE2800D4548B /* Raleway-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065D32081E55CE2800D4548B /* Raleway-Thin.otf */; };
+		065D320E1E55D58E00D4548B /* TemperatureDeltaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D320D1E55D58E00D4548B /* TemperatureDeltaViewModel.swift */; };
+		065D32111E57289000D4548B /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D32101E57289000D4548B /* TemperatureViewController.swift */; };
 		067CD8981E463028004BC3CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CD8971E463028004BC3CB /* AppDelegate.swift */; };
-		067CD89A1E463028004BC3CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CD8991E463028004BC3CB /* ViewController.swift */; };
 		067CD89D1E463028004BC3CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067CD89B1E463028004BC3CB /* Main.storyboard */; };
 		067CD89F1E463029004BC3CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 067CD89E1E463028004BC3CB /* Assets.xcassets */; };
 		067CD8A21E463029004BC3CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067CD8A01E463029004BC3CB /* LaunchScreen.storyboard */; };
@@ -21,22 +26,17 @@
 		067CD8CD1E46352A004BC3CB /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C51E46352A004BC3CB /* RxDataSources.framework */; };
 		067CD8CE1E46352A004BC3CB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C61E46352A004BC3CB /* RxSwift.framework */; };
 		067CD8D01E46352A004BC3CB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C81E46352A004BC3CB /* SnapKit.framework */; };
+		0C07D55F1E55FCD100AF4820 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D55E1E55FCD100AF4820 /* Location.swift */; };
+		0C07D5611E560DA500AF4820 /* TemperatureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D5601E560DA500AF4820 /* TemperatureType.swift */; };
+		0C07D5631E56175F00AF4820 /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D5621E56175F00AF4820 /* LocationCoordinate.swift */; };
+		0C07D5651E56177D00AF4820 /* LocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D5641E56177D00AF4820 /* LocationType.swift */; };
 		0C6DCC3E1E48FA93004432E6 /* Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6DCC3D1E48FA93004432E6 /* Serialization.swift */; };
 		0C81F5B11E490A12008940FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B01E490A12008940FB /* API.swift */; };
 		0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B31E490A97008940FB /* WeatherUndergroundRouter.swift */; };
 		0C81F5B61E490AE7008940FB /* CurrentTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B51E490AE7008940FB /* CurrentTemp.swift */; };
 		0C81F5B81E490B14008940FB /* YesterdayTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5B71E490B14008940FB /* YesterdayTemp.swift */; };
-		0C81F5BB1E490B51008940FB /* WeatherDifferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */; };
 		0C81F5BE1E4912B9008940FB /* UIColor+Ystrdy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5BD1E4912B9008940FB /* UIColor+Ystrdy.swift */; };
 		0C81F5C01E49177A008940FB /* UIFont+Ystrdy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5BF1E49177A008940FB /* UIFont+Ystrdy.swift */; };
-		0C81F5CA1E4917FA008940FB /* FS Me-Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C21E4917FA008940FB /* FS Me-Bold Italic.otf */; };
-		0C81F5CB1E4917FA008940FB /* FS Me-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C31E4917FA008940FB /* FS Me-Bold.otf */; };
-		0C81F5CC1E4917FA008940FB /* FS Me-Heavy Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C41E4917FA008940FB /* FS Me-Heavy Italic.otf */; };
-		0C81F5CD1E4917FA008940FB /* FS Me-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C51E4917FA008940FB /* FS Me-Heavy.otf */; };
-		0C81F5CE1E4917FA008940FB /* FS Me-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C61E4917FA008940FB /* FS Me-Italic.otf */; };
-		0C81F5CF1E4917FA008940FB /* FS Me-Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C71E4917FA008940FB /* FS Me-Light Italic.otf */; };
-		0C81F5D01E4917FA008940FB /* FS Me-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C81E4917FA008940FB /* FS Me-Light.otf */; };
-		0C81F5D11E4917FA008940FB /* FS Me-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C81F5C91E4917FA008940FB /* FS Me-Regular.otf */; };
 		0C81F5D41E491D96008940FB /* WeatherDeltaColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,9 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		065D32051E55CE2800D4548B /* Raleway-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraLight.otf"; path = "Resources/Fonts/Raleway-ExtraLight.otf"; sourceTree = "<group>"; };
+		065D32061E55CE2800D4548B /* Raleway-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Heavy.otf"; path = "Resources/Fonts/Raleway-Heavy.otf"; sourceTree = "<group>"; };
+		065D32071E55CE2800D4548B /* Raleway-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.otf"; path = "Resources/Fonts/Raleway-Medium.otf"; sourceTree = "<group>"; };
+		065D32081E55CE2800D4548B /* Raleway-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Thin.otf"; path = "Resources/Fonts/Raleway-Thin.otf"; sourceTree = "<group>"; };
+		065D320D1E55D58E00D4548B /* TemperatureDeltaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureDeltaViewModel.swift; path = ViewModel/TemperatureDeltaViewModel.swift; sourceTree = "<group>"; };
+		065D32101E57289000D4548B /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureViewController.swift; path = ViewController/TemperatureViewController.swift; sourceTree = "<group>"; };
 		067CD8941E463028004BC3CB /* ystrdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ystrdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		067CD8971E463028004BC3CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		067CD8991E463028004BC3CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		067CD89C1E463028004BC3CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		067CD89E1E463028004BC3CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		067CD8A11E463029004BC3CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,22 +76,17 @@
 		067CD8C61E46352A004BC3CB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		067CD8C71E46352A004BC3CB /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		067CD8C81E46352A004BC3CB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		0C07D55E1E55FCD100AF4820 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Model/Location.swift; sourceTree = "<group>"; };
+		0C07D5601E560DA500AF4820 /* TemperatureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureType.swift; path = Model/TemperatureType.swift; sourceTree = "<group>"; };
+		0C07D5621E56175F00AF4820 /* LocationCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCoordinate.swift; path = Model/LocationCoordinate.swift; sourceTree = "<group>"; };
+		0C07D5641E56177D00AF4820 /* LocationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationType.swift; path = Model/LocationType.swift; sourceTree = "<group>"; };
 		0C6DCC3D1E48FA93004432E6 /* Serialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Serialization.swift; path = Network/Serialization.swift; sourceTree = "<group>"; };
 		0C81F5B01E490A12008940FB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Network/API.swift; sourceTree = "<group>"; };
 		0C81F5B31E490A97008940FB /* WeatherUndergroundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherUndergroundRouter.swift; path = Network/WeatherUndergroundRouter.swift; sourceTree = "<group>"; };
 		0C81F5B51E490AE7008940FB /* CurrentTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentTemp.swift; path = Model/CurrentTemp.swift; sourceTree = "<group>"; };
 		0C81F5B71E490B14008940FB /* YesterdayTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YesterdayTemp.swift; path = Model/YesterdayTemp.swift; sourceTree = "<group>"; };
-		0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDifferenceViewModel.swift; path = ViewModel/WeatherDifferenceViewModel.swift; sourceTree = "<group>"; };
 		0C81F5BD1E4912B9008940FB /* UIColor+Ystrdy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Ystrdy.swift"; path = "Common/UIColor+Ystrdy.swift"; sourceTree = "<group>"; };
 		0C81F5BF1E49177A008940FB /* UIFont+Ystrdy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Ystrdy.swift"; path = "Common/UIFont+Ystrdy.swift"; sourceTree = "<group>"; };
-		0C81F5C21E4917FA008940FB /* FS Me-Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Bold Italic.otf"; path = "Resources/Fonts/FS Me-Bold Italic.otf"; sourceTree = "<group>"; };
-		0C81F5C31E4917FA008940FB /* FS Me-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Bold.otf"; path = "Resources/Fonts/FS Me-Bold.otf"; sourceTree = "<group>"; };
-		0C81F5C41E4917FA008940FB /* FS Me-Heavy Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Heavy Italic.otf"; path = "Resources/Fonts/FS Me-Heavy Italic.otf"; sourceTree = "<group>"; };
-		0C81F5C51E4917FA008940FB /* FS Me-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Heavy.otf"; path = "Resources/Fonts/FS Me-Heavy.otf"; sourceTree = "<group>"; };
-		0C81F5C61E4917FA008940FB /* FS Me-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Italic.otf"; path = "Resources/Fonts/FS Me-Italic.otf"; sourceTree = "<group>"; };
-		0C81F5C71E4917FA008940FB /* FS Me-Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Light Italic.otf"; path = "Resources/Fonts/FS Me-Light Italic.otf"; sourceTree = "<group>"; };
-		0C81F5C81E4917FA008940FB /* FS Me-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Light.otf"; path = "Resources/Fonts/FS Me-Light.otf"; sourceTree = "<group>"; };
-		0C81F5C91E4917FA008940FB /* FS Me-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FS Me-Regular.otf"; path = "Resources/Fonts/FS Me-Regular.otf"; sourceTree = "<group>"; };
 		0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDeltaColorViewModel.swift; path = ViewModel/WeatherDeltaColorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065D320F1E57285600D4548B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				065D32101E57289000D4548B /* TemperatureViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		067CD88B1E463028004BC3CB = {
 			isa = PBXGroup;
 			children = (
@@ -138,17 +146,17 @@
 		067CD8961E463028004BC3CB /* ystrdy */ = {
 			isa = PBXGroup;
 			children = (
+				067CD8971E463028004BC3CB /* AppDelegate.swift */,
+				067CD89E1E463028004BC3CB /* Assets.xcassets */,
+				067CD8A31E463029004BC3CB /* Info.plist */,
+				067CD8A01E463029004BC3CB /* LaunchScreen.storyboard */,
+				067CD89B1E463028004BC3CB /* Main.storyboard */,
 				0C81F5BC1E49129D008940FB /* Common */,
-				0C81F5B91E490B3F008940FB /* ViewModel */,
 				0C81F5B21E490A50008940FB /* Model */,
 				0C6DCC3C1E48FA7B004432E6 /* Network */,
 				0C81F5C11E4917EB008940FB /* Resources */,
-				067CD8971E463028004BC3CB /* AppDelegate.swift */,
-				067CD8991E463028004BC3CB /* ViewController.swift */,
-				067CD89B1E463028004BC3CB /* Main.storyboard */,
-				067CD89E1E463028004BC3CB /* Assets.xcassets */,
-				067CD8A01E463029004BC3CB /* LaunchScreen.storyboard */,
-				067CD8A31E463029004BC3CB /* Info.plist */,
+				065D320F1E57285600D4548B /* ViewController */,
+				0C81F5B91E490B3F008940FB /* ViewModel */,
 			);
 			path = ystrdy;
 			sourceTree = "<group>";
@@ -193,6 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				0C81F5B51E490AE7008940FB /* CurrentTemp.swift */,
+				0C07D55E1E55FCD100AF4820 /* Location.swift */,
+				0C07D5621E56175F00AF4820 /* LocationCoordinate.swift */,
+				0C07D5641E56177D00AF4820 /* LocationType.swift */,
+				0C07D5601E560DA500AF4820 /* TemperatureType.swift */,
 				0C81F5B71E490B14008940FB /* YesterdayTemp.swift */,
 			);
 			name = Model;
@@ -201,8 +213,8 @@
 		0C81F5B91E490B3F008940FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				065D320D1E55D58E00D4548B /* TemperatureDeltaViewModel.swift */,
 				0C81F5D31E491D96008940FB /* WeatherDeltaColorViewModel.swift */,
-				0C81F5BA1E490B51008940FB /* WeatherDifferenceViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -227,14 +239,10 @@
 		0C81F5D21E491951008940FB /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				0C81F5C21E4917FA008940FB /* FS Me-Bold Italic.otf */,
-				0C81F5C31E4917FA008940FB /* FS Me-Bold.otf */,
-				0C81F5C41E4917FA008940FB /* FS Me-Heavy Italic.otf */,
-				0C81F5C51E4917FA008940FB /* FS Me-Heavy.otf */,
-				0C81F5C61E4917FA008940FB /* FS Me-Italic.otf */,
-				0C81F5C71E4917FA008940FB /* FS Me-Light Italic.otf */,
-				0C81F5C81E4917FA008940FB /* FS Me-Light.otf */,
-				0C81F5C91E4917FA008940FB /* FS Me-Regular.otf */,
+				065D32051E55CE2800D4548B /* Raleway-ExtraLight.otf */,
+				065D32061E55CE2800D4548B /* Raleway-Heavy.otf */,
+				065D32071E55CE2800D4548B /* Raleway-Medium.otf */,
+				065D32081E55CE2800D4548B /* Raleway-Thin.otf */,
 			);
 			name = Font;
 			sourceTree = "<group>";
@@ -326,17 +334,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C81F5CC1E4917FA008940FB /* FS Me-Heavy Italic.otf in Resources */,
-				0C81F5CF1E4917FA008940FB /* FS Me-Light Italic.otf in Resources */,
-				0C81F5CB1E4917FA008940FB /* FS Me-Bold.otf in Resources */,
+				065D320B1E55CE2800D4548B /* Raleway-Medium.otf in Resources */,
 				067CD8A21E463029004BC3CB /* LaunchScreen.storyboard in Resources */,
-				0C81F5D11E4917FA008940FB /* FS Me-Regular.otf in Resources */,
+				065D320C1E55CE2800D4548B /* Raleway-Thin.otf in Resources */,
 				067CD89F1E463029004BC3CB /* Assets.xcassets in Resources */,
+				065D320A1E55CE2800D4548B /* Raleway-Heavy.otf in Resources */,
 				067CD89D1E463028004BC3CB /* Main.storyboard in Resources */,
-				0C81F5CE1E4917FA008940FB /* FS Me-Italic.otf in Resources */,
-				0C81F5CA1E4917FA008940FB /* FS Me-Bold Italic.otf in Resources */,
-				0C81F5D01E4917FA008940FB /* FS Me-Light.otf in Resources */,
-				0C81F5CD1E4917FA008940FB /* FS Me-Heavy.otf in Resources */,
+				065D32091E55CE2800D4548B /* Raleway-ExtraLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,17 +395,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				067CD89A1E463028004BC3CB /* ViewController.swift in Sources */,
+				0C07D5651E56177D00AF4820 /* LocationType.swift in Sources */,
 				0C81F5BE1E4912B9008940FB /* UIColor+Ystrdy.swift in Sources */,
 				0C6DCC3E1E48FA93004432E6 /* Serialization.swift in Sources */,
 				0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */,
+				0C07D5611E560DA500AF4820 /* TemperatureType.swift in Sources */,
 				0C81F5B11E490A12008940FB /* API.swift in Sources */,
+				0C07D5631E56175F00AF4820 /* LocationCoordinate.swift in Sources */,
 				0C81F5D41E491D96008940FB /* WeatherDeltaColorViewModel.swift in Sources */,
+				0C07D55F1E55FCD100AF4820 /* Location.swift in Sources */,
 				0C81F5C01E49177A008940FB /* UIFont+Ystrdy.swift in Sources */,
-				0C81F5BB1E490B51008940FB /* WeatherDifferenceViewModel.swift in Sources */,
 				067CD8981E463028004BC3CB /* AppDelegate.swift in Sources */,
 				0C81F5B81E490B14008940FB /* YesterdayTemp.swift in Sources */,
 				0C81F5B61E490AE7008940FB /* CurrentTemp.swift in Sources */,
+				065D320E1E55D58E00D4548B /* TemperatureDeltaViewModel.swift in Sources */,
+				065D32111E57289000D4548B /* TemperatureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

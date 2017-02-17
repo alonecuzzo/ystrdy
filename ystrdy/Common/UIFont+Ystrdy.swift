@@ -11,7 +11,7 @@ import UIKit
 
 
 extension UIFont {
-    static func fsmeLightFontWithSize(_ size: CGFloat) -> UIFont? {
-        return UIFont(name: "FSMe-Light", size: size)
+    static func ralewayExtraLightFontWithSize(_ size: CGFloat) -> UIFont? {
+        return UIFont(name: "Raleway-ExtraLight", size: size)
     }
 }
