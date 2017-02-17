@@ -26,7 +26,7 @@ class TemperatureViewController: UIViewController {
         
         view.backgroundColor = UIColor.ystrdyDarkPurple()
         
-        let nycCoordinates = LocationCoordinate(latitude: -74.005941, longitude: 40.712784)
+        let nycCoordinates = LocationCoordinate(latitude: 40.712784, longitude: -74.005941)
         
         let ovm = TemperatureDeltaViewModel()
         ovm.updateWeatherDifferenceForLocation(nycCoordinates)
@@ -42,7 +42,7 @@ class TemperatureViewController: UIViewController {
             make.top.equalTo(32)
         }
         
-        let inset = 40
+        let inset = 48
         
         let yesterdayTempLabel = UILabel(frame: .zero)
         yesterdayTempLabel.font = UIFont.ralewayExtraLightFontWithSize(48)
@@ -54,6 +54,18 @@ class TemperatureViewController: UIViewController {
             make.top.equalTo(250)
         }
         
+        let yesterdayLabel = UILabel(frame: .zero)
+        yesterdayLabel.font = UIFont.ralewayExtraLightFontWithSize(24)
+        yesterdayLabel.textAlignment = .center
+        yesterdayLabel.text = "yesterday"
+        yesterdayLabel.textColor = UIColor.ystrdyWarm()
+        view.addSubview(yesterdayLabel)
+        yesterdayLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(yesterdayTempLabel)
+            make.top.equalTo(yesterdayTempLabel.snp.bottom).offset(10)
+        }
+        
+        
         let todayTempLabel = UILabel(frame: .zero)
         todayTempLabel.font = UIFont.ralewayExtraLightFontWithSize(48)
         todayTempLabel.textAlignment = .center
@@ -64,22 +76,43 @@ class TemperatureViewController: UIViewController {
             make.top.equalTo(250)
         }
         
+        let todayLabel = UILabel(frame: .zero)
+        todayLabel.font = UIFont.ralewayExtraLightFontWithSize(24)
+        todayLabel.textAlignment = .center
+        todayLabel.text = "today"
+        todayLabel.textColor = UIColor.ystrdyWarm()
+        view.addSubview(todayLabel)
+        todayLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(todayTempLabel)
+            make.top.equalTo(todayTempLabel.snp.bottom).offset(10)
+        }
+        
         let locationLabel = UILabel(frame: .zero)
         locationLabel.font = UIFont.ralewayExtraLightFontWithSize(24)
         locationLabel.textAlignment = .center
         locationLabel.text = "Ridgewood, Queens"
+        locationLabel.numberOfLines = 0
+        locationLabel.lineBreakMode = .byWordWrapping
         locationLabel.textColor = UIColor.ystrdyWarm()
         view.addSubview(locationLabel)
         
         locationLabel.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).inset(32)
+            make.left.right.equalTo(view).inset(32)
         }
         
         ovm.delta.asObservable().subscribe(onNext: { deltaModel in
             
             guard let model = deltaModel else { return }
-            locationLabel.text = "\(model.location.cityName), \(model.location.stateName)"
+            
+            switch model.location.locationType {
+            case .national:
+                locationLabel.text = "\(model.location.cityName), \(model.location.stateName)"
+            case .international, .none:
+                locationLabel.text = "\(model.location.cityName), \(model.location.countryName)"
+            }
+            
             let deltaInt = Int(model.todayTemp.tempF - model.yesterdayTemp.tempF)
             deltaLabel.text = "\(deltaInt)°"
             yesterdayTempLabel.text = "\(Int(model.yesterdayTemp.tempF))°"
@@ -88,6 +121,8 @@ class TemperatureViewController: UIViewController {
             locationLabel.textColor = deltaLabel.textColor
             yesterdayTempLabel.textColor = deltaLabel.textColor
             todayTempLabel.textColor = deltaLabel.textColor
+            yesterdayLabel.textColor = deltaLabel.textColor
+            todayLabel.textColor = deltaLabel.textColor
         }).addDisposableTo(disposeBag)
     }
 }

@@ -52,7 +52,7 @@ enum WeatherUndergroundRouter: URLRequestConvertible {
         
         switch self {
         case let .getYesterdaysWeatherForLocation(location), let .getCurrentWeatherForLocation(location), let .getLocationDataForLocation(location):
-            finalURL = urlWithQ.appendingPathComponent("\(location.longitude),\(location.latitude).json")
+            finalURL = urlWithQ.appendingPathComponent("\(location.latitude),\(location.longitude).json")
         }
         
         var urlRequest = URLRequest(url: finalURL!)
