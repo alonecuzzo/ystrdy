@@ -46,6 +46,16 @@ This will also make sure the profile is up to date
 fastlane ios release
 ```
 Deploy a new version to the App Store
+### ios register_a_device
+```
+fastlane ios register_a_device
+```
+
+### ios refresh_profiles
+```
+fastlane ios refresh_profiles
+```
+
 
 ----
 

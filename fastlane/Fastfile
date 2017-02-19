@@ -64,6 +64,25 @@ platform :ios do
     # frameit
   end
 
+  lane :register_a_device do
+  register_devices(
+      devices: {
+        "device name": "uuid",
+        "another device name": "another uuid"
+      })
+    refresh_profiles
+  end
+
+  # A helper lane for refreshing provisioning profiles.
+  lane :refresh_profiles do
+    match(
+      type: "development",
+      force: true)
+    match(
+      type: "adhoc",
+      force: true)
+  end
+
   # You can define as many lanes as you want
 
   after_all do |lane|
