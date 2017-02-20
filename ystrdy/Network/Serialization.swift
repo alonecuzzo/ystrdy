@@ -31,7 +31,7 @@ extension DataRequest {
             let result = jsonResponseSerializer.serializeResponse(request, response, data, nil)
             
             //TODO: Weird crash here - getting a failure from the server?
-            print("url: \(response?.url?.absoluteString)")
+//            print("url: \(response?.url?.absoluteString)")
             guard case let .success(jsonObject) = result else {
                 fatalError("CRASH ON SERIALIZING")
             }

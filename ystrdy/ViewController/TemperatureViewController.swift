@@ -9,7 +9,47 @@
 import UIKit
 import Alamofire
 import RxSwift
+import RxCocoa
 import SnapKit
+import CoreLocation
+
+//http://nshipster.com/core-location-in-ios-8/ for pattern
+
+class LocationManager: NSObject, CLLocationManagerDelegate {
+    
+    //MARK: - Property
+    let location = Variable(LocationCoordinate(latitude: 0, longitude: 0))
+    private let locationManager = CLLocationManager()
+    private let disposeBag = DisposeBag()
+    
+    func getLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        self.location.value = LocationCoordinate(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .denied, .restricted:
+            //ask for them to cut permissions on http://nshipster.com/core-location-in-ios-8/
+            break
+        default:
+            break
+        }
+    }
+    
+    
+}
 
 
 class TemperatureViewController: UIViewController {
@@ -18,6 +58,7 @@ class TemperatureViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     override var prefersStatusBarHidden: Bool { return true }
+    let locationManager = LocationManager()
     
 
     //MARK: Method
@@ -26,10 +67,12 @@ class TemperatureViewController: UIViewController {
         
         view.backgroundColor = UIColor.ystrdyDarkPurple()
         
-        let nycCoordinates = LocationCoordinate(latitude: 40.712784, longitude: -74.005941)
-        
         let ovm = TemperatureDeltaViewModel()
-        ovm.updateWeatherDifferenceForLocation(nycCoordinates)
+        
+        locationManager.location.asObservable().filter { $0.latitude != 0 && $0.longitude != 0 }.subscribe(onNext: { coordinates in
+            ovm.updateWeatherDifferenceForLocation(coordinates)
+        } ).addDisposableTo(disposeBag)
+        locationManager.getLocation()
         
         let deltaLabel = UILabel(frame: .zero)
         deltaLabel.font = UIFont.ralewayExtraLightFontWithSize(100)
