@@ -26,6 +26,7 @@
 		067CD8CD1E46352A004BC3CB /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C51E46352A004BC3CB /* RxDataSources.framework */; };
 		067CD8CE1E46352A004BC3CB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C61E46352A004BC3CB /* RxSwift.framework */; };
 		067CD8D01E46352A004BC3CB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CD8C81E46352A004BC3CB /* SnapKit.framework */; };
+		06C8D17E1E5B3CDE00E7D12F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8D17D1E5B3CDE00E7D12F /* LocationManager.swift */; };
 		0C07D55F1E55FCD100AF4820 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D55E1E55FCD100AF4820 /* Location.swift */; };
 		0C07D5611E560DA500AF4820 /* TemperatureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D5601E560DA500AF4820 /* TemperatureType.swift */; };
 		0C07D5631E56175F00AF4820 /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07D5621E56175F00AF4820 /* LocationCoordinate.swift */; };
@@ -76,6 +77,7 @@
 		067CD8C61E46352A004BC3CB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		067CD8C71E46352A004BC3CB /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		067CD8C81E46352A004BC3CB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		06C8D17D1E5B3CDE00E7D12F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Location/LocationManager.swift; sourceTree = "<group>"; };
 		0C07D55E1E55FCD100AF4820 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Model/Location.swift; sourceTree = "<group>"; };
 		0C07D5601E560DA500AF4820 /* TemperatureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureType.swift; path = Model/TemperatureType.swift; sourceTree = "<group>"; };
 		0C07D5621E56175F00AF4820 /* LocationCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCoordinate.swift; path = Model/LocationCoordinate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				067CD8A01E463029004BC3CB /* LaunchScreen.storyboard */,
 				067CD89B1E463028004BC3CB /* Main.storyboard */,
 				0C81F5BC1E49129D008940FB /* Common */,
+				06C8D17C1E5B3CC700E7D12F /* Location */,
 				0C81F5B21E490A50008940FB /* Model */,
 				0C6DCC3C1E48FA7B004432E6 /* Network */,
 				0C81F5C11E4917EB008940FB /* Resources */,
@@ -185,6 +188,14 @@
 				067CD8BE1E4634F2004BC3CB /* Fabric.framework */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		06C8D17C1E5B3CC700E7D12F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				06C8D17D1E5B3CDE00E7D12F /* LocationManager.swift */,
+			);
+			name = Location;
 			sourceTree = "<group>";
 		};
 		0C6DCC3C1E48FA7B004432E6 /* Network */ = {
@@ -399,6 +410,7 @@
 				0C81F5BE1E4912B9008940FB /* UIColor+Ystrdy.swift in Sources */,
 				0C6DCC3E1E48FA93004432E6 /* Serialization.swift in Sources */,
 				0C81F5B41E490A97008940FB /* WeatherUndergroundRouter.swift in Sources */,
+				06C8D17E1E5B3CDE00E7D12F /* LocationManager.swift in Sources */,
 				0C07D5611E560DA500AF4820 /* TemperatureType.swift in Sources */,
 				0C81F5B11E490A12008940FB /* API.swift in Sources */,
 				0C07D5631E56175F00AF4820 /* LocationCoordinate.swift in Sources */,
