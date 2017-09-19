@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import RxSwift
+import RxCocoa
 import SnapKit
 
 
@@ -18,6 +19,7 @@ class TemperatureViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     override var prefersStatusBarHidden: Bool { return true }
+    let locationManager = LocationManager()
     
 
     //MARK: Method
@@ -26,10 +28,12 @@ class TemperatureViewController: UIViewController {
         
         view.backgroundColor = UIColor.ystrdyDarkPurple()
         
-        let nycCoordinates = LocationCoordinate(latitude: 40.712784, longitude: -74.005941)
-        
         let ovm = TemperatureDeltaViewModel()
-        ovm.updateWeatherDifferenceForLocation(nycCoordinates)
+        
+        locationManager.location.asObservable().filter { $0.latitude != 0 && $0.longitude != 0 }.subscribe(onNext: { coordinates in
+            ovm.updateWeatherDifferenceForLocation(coordinates)
+        } ).addDisposableTo(disposeBag)
+        locationManager.getLocation()
         
         let deltaLabel = UILabel(frame: .zero)
         deltaLabel.font = UIFont.ralewayExtraLightFontWithSize(100)
